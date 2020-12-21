@@ -25,19 +25,23 @@ const StyledContainer = styled.div`
 `;
 
 const StyledHeading = styled.h1`
-    ${tw`mb-8 text-5xl`}
+    ${tw`font-bold mb-8 text-5xl`}
 
     line-height: 3.75rem
 `;
 
 const StyledP = styled.p`
-    ${tw`md:max-w-3xl mb-8 text-2xl`}
+    ${tw`font-semibold md:max-w-3xl mb-8 text-2xl`}
 
     line-height: 1.9rem
 `;
 
+const StyledPExtraBold = styled(StyledP)`
+    ${tw`font-extrabold`}
+`;
+
 const StyledCTA = styled(StyledP)`
-    ${tw`py-2 px-6 max-w-max uppercase`}
+    ${tw`py-2 px-6 max-w-max mt-16 uppercase`}
 
     background: #00A09B;
 `;
@@ -49,9 +53,7 @@ export default function Hero({ bgImage }) {
                 <StyledHeading>{content.hero.join(', ')}</StyledHeading>
                 <StyledP>{content.body[0]}</StyledP>
                 <StyledP>{content.body[1]}</StyledP>
-                <StyledP style={{ fontWeight: `bold` }}>
-                    {content.body[2]}
-                </StyledP>
+                <StyledPExtraBold>{content.body[2]}</StyledPExtraBold>
                 <StyledCTA>{content.body[3]}</StyledCTA>
             </StyledContainer>
         </StyledBackgroundSection>
