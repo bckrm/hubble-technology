@@ -5,6 +5,7 @@ import { createGlobalStyle } from 'styled-components';
 
 import Hero from '../components/hero';
 import SubHero from '../components/subHero';
+import FeaturesSection from '../components/featuresSection';
 
 import 'fontsource-montserrat';
 import 'fontsource-montserrat/600.css';
@@ -20,6 +21,27 @@ export const query = graphql`
                 }
             }
         }
+        feature1Image: file(relativePath: { regex: "/feature-1/" }) {
+            childImageSharp {
+                fluid(maxWidth: 500) {
+                    ...GatsbyImageSharpFluid
+                }
+            }
+        }
+        feature2Image: file(relativePath: { regex: "/feature-2/" }) {
+            childImageSharp {
+                fluid(maxWidth: 500) {
+                    ...GatsbyImageSharpFluid
+                }
+            }
+        }
+        feature3Image: file(relativePath: { regex: "/feature-3/" }) {
+            childImageSharp {
+                fluid(maxWidth: 500) {
+                    ...GatsbyImageSharpFluid
+                }
+            }
+        }
     }
 `;
 
@@ -31,13 +53,16 @@ const GlobalStyles = createGlobalStyle`
     }
 `;
 export default function IndexPage({ data }) {
-    const { heroImage } = data;
+    const { heroImage, feature1Image, feature2Image, feature3Image } = data;
+
+    const featureImages = [feature1Image, feature2Image, feature3Image];
 
     return (
         <>
             <GlobalStyles />
             <Hero bgImage={heroImage} />
             <SubHero />
+            <FeaturesSection images={featureImages} />
         </>
     );
 }
@@ -45,5 +70,8 @@ export default function IndexPage({ data }) {
 IndexPage.propTypes = {
     data: PropTypes.shape({
         heroImage: PropTypes.object.isRequired,
+        feature1Image: PropTypes.object.isRequired,
+        feature2Image: PropTypes.object.isRequired,
+        feature3Image: PropTypes.object.isRequired,
     }).isRequired,
 };
