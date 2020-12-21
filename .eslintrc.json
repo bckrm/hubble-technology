@@ -41,7 +41,8 @@
         "react/forbid-prop-types": "off",
         "react-hooks/rules-of-hooks": "error",
         "react-hooks/exhaustive-deps": "warn",
-        "prettier/prettier": "warn"
+        "prettier/prettier": "warn",
+        "space-before-function-paren": ["error", {"anonymous": "always", "named": "never", "asyncArrow": "always"}]
     },
     "root": true
 }
