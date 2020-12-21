@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import { createGlobalStyle } from 'styled-components';
 
 import Hero from '../components/hero';
+import SubHero from '../components/subHero';
 
 import 'fontsource-montserrat';
 import 'fontsource-montserrat/600.css';
@@ -24,6 +25,7 @@ export const query = graphql`
 
 const GlobalStyles = createGlobalStyle`
     body {
+        background-color: #000000;
         color: #ffffff;
         font-family: 'Montserrat';
     }
@@ -35,6 +37,7 @@ export default function IndexPage({ data }) {
         <>
             <GlobalStyles />
             <Hero bgImage={heroImage} />
+            <SubHero />
         </>
     );
 }
