@@ -5,6 +5,11 @@ import { createGlobalStyle } from 'styled-components';
 
 import Hero from '../components/hero';
 
+import 'fontsource-montserrat';
+import 'fontsource-montserrat/600.css';
+import 'fontsource-montserrat/700.css';
+import 'fontsource-montserrat/800.css';
+
 export const query = graphql`
     query IndexQuery {
         heroImage: file(relativePath: { regex: "/Hero-Image/" }) {
@@ -20,6 +25,7 @@ export const query = graphql`
 const GlobalStyles = createGlobalStyle`
     body {
         color: #ffffff;
+        font-family: 'Montserrat';
     }
 `;
 export default function IndexPage({ data }) {
