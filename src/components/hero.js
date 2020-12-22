@@ -7,12 +7,11 @@ import tw from 'twin.macro';
 import BackgroundImage from 'gatsby-background-image';
 
 const content = {
-    hero: ['Unlock the value of your asset data', 'in one visual dashboard'],
+    hero: ['Digital asset management at the speed of business'],
     body: [
-        'Today’s leading enterprises need actionable insight across their digital ecosystem to make informed decisions around security, infrastructure, and finance.',
-        'Asset management systems trap data in itemized lists, hiding the relationships and dynamic nature of digital assets.',
+        `To make informed decisions around security, infrastructure, and finance, today's leading enterprises need actionable insight across their digital ecosystem.`,
         'Ready to see your assets in a new light?',
-        `Let's do it`,
+        `let’s do it`,
     ],
 };
 
@@ -25,7 +24,7 @@ const StyledContainer = styled.div`
 `;
 
 const StyledHeading = styled.h1`
-    ${tw`font-bold mb-8 text-5xl`}
+    ${tw`font-bold mb-8 text-5xl md:max-w-2xl`}
 
     line-height: 3.75rem
 `;
@@ -52,9 +51,8 @@ export default function Hero({ bgImage }) {
             <StyledContainer>
                 <StyledHeading>{content.hero.join(', ')}</StyledHeading>
                 <StyledP>{content.body[0]}</StyledP>
-                <StyledP>{content.body[1]}</StyledP>
-                <StyledPExtraBold>{content.body[2]}</StyledPExtraBold>
-                <StyledCTA>{content.body[3]}</StyledCTA>
+                <StyledPExtraBold>{content.body[1]}</StyledPExtraBold>
+                <StyledCTA>{content.body[2]}</StyledCTA>
             </StyledContainer>
         </StyledBackgroundSection>
     );
