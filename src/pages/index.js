@@ -44,6 +44,12 @@ export const query = graphql`
                 }
             }
         }
+        processAnimation: file(
+            relativePath: { regex: "/Process-Animation-3/" }
+        ) {
+            id
+            relativePath
+        }
     }
 `;
 
@@ -55,7 +61,13 @@ const GlobalStyles = createGlobalStyle`
     }
 `;
 export default function IndexPage({ data }) {
-    const { heroImage, feature1Image, feature2Image, feature3Image } = data;
+    const {
+        heroImage,
+        feature1Image,
+        feature2Image,
+        feature3Image,
+        processAnimation,
+    } = data;
 
     const featureImages = [feature1Image, feature2Image, feature3Image];
 
@@ -64,7 +76,7 @@ export default function IndexPage({ data }) {
             <GlobalStyles />
             <Header />
             <Hero bgImage={heroImage} />
-            <SubHero />
+            <SubHero animation={processAnimation} />
             <FeaturesSection images={featureImages} />
             <Footer />
         </>
@@ -77,5 +89,6 @@ IndexPage.propTypes = {
         feature1Image: PropTypes.object.isRequired,
         feature2Image: PropTypes.object.isRequired,
         feature3Image: PropTypes.object.isRequired,
+        processAnimation: PropTypes.object.isRequired,
     }).isRequired,
 };
