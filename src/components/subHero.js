@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/media-has-caption */
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import tw from 'twin.macro';
@@ -20,33 +20,11 @@ const StyledHeading = styled.h2`
     line-height: 2.75rem;
 `;
 
-// const AnimPlaceholder = styled.div`
-//     ${tw`bg-gray-500 h-80 w-full`}
-// `;
-
 export default function SubHero() {
-    const ref = useRef();
-
-    const handleScroll = () => {
-        const elementTop = ref.current.getBoundingClientRect().top;
-        const played = ref.current.played.length;
-
-        if (elementTop < 400 && played < 1) {
-            ref.current.play();
-        }
-    };
-
-    useEffect(() => {
-        window.addEventListener('scroll', handleScroll);
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
-        };
-    });
-
     return (
         <StyledSection>
             <StyledHeading>{content.hero}</StyledHeading>
-            <video ref={ref}>
+            <video autoPlay>
                 <source src={Video} type="video/mp4" />
             </video>
         </StyledSection>
