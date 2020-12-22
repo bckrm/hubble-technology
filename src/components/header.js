@@ -8,8 +8,8 @@ import FullLogo from './logos/fullLogo';
 const content = {
     nav: [
         {
-            name: 'features',
-            link: '#features',
+            name: 'why hubble',
+            link: '#why-hubble',
         },
         {
             name: 'contact',
