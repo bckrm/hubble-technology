@@ -7,6 +7,7 @@ import Header from '../components/header';
 import Hero from '../components/hero';
 import SubHero from '../components/subHero';
 import FeaturesSection from '../components/featuresSection';
+import Footer from '../components/footer';
 
 import 'fontsource-montserrat';
 import 'fontsource-montserrat/600.css';
@@ -65,6 +66,7 @@ export default function IndexPage({ data }) {
             <Hero bgImage={heroImage} />
             <SubHero />
             <FeaturesSection images={featureImages} />
+            <Footer />
         </>
     );
 }
