@@ -1,6 +1,7 @@
 module.exports = {
     siteMetadata: {
         title: 'hubble-technology',
+        siteUrl: 'https://hubble-technology.netlify.app',
     },
     plugins: [
         'gatsby-plugin-styled-components',
@@ -11,7 +12,7 @@ module.exports = {
             resolve: 'gatsby-plugin-manifest',
             options: {
                 icon: 'src/images/icon.png',
-        },
+            },
         },
         'gatsby-transformer-sharp',
         {
