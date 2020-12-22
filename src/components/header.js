@@ -22,7 +22,7 @@ const StyledNav = styled.nav`
     ${tw`fixed mx-auto px-4 md:px-0 py-8 w-full z-10`}
 
     background-color: ${(props) =>
-        props.isScrolled ? `#000000` : `#00000000`};
+        props.isScrolled ? `#04080D` : `#04080D00`};
     transition: background-color 500ms ease-out;
 `;
 

@@ -55,7 +55,8 @@ export const query = graphql`
 
 const GlobalStyles = createGlobalStyle`
     body {
-        background-color: #000000;
+        background-color: #04080D;
+        ;
         color: #ffffff;
         font-family: 'Montserrat';
     }
