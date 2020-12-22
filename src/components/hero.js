@@ -17,7 +17,7 @@ const content = {
 };
 
 const StyledBackgroundSection = styled(BackgroundImage)`
-    ${tw`flex flex-col justify-center min-h-screen`}
+    ${tw`flex flex-col justify-center min-h-screen pt-40 md:pt-0`}
 `;
 
 const StyledContainer = styled.div`
