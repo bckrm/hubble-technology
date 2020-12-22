@@ -39,10 +39,15 @@ const StyledPExtraBold = styled(StyledP)`
     ${tw`font-extrabold`}
 `;
 
-const StyledCTA = styled(StyledP)`
-    ${tw`py-2 px-6 max-w-max mt-16 uppercase`}
+const StyledCTA = styled.a`
+    ${tw`cursor-pointer py-2 px-6 max-w-max mt-16 uppercase tracking-widest`}
 
     background: #00A09B;
+    transition: background 500ms ease-out;
+
+    &:hover {
+        background: #027874;
+    }
 `;
 
 export default function Hero({ bgImage }) {
@@ -52,7 +57,7 @@ export default function Hero({ bgImage }) {
                 <StyledHeading>{content.hero.join(', ')}</StyledHeading>
                 <StyledP>{content.body[0]}</StyledP>
                 <StyledPExtraBold>{content.body[1]}</StyledPExtraBold>
-                <StyledCTA>{content.body[2]}</StyledCTA>
+                <StyledCTA href="#contact">{content.body[2]}</StyledCTA>
             </StyledContainer>
         </StyledBackgroundSection>
     );

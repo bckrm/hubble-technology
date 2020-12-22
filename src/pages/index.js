@@ -3,6 +3,7 @@ import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 import { createGlobalStyle } from 'styled-components';
 
+import Contact from '../components/contact';
 import Header from '../components/header';
 import Hero from '../components/hero';
 import SubHero from '../components/subHero';
@@ -79,6 +80,7 @@ export default function IndexPage({ data }) {
             <Hero bgImage={heroImage} />
             <SubHero animation={processAnimation} />
             <FeaturesSection images={featureImages} />
+            <Contact />
             <Footer />
         </>
     );
