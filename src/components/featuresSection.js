@@ -7,7 +7,7 @@ import tw from 'twin.macro';
 import Feature from './feature';
 
 const content = {
-    heading: 'Highlights',
+    heading: 'Why Hubble?',
     features: [
         {
             heading: 'Compliance and Security',
@@ -28,7 +28,7 @@ const content = {
 };
 
 const StyledSection = styled.section`
-    ${tw`container mt-14 mx-auto px-4 md:px-0`}
+    ${tw`container pt-40 mx-auto px-4 md:px-0`}
 `;
 
 const StyledHeading = styled.h2`
@@ -40,7 +40,7 @@ const StyledHeading = styled.h2`
 
 export default function FeaturesSection({ images }) {
     return (
-        <StyledSection>
+        <StyledSection id="why-hubble">
             <StyledHeading>{content.heading}</StyledHeading>
             {content.features.map((feature, index) => {
                 return (
