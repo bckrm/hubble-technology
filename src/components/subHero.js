@@ -18,7 +18,7 @@ const StyledSection = styled.section`
 `;
 
 const InnerWrapper = styled.div`
-    ${tw`container mx-auto`}
+    ${tw`container mx-auto px-4 lg:px-2 2xl:px-0`}
 `;
 
 const StyledHeading = styled.h2`

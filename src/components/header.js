@@ -27,7 +27,7 @@ const StyledNav = styled.nav`
 `;
 
 const NavInner = styled.div`
-    ${tw`container flex justify-between mx-auto`}
+    ${tw`container flex justify-between mx-auto px-4 lg:px-2 2xl:px-0`}
 `;
 
 const StyledUL = styled.ul`

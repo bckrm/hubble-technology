@@ -28,7 +28,7 @@ const content = {
 };
 
 const StyledSection = styled.section`
-    ${tw`container pt-40 mx-auto px-4 md:px-0`}
+    ${tw`container pt-40 mx-auto px-4 lg:px-2 2xl:px-0`}
 `;
 
 const StyledHeading = styled.h2`

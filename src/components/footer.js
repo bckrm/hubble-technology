@@ -35,7 +35,7 @@ const content = {
 };
 
 const StyledFooter = styled.footer`
-    ${tw`container flex flex-col md:flex-row justify-between mx-auto px-4 md:px-0 pb-12`}
+    ${tw`container flex flex-col md:flex-row justify-between mx-auto px-4 lg:px-2 2xl:px-0`}
 `;
 
 const LogoWrapper = styled.div`
