@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/media-has-caption */
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import styled from 'styled-components';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import tw from 'twin.macro';
@@ -35,12 +35,48 @@ const StyledP = styled.p`
 `;
 
 export default function SubHero() {
+    const target = useRef();
+    const observer = useRef();
+
+    useEffect(() => {
+        // to avoid error during gatsby build we need to assign current during useEffect hook
+        observer.current = new IntersectionObserver(
+            (entries) => {
+                const entry = entries[0];
+
+                if (entry.isIntersecting) {
+                    playVideo();
+                }
+            },
+            {
+                threshold: 1,
+            },
+        );
+    });
+
+    function playVideo() {
+        target.current.play();
+    }
+
+    useEffect(() => {
+        const currentTarget = target.current;
+        const currentObserver = observer.current;
+
+        if (target) {
+            currentObserver.observe(currentTarget);
+        }
+
+        return () => {
+            currentObserver.unobserve(currentTarget);
+        };
+    }, [target]);
+
     return (
         <StyledSection>
             <InnerWrapper>
                 <StyledHeading>{content.hero}</StyledHeading>
                 <StyledP>{content.body}</StyledP>
-                <video autoPlay muted>
+                <video muted playsInline ref={target}>
                     <source src={Video} type="video/mp4" />
                 </video>
             </InnerWrapper>
