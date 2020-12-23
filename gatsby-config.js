@@ -1,6 +1,6 @@
 module.exports = {
     siteMetadata: {
-        title: 'hubble-technology',
+        title: 'Hubble Technology',
         siteUrl: 'https://hubble-technology.netlify.app',
     },
     plugins: [
