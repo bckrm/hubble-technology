@@ -12,17 +12,17 @@ const content = {
         {
             heading: 'Compliance and Security',
             body:
-                'Ensure compliance and security across the entire organization',
+                'Ensure compliance and security across the entire organization. Infuse technology asset technology into your existing security investments, enabling enhanced situational awareness and super-charging security automation and orchestration.',
         },
         {
             heading: 'Digital Transformation',
             body:
-                'Enable true digital transformation with real time asset data that helps you measure risk gaps against opportunities for innovation ',
+                'Enable digital transformation with real time asset data that helps you identify opportunities for technology rationalization, innovation and transformation.',
         },
         {
-            heading: 'Return on Investment',
+            heading: 'Untrap Value',
             body:
-                'See true ROI on digital asset investments with actionable tasks to maximize value ',
+                'Releasing trapped value is key to success in a digital world. Our platform is designed to unlock the value of your existing technology data to help power your business through asset intelligence.',
         },
     ],
 };

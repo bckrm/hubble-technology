@@ -7,8 +7,8 @@ import tw from 'twin.macro';
 import Video from '../images/Process-Animation-4.mp4';
 
 const content = {
-    hero: 'Unlock the value of your asset data, in one visual dashboard',
-    body: `Previously, asset management systems trapped data in itemized lists, hiding the relationships between and dynamic nature of an enterprise's digital assets. Hubble's asset intelligence platform brings those relationships to the surface, providing a comprehensive view of an organization’s assets—and the connections between them.`,
+    hero: `Understand your assets in a feature-rich platform`,
+    body: `Existing asset management systems are incomplete, lack context and are expensive to operate. Hubble's asset intelligence platform sheds a new light on an enterprise technology stack, providing a comprehensive view of an organization’s assets, enabling for an enhanced institutional understanding and informed decision making.`,
 };
 
 const StyledSection = styled.section`
@@ -24,7 +24,7 @@ const InnerWrapper = styled.div`
 const StyledHeading = styled.h2`
     ${tw`font-bold text-5xl mb-12`}
 
-    line-height: 2.75rem;
+    line-height: 3.75rem;
     max-width: 58rem;
 `;
 

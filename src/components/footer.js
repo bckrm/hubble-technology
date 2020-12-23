@@ -8,28 +8,12 @@ import TextLogoWhite from './logos/textLogoWhite';
 const content = {
     footerLinks: [
         {
-            name: 'page link',
-            link: '#',
+            name: 'LinkedIn',
+            link: 'https://www.linkedin.com/company/hubble-technology/',
         },
         {
-            name: 'page link',
-            link: '#',
-        },
-        {
-            name: 'page link',
-            link: '#',
-        },
-        {
-            name: 'page link',
-            link: '#',
-        },
-        {
-            name: 'page link',
-            link: '#',
-        },
-        {
-            name: 'page link',
-            link: '#',
+            name: 'Twitter',
+            link: 'https://twitter.com/gethubble',
         },
     ],
 };
@@ -64,7 +48,7 @@ export default function Footer() {
                 {content.footerLinks.map((item) => {
                     return (
                         <li key={item.name}>
-                            <StyledLink href={item.link}>
+                            <StyledLink href={item.link} target="_blank">
                                 {item.name}
                             </StyledLink>
                         </li>
