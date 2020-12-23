@@ -60,6 +60,6 @@ export default function Feature({ content, image }) {
 }
 
 Feature.propTypes = {
-    content: PropTypes.array.isRequired,
+    content: PropTypes.object.isRequired,
     image: PropTypes.object.isRequired,
 };

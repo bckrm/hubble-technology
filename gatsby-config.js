@@ -2,6 +2,7 @@ module.exports = {
     siteMetadata: {
         title: 'Hubble Technology',
         siteUrl: 'https://hubble-technology.netlify.app',
+        description: `Hubble's feature-rich digital asset intelligence platform provides an organization with a comprehensive view of its assets and the relationships between them.`,
     },
     plugins: [
         'gatsby-plugin-styled-components',

@@ -56,5 +56,5 @@ export default function FeaturesSection({ images }) {
 }
 
 FeaturesSection.propTypes = {
-    images: PropTypes.array.isRequired,
+    images: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
