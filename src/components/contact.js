@@ -23,11 +23,11 @@ const StyledForm = styled.form`
 `;
 
 const InputWrapper = styled.div`
-    ${tw`flex flex-col md:flex-row md:justify-around md:mx-auto w-1/2`}
+    ${tw`flex flex-col md:flex-row md:justify-center md:mx-auto w-1/2`}
 `;
 
 const StyledLabel = styled.label`
-    ${tw`flex flex-col text-sm`}
+    ${tw`flex flex-col mb-4 mx-4 text-sm`}
 `;
 
 const StyledInput = styled.input`
