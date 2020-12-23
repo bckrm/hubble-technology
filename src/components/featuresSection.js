@@ -28,7 +28,7 @@ const content = {
 };
 
 const StyledSection = styled.section`
-    ${tw`container mx-auto px-4 lg:px-2 2xl:px-0`}
+    ${tw`container mx-auto pt-24 lg:pt-36 px-4 lg:px-2 2xl:px-0`}
 `;
 
 const StyledHeading = styled.h2`
