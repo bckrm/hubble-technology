@@ -19,7 +19,7 @@ const content = {
 };
 
 const StyledNav = styled.nav`
-    ${tw`fixed mx-auto px-4 md:px-0 py-8 w-full z-10`}
+    ${tw`fixed py-8 w-full z-10`}
 
     background-color: ${(props) =>
         props.isScrolled ? `#04080D` : `#04080D00`};
@@ -35,7 +35,11 @@ const StyledUL = styled.ul`
 `;
 
 const StyledLink = styled.a`
-    ${tw`block font-bold ml-5 md:ml-10 my-4 md:my-0 text-lg uppercase leading-5`}
+    ${tw`block font-bold ml-5 md:ml-10 my-4 md:my-0 text-lg text-right uppercase leading-5`}
+`;
+
+const LogoLink = styled(StyledLink)`
+    ${tw`ml-0`}
 `;
 
 export default function Header() {
@@ -60,9 +64,9 @@ export default function Header() {
     return (
         <StyledNav isScrolled={isScrolled}>
             <NavInner>
-                <StyledLink href="#hero">
+                <LogoLink href="#hero">
                     <FullLogo />
-                </StyledLink>
+                </LogoLink>
                 <StyledUL>
                     {content.nav.map((item) => (
                         <li key={item.link}>
