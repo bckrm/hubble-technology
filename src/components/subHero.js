@@ -40,7 +40,7 @@ export default function SubHero() {
             <InnerWrapper>
                 <StyledHeading>{content.hero}</StyledHeading>
                 <StyledP>{content.body}</StyledP>
-                <video autoPlay>
+                <video autoPlay muted>
                     <source src={Video} type="video/mp4" />
                 </video>
             </InnerWrapper>
