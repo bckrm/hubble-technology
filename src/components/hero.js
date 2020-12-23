@@ -32,7 +32,7 @@ const StyledHeading = styled.h1`
 const StyledP = styled.p`
     ${tw`font-semibold md:max-w-3xl mb-8 text-2xl`}
 
-    line-height: 1.9rem
+    line-height: 150%;
 `;
 
 const StyledPExtraBold = styled(StyledP)`

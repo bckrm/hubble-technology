@@ -31,7 +31,7 @@ const StyledHeading = styled.h2`
 const StyledP = styled.p`
     ${tw`font-semibold md:max-w-3xl pb-48 text-2xl`}
 
-    line-height: 1.9rem
+    line-height: 150%;
 `;
 
 export default function SubHero() {
