@@ -60,7 +60,9 @@ export default function Header() {
     return (
         <StyledNav isScrolled={isScrolled}>
             <NavInner>
-                <FullLogo />
+                <a href="#hero">
+                    <FullLogo />
+                </a>
                 <StyledUL>
                     {content.nav.map((item) => (
                         <li key={item.link}>

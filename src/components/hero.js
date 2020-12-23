@@ -52,7 +52,10 @@ const StyledCTA = styled.a`
 
 export default function Hero({ bgImage }) {
     return (
-        <StyledBackgroundSection fluid={bgImage.childImageSharp.fluid}>
+        <StyledBackgroundSection
+            id="hero"
+            fluid={bgImage.childImageSharp.fluid}
+        >
             <StyledContainer>
                 <StyledHeading>{content.hero.join(', ')}</StyledHeading>
                 <StyledP>{content.body[0]}</StyledP>
