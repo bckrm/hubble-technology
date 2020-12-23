@@ -12,7 +12,7 @@ const content = {
 };
 
 const StyledSection = styled.section`
-    ${tw`mb-32 pt-20`}
+    ${tw`mb-24 lg:mb-36 pt-20`}
 
     background: linear-gradient(180deg, #000000 10%, #04080D 40%);
 `;
@@ -29,7 +29,7 @@ const StyledHeading = styled.h2`
 `;
 
 const StyledP = styled.p`
-    ${tw`font-semibold md:max-w-3xl pb-48 text-2xl`}
+    ${tw`font-semibold md:max-w-3xl pb-16 lg:pb-24 text-2xl`}
 
     line-height: 150%;
 `;
