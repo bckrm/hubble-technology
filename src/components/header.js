@@ -31,11 +31,11 @@ const NavInner = styled.div`
 `;
 
 const StyledUL = styled.ul`
-    ${tw`flex self-center`}
+    ${tw`flex flex-col md:flex-row self-center`}
 `;
 
 const StyledLink = styled.a`
-    ${tw`font-bold ml-5 md:ml-10 text-lg uppercase leading-5`}
+    ${tw`block font-bold ml-5 md:ml-10 my-4 md:my-0 text-lg uppercase leading-5`}
 `;
 
 export default function Header() {
@@ -60,9 +60,9 @@ export default function Header() {
     return (
         <StyledNav isScrolled={isScrolled}>
             <NavInner>
-                <a href="#hero">
+                <StyledLink href="#hero">
                     <FullLogo />
-                </a>
+                </StyledLink>
                 <StyledUL>
                     {content.nav.map((item) => (
                         <li key={item.link}>
