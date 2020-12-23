@@ -31,7 +31,7 @@ const StyledLabel = styled.label`
 `;
 
 const StyledInput = styled.input`
-    ${tw`mt-2 py-1 px-2 text-black`}
+    ${tw`h-12 mt-2 py-1 px-2 text-black text-lg`}
 `;
 
 const StyledButton = styled.button`
@@ -70,9 +70,10 @@ export default function Contact() {
                     <StyledLabel>
                         Email
                         <StyledInput
-                            type="email"
                             name="email"
                             onChange={handleInputChange}
+                            placeholder="example@email.com"
+                            type="email"
                         />
                     </StyledLabel>
                 </InputWrapper>
