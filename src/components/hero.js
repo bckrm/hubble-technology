@@ -9,8 +9,8 @@ import BackgroundImage from 'gatsby-background-image';
 const content = {
     hero: ['Digital asset management at the speed of business'],
     body: [
-        `To make informed decisions around security, infrastructure, and finance, today's leading enterprises need actionable insight across their digital ecosystem.`,
-        'Ready to see your assets in a new light?',
+        `Resilient businesses require a trusted, intelligent and thorough understanding of the digital assets that are at the heart of their operations. Whether they are enabling security, infrastructure operations, or business process automation, they need to be understood – allowing full recognition of their value, secured and maintained.`,
+        `Ready to see your digital assets in a new light?`,
         `let’s do it`,
     ],
 };
