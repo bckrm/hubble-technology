@@ -3,6 +3,7 @@ import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 import { createGlobalStyle } from 'styled-components';
 
+import SEO from '../components/seo';
 import Contact from '../components/contact';
 import Header from '../components/header';
 import Hero from '../components/hero';
@@ -76,6 +77,7 @@ export default function IndexPage({ data }) {
     return (
         <>
             <GlobalStyles />
+            <SEO title="Hubble Technology" />
             <Header />
             <Hero bgImage={heroImage} />
             <SubHero animation={processAnimation} />
