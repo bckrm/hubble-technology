@@ -12,7 +12,7 @@ const content = {
 };
 
 const StyledSection = styled.section`
-    ${tw`mb-24 lg:mb-36 pt-20`}
+    ${tw`pt-20`}
 
     background: linear-gradient(180deg, #000000 10%, #04080D 40%);
 `;
