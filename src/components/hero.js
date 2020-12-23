@@ -20,7 +20,7 @@ const StyledBackgroundSection = styled(BackgroundImage)`
 `;
 
 const StyledContainer = styled.div`
-    ${tw`container mx-auto px-4 md:px-0`}
+    ${tw`container mx-auto px-4 lg:px-2 2xl:px-0`}
 `;
 
 const StyledHeading = styled.h1`
@@ -32,7 +32,7 @@ const StyledHeading = styled.h1`
 const StyledP = styled.p`
     ${tw`font-semibold md:max-w-3xl mb-8 text-2xl`}
 
-    line-height: 1.9rem
+    line-height: 150%;
 `;
 
 const StyledPExtraBold = styled(StyledP)`
@@ -52,7 +52,10 @@ const StyledCTA = styled.a`
 
 export default function Hero({ bgImage }) {
     return (
-        <StyledBackgroundSection fluid={bgImage.childImageSharp.fluid}>
+        <StyledBackgroundSection
+            id="hero"
+            fluid={bgImage.childImageSharp.fluid}
+        >
             <StyledContainer>
                 <StyledHeading>{content.hero.join(', ')}</StyledHeading>
                 <StyledP>{content.body[0]}</StyledP>

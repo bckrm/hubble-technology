@@ -4,7 +4,7 @@ import styled from 'styled-components';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import tw from 'twin.macro';
 
-import Video from '../images/Process-Animation-3.mp4';
+import Video from '../images/Process-Animation-4.mp4';
 
 const content = {
     hero: 'Unlock the value of your asset data, in one visual dashboard',
@@ -18,7 +18,7 @@ const StyledSection = styled.section`
 `;
 
 const InnerWrapper = styled.div`
-    ${tw`container mx-auto`}
+    ${tw`container mx-auto px-4 lg:px-2 2xl:px-0`}
 `;
 
 const StyledHeading = styled.h2`
@@ -31,7 +31,7 @@ const StyledHeading = styled.h2`
 const StyledP = styled.p`
     ${tw`font-semibold md:max-w-3xl pb-48 text-2xl`}
 
-    line-height: 1.9rem
+    line-height: 150%;
 `;
 
 export default function SubHero() {

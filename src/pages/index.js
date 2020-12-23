@@ -46,7 +46,7 @@ export const query = graphql`
             }
         }
         processAnimation: file(
-            relativePath: { regex: "/Process-Animation-3/" }
+            relativePath: { regex: "/Process-Animation-4/" }
         ) {
             id
             relativePath

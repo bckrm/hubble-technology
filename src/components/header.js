@@ -27,7 +27,7 @@ const StyledNav = styled.nav`
 `;
 
 const NavInner = styled.div`
-    ${tw`container flex justify-between mx-auto`}
+    ${tw`container flex justify-between mx-auto px-4 lg:px-2 2xl:px-0`}
 `;
 
 const StyledUL = styled.ul`
@@ -60,7 +60,9 @@ export default function Header() {
     return (
         <StyledNav isScrolled={isScrolled}>
             <NavInner>
-                <FullLogo />
+                <a href="#hero">
+                    <FullLogo />
+                </a>
                 <StyledUL>
                     {content.nav.map((item) => (
                         <li key={item.link}>

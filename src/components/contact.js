@@ -9,7 +9,7 @@ const content = {
 };
 
 const StyledSection = styled.section`
-    ${tw`container mx-auto mb-16 px-4 md:px-0`}
+    ${tw`container mx-auto mb-16 px-4 lg:px-2 2xl:px-0`}
 `;
 
 const StyledHeading = styled.h2`
@@ -23,15 +23,15 @@ const StyledForm = styled.form`
 `;
 
 const InputWrapper = styled.div`
-    ${tw`flex flex-col md:flex-row md:justify-around md:mx-auto w-1/2`}
+    ${tw`flex flex-col md:flex-row md:justify-center md:mx-auto w-1/2`}
 `;
 
 const StyledLabel = styled.label`
-    ${tw`flex flex-col text-sm`}
+    ${tw`flex flex-col mb-4 mx-4 text-sm`}
 `;
 
 const StyledInput = styled.input`
-    ${tw`mt-2 py-1 px-2 text-black`}
+    ${tw`h-12 mt-2 py-1 px-2 text-black text-lg`}
 `;
 
 const StyledButton = styled.button`
@@ -70,9 +70,10 @@ export default function Contact() {
                     <StyledLabel>
                         Email
                         <StyledInput
-                            type="email"
                             name="email"
                             onChange={handleInputChange}
+                            placeholder="example@email.com"
+                            type="email"
                         />
                     </StyledLabel>
                 </InputWrapper>
