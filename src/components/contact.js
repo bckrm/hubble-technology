@@ -57,7 +57,14 @@ export default function Contact() {
     return (
         <StyledSection id="contact">
             <StyledHeading>{content.heading}</StyledHeading>
-            <StyledForm>
+            <StyledForm
+                method="post"
+                netlify-honeypot="1botField"
+                data-netlify="true"
+                name="contact"
+            >
+                <input name="1botField" type="hidden" />
+                <input name="contact" type="hidden" value="contact" />
                 <InputWrapper>
                     <StyledLabel>
                         Name
