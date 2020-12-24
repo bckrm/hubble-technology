@@ -94,7 +94,7 @@ export default function Contact() {
                 <StyledHeading>Thank you!</StyledHeading>
             ) : (
                 <StyledForm
-                    method="post"
+                    method="POST"
                     netlify-honeypot="1botField"
                     data-netlify="true"
                     name="contact"
