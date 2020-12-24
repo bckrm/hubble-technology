@@ -101,7 +101,7 @@ export default function Contact() {
                     onSubmit={handleSubmit}
                 >
                     <input name="1botField" type="hidden" />
-                    <input name="contact" type="hidden" value="contact" />
+                    <input name="form-name" type="hidden" value="contact" />
                     <InputWrapper>
                         <StyledLabel>
                             Name
