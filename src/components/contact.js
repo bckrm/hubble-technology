@@ -95,12 +95,12 @@ export default function Contact() {
             ) : (
                 <StyledForm
                     method="POST"
-                    netlify-honeypot="botfieldbot"
+                    netlify-honeypot="bot-field"
                     data-netlify="true"
                     name="contact"
                     onSubmit={handleSubmit}
                 >
-                    <input name="botfieldbot" type="hidden" />
+                    <input name="bot-field" type="hidden" />
                     <input name="form-name" type="hidden" value="contact" />
                     <InputWrapper>
                         <StyledLabel>
