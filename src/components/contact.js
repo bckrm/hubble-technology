@@ -47,6 +47,7 @@ const StyledButton = styled.button`
 
 export default function Contact() {
     const [input, setInput] = useState({});
+    const [formSubmitSuccessful, setFormSubmitSuccessful] = useState(false);
 
     const handleInputChange = (e) =>
         setInput({
@@ -54,38 +55,77 @@ export default function Contact() {
             [e.currentTarget.name]: e.currentTarget.value,
         });
 
+    function encode(data) {
+        const encodedData = Object.keys(data)
+            .map(
+                (key) =>
+                    `${encodeURIComponent(key)}=${encodeURIComponent(
+                        data[key],
+                    )}`,
+            )
+            .join('&');
+
+        console.log(encodedData)
+    }
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        encode({
+            'form-name': event.target.getAttribute('name'),
+            ...input,
+        });
+
+        fetch('/', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: encode({
+                'form-name': event.target.getAttribute('name'),
+                ...input,
+            }),
+        })
+            .then(() => setFormSubmitSuccessful(true))
+            .catch((error) => alert(error));
+    };
+
     return (
         <StyledSection id="contact">
             <StyledHeading>{content.heading}</StyledHeading>
-            <StyledForm
-                method="post"
-                netlify-honeypot="1botField"
-                data-netlify="true"
-                name="contact"
-            >
-                <input name="1botField" type="hidden" />
-                <input name="contact" type="hidden" value="contact" />
-                <InputWrapper>
-                    <StyledLabel>
-                        Name
-                        <StyledInput
-                            type="text"
-                            name="name"
-                            onChange={handleInputChange}
-                        />
-                    </StyledLabel>
-                    <StyledLabel>
-                        Email
-                        <StyledInput
-                            name="email"
-                            onChange={handleInputChange}
-                            placeholder="example@email.com"
-                            type="email"
-                        />
-                    </StyledLabel>
-                </InputWrapper>
-                <StyledButton type="submit">{content.buttonText}</StyledButton>
-            </StyledForm>
+            {formSubmitSuccessful ? (
+                <StyledHeading>Thank you!</StyledHeading>
+            ) : (
+                <StyledForm
+                    method="post"
+                    netlify-honeypot="1botField"
+                    data-netlify="true"
+                    name="contact"
+                    onSubmit={handleSubmit}
+                >
+                    <input name="1botField" type="hidden" />
+                    <input name="contact" type="hidden" value="contact" />
+                    <InputWrapper>
+                        <StyledLabel>
+                            Name
+                            <StyledInput
+                                type="text"
+                                name="name"
+                                onChange={handleInputChange}
+                            />
+                        </StyledLabel>
+                        <StyledLabel>
+                            Email
+                            <StyledInput
+                                name="email"
+                                onChange={handleInputChange}
+                                placeholder="example@email.com"
+                                type="email"
+                            />
+                        </StyledLabel>
+                    </InputWrapper>
+                    <StyledButton type="submit">
+                        {content.buttonText}
+                    </StyledButton>
+                </StyledForm>
+            )}
         </StyledSection>
     );
 }
