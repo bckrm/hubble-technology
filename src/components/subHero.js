@@ -4,7 +4,7 @@ import styled from 'styled-components';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import tw from 'twin.macro';
 
-import Video from '../images/Process-Animation-4.mp4';
+import Video from '../images/process-animation.webm';
 
 const content = {
     hero: `Understand your assets in a feature-rich platform`,
