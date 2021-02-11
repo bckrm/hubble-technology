@@ -63,7 +63,7 @@ const GlobalStyles = createGlobalStyle`
         font-family: 'Montserrat';
     }
 `;
-export default function IndexPage({ data }) {
+export default function OldIndexPage({ data }) {
     const {
         heroImage,
         feature1Image,
@@ -88,7 +88,7 @@ export default function IndexPage({ data }) {
     );
 }
 
-IndexPage.propTypes = {
+OldIndexPage.propTypes = {
     data: PropTypes.shape({
         heroImage: PropTypes.object.isRequired,
         feature1Image: PropTypes.object.isRequired,
