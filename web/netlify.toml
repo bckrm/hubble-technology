@@ -108,9 +108,11 @@
 #   to = "/index.html"
 #   status = 200
 
-# [[headers]]
+[[headers]]
   # Define which paths this specific [[headers]] block will cover.
-  # for = "/*"
+  for = "/*"
+  [headers.value]
+    X-Robots-Tag = 'noindex, nofollow'
 
   # [headers.values]
   # X-Frame-Options = "DENY"

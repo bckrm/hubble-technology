@@ -65,7 +65,7 @@ export default function Contact() {
             )
             .join('&');
 
-        console.log(encodedData)
+        console.log(encodedData);
     }
 
     const handleSubmit = (event) => {
