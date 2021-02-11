@@ -9,24 +9,12 @@ module.exports = {
         description: `Hubble's feature-rich digital asset intelligence platform provides an organization with a comprehensive view of its assets and the relationships between them.`,
     },
     plugins: [
-        'gatsby-plugin-styled-components',
-        'gatsby-plugin-sharp',
-        'gatsby-plugin-react-helmet',
-        'gatsby-plugin-sitemap',
         {
-            resolve: 'gatsby-plugin-manifest',
+            resolve: 'gatsby-background-image',
             options: {
-                icon: 'src/images/icon.png',
+                // add your own characters to escape, replacing the default ':/'
+                specialChars: '/:',
             },
-        },
-        'gatsby-transformer-sharp',
-        {
-            resolve: 'gatsby-source-filesystem',
-            options: {
-                name: 'images',
-                path: './src/images/',
-            },
-            __key: 'images',
         },
         {
             resolve: 'gatsby-plugin-eslint',
@@ -41,11 +29,22 @@ module.exports = {
             },
         },
         {
-            resolve: 'gatsby-background-image',
+            resolve: 'gatsby-plugin-manifest',
             options: {
-                // add your own characters to escape, replacing the default ':/'
-                specialChars: '/:',
+                icon: 'src/images/icon.png',
             },
+        },
+        'gatsby-plugin-sharp',
+        'gatsby-plugin-sitemap',
+        'gatsby-plugin-styled-components',
+        'gatsby-plugin-react-helmet',
+        {
+            resolve: 'gatsby-source-filesystem',
+            options: {
+                name: 'images',
+                path: './src/images/',
+            },
+            __key: 'images',
         },
         {
             resolve: 'gatsby-source-sanity',
@@ -55,5 +54,6 @@ module.exports = {
                 token: process.env.SANITY_TOKEN,
             },
         },
+        'gatsby-transformer-sharp',
     ],
 };
