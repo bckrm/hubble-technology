@@ -1,3 +1,7 @@
+require('dotenv').config({
+    path: `.env`,
+});
+
 module.exports = {
     siteMetadata: {
         title: 'Hubble Technology',
@@ -41,6 +45,14 @@ module.exports = {
             options: {
                 // add your own characters to escape, replacing the default ':/'
                 specialChars: '/:',
+            },
+        },
+        {
+            resolve: 'gatsby-source-sanity',
+            options: {
+                projectId: process.env.SANITY_PROJECT_ID,
+                dataset: process.env.SANITY_DATASET,
+                token: process.env.SANITY_TOKEN,
             },
         },
     ],
