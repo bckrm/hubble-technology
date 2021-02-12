@@ -42,5 +42,27 @@ export default {
             title: 'Hero CTA',
             type: 'string',
         },
+        {
+            name: 'introPlaceholderImage',
+            title: 'Placeholder Image',
+            type: 'image',
+        },
+        {
+            name: 'introHeading',
+            title: 'Intro Heading',
+            type: 'string',
+        },
+        {
+            name: 'introBody',
+            title: 'Intro Body',
+            type: 'array',
+            of: [
+                {
+                    title: 'Block',
+                    type: 'block',
+                    styles: [{ title: 'Normal', value: 'normal' }],
+                },
+            ],
+        },
     ],
 };

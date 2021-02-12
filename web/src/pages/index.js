@@ -4,18 +4,21 @@ import PropTypes from 'prop-types';
 
 import Layout from '../page-layouts/layout';
 import SEO from '../components/seo';
-import Hero from '../components/hero';
+import IndexHero from '../components/indexHero';
+import IndexIntro from '../components/indexIntro';
 
 export default function IndexPage({ data }) {
     const {
         heroContent,
         heroImage: { heroImage },
+        introContent,
     } = data;
 
     return (
         <Layout>
             <SEO title="Hubble Technology" />
-            <Hero bgImage={heroImage} content={heroContent} />
+            <IndexHero bgImage={heroImage} content={heroContent} />
+            <IndexIntro content={introContent} />
         </Layout>
     );
 }
@@ -37,6 +40,17 @@ export const query = graphql`
             heroHeading
             heroCta
         }
+        introContent: sanityIndexPage {
+            introHeading
+            _rawIntroBody
+            introPlaceholderImage {
+                asset {
+                    fluid(maxWidth: 2000) {
+                        ...GatsbySanityImageFluid
+                    }
+                }
+            }
+        }
     }
 `;
 
@@ -46,5 +60,6 @@ IndexPage.propTypes = {
             heroImage: PropTypes.object.isRequired,
         }),
         heroContent: PropTypes.object.isRequired,
+        introContent: PropTypes.object.isRequired,
     }).isRequired,
 };
