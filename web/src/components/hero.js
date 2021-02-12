@@ -5,46 +5,39 @@ import styled from 'styled-components';
 import tw from 'twin.macro';
 
 import BackgroundImage from 'gatsby-background-image';
+import BlockText from './block-content/blockText';
+import DarkMask from './svgs/darkMask';
 
-const content = {
-    hero: ['Digital asset management at the speed of business'],
-    body: [
-        `Resilient businesses require a trusted, intelligent and thorough understanding of the digital assets that are at the heart of their operations. Whether they are enabling security, infrastructure operations, or business process automation, they need to be understood – allowing full recognition of their value, secured and maintained.`,
-        `Ready to see your digital assets in a new light?`,
-        `let’s do it`,
-    ],
-};
-
-const StyledBackgroundSection = styled(BackgroundImage)`
-    ${tw`flex flex-col justify-end min-h-screen pb-20 2xl:pb-0 pt-40 md:pt-0`}
+const BackgroundSection = styled(BackgroundImage)`
+    ${tw`flex flex-col justify-end mb-64 min-h-screen pb-20 2xl:pb-0 pt-40 md:pt-0 text-white`}
 
     @media screen and (min-width: 1440px) {
         justify-content: center;
     }
 `;
 
-const StyledContainer = styled.div`
-    ${tw`container mx-auto px-4 lg:px-2 2xl:px-0`}
+const Container = styled.div`
+    ${tw`container mx-auto`}
 `;
 
-const StyledHeading = styled.h1`
+const Heading = styled.h1`
     ${tw`font-bold mb-8 text-5xl md:max-w-2xl`}
 
     line-height: 3.75rem
 `;
 
-const StyledP = styled.p`
+const Body = styled.div`
     ${tw`font-semibold md:max-w-3xl mb-8 text-2xl`}
 
     line-height: 150%;
+
+    p {
+        margin-bottom: 2rem;
+    }
 `;
 
-const StyledPExtraBold = styled(StyledP)`
-    ${tw`font-extrabold`}
-`;
-
-const StyledCTA = styled.a`
-    ${tw`cursor-pointer py-2 px-6 max-w-max mt-16 uppercase tracking-widest`}
+const Link = styled.a`
+    ${tw`cursor-pointer py-2 px-6 max-w-max mt-16 tracking-widest`}
 
     background: #00A09B;
     transition: background 500ms ease-out;
@@ -54,22 +47,28 @@ const StyledCTA = styled.a`
     }
 `;
 
-export default function Hero({ bgImage }) {
+export default function Hero({ bgImage, content }) {
+    const {
+        asset: { fluid: imageData },
+    } = bgImage;
+
+    const { _rawHeroBody, heroCta, heroHeading } = content;
+
     return (
-        <StyledBackgroundSection
-            id="hero"
-            fluid={bgImage.childImageSharp.fluid}
-        >
-            <StyledContainer>
-                <StyledHeading>{content.hero.join(', ')}</StyledHeading>
-                <StyledP>{content.body[0]}</StyledP>
-                <StyledPExtraBold>{content.body[1]}</StyledPExtraBold>
-                <StyledCTA href="#contact">{content.body[2]}</StyledCTA>
-            </StyledContainer>
-        </StyledBackgroundSection>
+        <BackgroundSection id="hero" fluid={imageData}>
+            <Container>
+                <Heading>{heroHeading}</Heading>
+                <Body>
+                    <BlockText blocks={_rawHeroBody} />
+                </Body>
+                <Link href="#contact">{heroCta}</Link>
+            </Container>
+            <DarkMask />
+        </BackgroundSection>
     );
 }
 
 Hero.propTypes = {
     bgImage: PropTypes.object.isRequired,
+    content: PropTypes.object.isRequired,
 };
