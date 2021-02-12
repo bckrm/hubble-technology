@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import tw from 'twin.macro';
 
 const Svg = styled.svg`
-    ${tw`absolute top-full`}
+    ${tw`absolute top-full w-full`}
 `;
 
 export default function darkMask() {
