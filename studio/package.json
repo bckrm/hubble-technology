@@ -7,8 +7,9 @@
   "author": "Asa Smith <smith.asa.la@gmail.com>",
   "license": "UNLICENSED",
   "scripts": {
-    "start": "sanity start",
-    "build": "sanity build"
+    "start": "npx @sanity/cli start",
+    "build": "npx @sanity/cli build",
+    "graphql-deploy": "npx @sanity/cli graphql deploy"
   },
   "keywords": [
     "sanity"
