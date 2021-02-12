@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-// eslint-disable-next-line import/no-extraneous-dependencies
 import tw from 'twin.macro';
 
 import BackgroundImage from 'gatsby-background-image';
@@ -47,7 +46,7 @@ const Link = styled.a`
     }
 `;
 
-export default function Hero({ bgImage, content }) {
+export default function IndexHero({ bgImage, content }) {
     const {
         asset: { fluid: imageData },
     } = bgImage;
@@ -68,7 +67,7 @@ export default function Hero({ bgImage, content }) {
     );
 }
 
-Hero.propTypes = {
+IndexHero.propTypes = {
     bgImage: PropTypes.object.isRequired,
     content: PropTypes.object.isRequired,
 };

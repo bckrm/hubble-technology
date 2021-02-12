@@ -6,7 +6,7 @@ import { createGlobalStyle } from 'styled-components';
 import SEO from '../components/seo';
 import Contact from '../components/contact';
 import Header from '../components/header';
-import Hero from '../components/hero';
+// import Hero from '../components/hero';
 import SubHero from '../components/subHero';
 import FeaturesSection from '../components/featuresSection';
 import Footer from '../components/footer';
@@ -65,7 +65,7 @@ const GlobalStyles = createGlobalStyle`
 `;
 export default function OldIndexPage({ data }) {
     const {
-        heroImage,
+        // heroImage,
         feature1Image,
         feature2Image,
         feature3Image,
@@ -79,7 +79,7 @@ export default function OldIndexPage({ data }) {
             <GlobalStyles />
             <SEO title="Hubble Technology" />
             <Header />
-            <Hero bgImage={heroImage} />
+            {/* <Hero bgImage={heroImage} /> */}
             <SubHero animation={processAnimation} />
             <FeaturesSection images={featureImages} />
             <Contact />
