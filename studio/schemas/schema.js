@@ -13,7 +13,7 @@ import post from './documents/post';
 import siteSettings from './documents/siteSettings';
 
 // Object types
-import blockContent from './blockContent';
+import blockContent from './objects/blockContent';
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
