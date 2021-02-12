@@ -10,6 +10,14 @@ export default () => {
         .title('Content')
         .items([
             S.listItem()
+                .title('Index Page')
+                .icon(VscFile)
+                .child(
+                    S.document()
+                        .schemaType('indexPage')
+                        .documentId('indexPage'),
+                ),
+            S.listItem()
                 .title('Settings')
                 .icon(VscFile)
                 .child(
@@ -23,7 +31,9 @@ export default () => {
                 .child(S.document().schemaType('author').documentId('author')),
             ...S.documentTypeListItems().filter(
                 (listItem) =>
-                    !['author', 'siteSettings'].includes(listItem.getId()),
+                    !['author', 'indexPage', 'siteSettings'].includes(
+                        listItem.getId(),
+                    ),
             ),
         ]);
 };
