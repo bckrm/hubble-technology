@@ -17,7 +17,7 @@ import 'fontsource-montserrat/700.css';
 import 'fontsource-montserrat/800.css';
 
 export const query = graphql`
-    query IndexQuery {
+    query OldIndexQuery {
         heroImage: file(relativePath: { regex: "/Hero-Image/" }) {
             childImageSharp {
                 fluid(maxWidth: 2000) {
