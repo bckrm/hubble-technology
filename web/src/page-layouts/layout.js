@@ -11,6 +11,12 @@ import 'fontsource-montserrat/700.css';
 import 'fontsource-montserrat/800.css';
 
 const GlobalStyles = createGlobalStyle`
+    :root {
+        --white: #ffffff;
+        --black: #000000;
+        --darkGray: #151417;
+    } 
+    
     body {
         font-family: 'Montserrat', sans-serif;
     }
