@@ -7,8 +7,11 @@ import schemaTypes from 'all:part:@sanity/base/schema-type';
 
 // Document schemas
 import author from './documents/author';
+import bio from './documents/bio';
 import category from './documents/category';
 import indexPage from './documents/indexPage';
+import indexFeature from './documents/indexFeature';
+import internalLink from './documents/internalLink';
 import post from './documents/post';
 import siteSettings from './documents/siteSettings';
 
@@ -25,8 +28,11 @@ export default createSchema({
         // The following are document types which will appear
         // in the studio.
         author,
+        bio,
         category,
         indexPage,
+        indexFeature,
+        internalLink,
         post,
         siteSettings,
         // When added to this list, object types can be used as
