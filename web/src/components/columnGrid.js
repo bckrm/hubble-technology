@@ -36,7 +36,7 @@ export default function ColumnGrid({ content }) {
             <Heading>{heading}</Heading>
             <Grid>
                 {indexIndustries.map((item) => {
-                    return <Figure content={item} />;
+                    return <Figure content={item} key={item.id} />;
                 })}
             </Grid>
         </Section>
