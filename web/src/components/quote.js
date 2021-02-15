@@ -6,7 +6,7 @@ import tw from 'twin.macro';
 import Img from 'gatsby-image';
 
 const Section = styled.section`
-    ${tw`container grid grid-cols-1 lg:grid-cols-5 gap-20 mb-40 text-brand-black-alt`}
+    ${tw`container grid grid-cols-1 lg:grid-cols-5 gap-20 mb-40 text-black-2`}
 `;
 
 const StyledImg = styled(Img)`
