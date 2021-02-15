@@ -9,6 +9,7 @@ import IndexIntro from '../components/indexIntro';
 import IndexFeatures from '../components/indexFeatures';
 import Bio from '../components/bio';
 import ColumnGrid from '../components/columnGrid';
+import Quote from '../components/quote';
 
 export default function IndexPage({ data }) {
     const {
@@ -18,6 +19,7 @@ export default function IndexPage({ data }) {
         heroImage: { heroImage },
         industries,
         introContent,
+        quote,
     } = data;
 
     return (
@@ -28,6 +30,7 @@ export default function IndexPage({ data }) {
             <IndexFeatures content={featuresContent} />
             <Bio content={featuredBio} />
             <ColumnGrid content={industries} />
+            <Quote content={quote} />
         </Layout>
     );
 }
@@ -126,6 +129,20 @@ export const query = graphql`
                 }
             }
         }
+        quote: sanityIndexPage {
+            featuredQuote {
+                name
+                title
+                quote
+                image {
+                    asset {
+                        fluid(maxWidth: 500) {
+                            ...GatsbySanityImageFluid
+                        }
+                    }
+                }
+            }
+        }
     }
 `;
 
@@ -139,5 +156,6 @@ IndexPage.propTypes = {
         heroContent: PropTypes.object.isRequired,
         industries: PropTypes.array.isRequired,
         introContent: PropTypes.object.isRequired,
+        quote: PropTypes.object.isRequired,
     }).isRequired,
 };

@@ -92,5 +92,10 @@ export default {
             type: 'array',
             of: [{ type: 'reference', to: { type: 'industry' } }],
         },
+        {
+            name: 'featuredQuote',
+            title: 'Featured Quote',
+            type: 'quote',
+        },
     ],
 };

@@ -15,6 +15,7 @@ import industry from './documents/industry';
 import internalLink from './documents/internalLink';
 import post from './documents/post';
 import siteSettings from './documents/siteSettings';
+import quote from './documents/quote';
 
 // Object types
 import blockContent from './objects/blockContent';
@@ -37,6 +38,7 @@ export default createSchema({
         internalLink,
         post,
         siteSettings,
+        quote,
         // When added to this list, object types can be used as
         // { type: 'typename' } in other document schemas
         blockContent,
