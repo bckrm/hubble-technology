@@ -13,6 +13,8 @@ import CurveMask from './svgs/curveMask';
 // need it increase height of section to match layout but adding instrinsic height creates layout issues across different screen sizes
 const StyledBackground = styled(BackgroundImage)`
     ${tw`h-full text-white`}
+
+    margin-bottom: 10rem;
 `;
 
 const Grid = styled.div`
@@ -49,7 +51,7 @@ export default function Bio({ content }) {
     } = content;
 
     return (
-        <StyledBackground tag="section" fluid={bgImageData}>
+        <StyledBackground Tag="section" fluid={bgImageData}>
             <CurveMask color="var(--white)" isTop />
             <CurveMask color="var(--white)" />
             <Grid>
