@@ -6,6 +6,8 @@ module.exports = {
         colors: {
             'brand-black': '#404040',
             'brand-black-alt': '#343434',
+            white: '#ffffff',
+            'black-1': '#151417',
         },
         container: (theme) => ({
             center: true,
