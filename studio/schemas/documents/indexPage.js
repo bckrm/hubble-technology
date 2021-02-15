@@ -97,5 +97,15 @@ export default {
             title: 'Featured Quote',
             type: 'quote',
         },
+        {
+            name: 'ctaHeading',
+            title: 'CTA Heading',
+            type: 'string',
+        },
+        {
+            name: 'link',
+            title: 'Link',
+            type: 'link',
+        },
     ],
 };

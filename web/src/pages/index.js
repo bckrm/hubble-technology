@@ -10,9 +10,11 @@ import IndexFeatures from '../components/indexFeatures';
 import Bio from '../components/bio';
 import ColumnGrid from '../components/columnGrid';
 import Quote from '../components/quote';
+import CtaSection from '../components/ctaSection';
 
 export default function IndexPage({ data }) {
     const {
+        cta,
         featuredBio,
         featuresContent,
         heroContent,
@@ -31,6 +33,7 @@ export default function IndexPage({ data }) {
             <Bio content={featuredBio} />
             <ColumnGrid content={industries} />
             <Quote content={quote} />
+            <CtaSection content={cta} />
         </Layout>
     );
 }
@@ -143,11 +146,19 @@ export const query = graphql`
                 }
             }
         }
+        cta: sanityIndexPage {
+            ctaHeading
+            link {
+                text
+                url
+            }
+        }
     }
 `;
 
 IndexPage.propTypes = {
     data: PropTypes.shape({
+        cta: PropTypes.object.isRequired,
         featuredBio: PropTypes.object.isRequired,
         featuresContent: PropTypes.object.isRequired,
         heroImage: PropTypes.shape({
