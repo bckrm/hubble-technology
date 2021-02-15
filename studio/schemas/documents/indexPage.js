@@ -64,5 +64,33 @@ export default {
                 },
             ],
         },
+        {
+            name: 'featuresHeading',
+            title: 'Features Heading',
+            type: 'string',
+        },
+        {
+            name: 'features',
+            title: 'Features',
+            type: 'array',
+            of: [{ type: 'reference', to: { type: 'indexFeature' } }],
+            validation: (Rule) => Rule.required().max(4),
+        },
+        {
+            name: 'featuredBio',
+            title: 'Featured Bio',
+            type: 'bio',
+        },
+        {
+            name: 'industriesHeading',
+            title: 'Industries Heading',
+            type: 'string',
+        },
+        {
+            name: 'indexIndustries',
+            title: 'Industries',
+            type: 'array',
+            of: [{ type: 'reference', to: { type: 'industry' } }],
+        },
     ],
 };

@@ -11,6 +11,7 @@ import bio from './documents/bio';
 import category from './documents/category';
 import indexPage from './documents/indexPage';
 import indexFeature from './documents/indexFeature';
+import industry from './documents/industry';
 import internalLink from './documents/internalLink';
 import post from './documents/post';
 import siteSettings from './documents/siteSettings';
@@ -32,6 +33,7 @@ export default createSchema({
         category,
         indexPage,
         indexFeature,
+        industry,
         internalLink,
         post,
         siteSettings,
