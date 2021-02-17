@@ -65,7 +65,7 @@ export default function Contact() {
             )
             .join('&');
 
-        console.log(encodedData);
+        return encodedData;
     }
 
     const handleSubmit = (event) => {
@@ -84,7 +84,7 @@ export default function Contact() {
             }),
         })
             .then(() => setFormSubmitSuccessful(true))
-            .catch((error) => alert(error));
+            .catch((error) => error);
     };
 
     return (

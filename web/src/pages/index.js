@@ -1,99 +1,172 @@
-import * as React from 'react';
+import React from 'react';
 import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
-import { createGlobalStyle } from 'styled-components';
 
+import Layout from '../page-layouts/layout';
 import SEO from '../components/seo';
-import Contact from '../components/contact';
-import Header from '../components/header';
-import Hero from '../components/hero';
-import SubHero from '../components/subHero';
-import FeaturesSection from '../components/featuresSection';
-import Footer from '../components/footer';
+import IndexHero from '../components/indexHero';
+import IndexIntro from '../components/indexIntro';
+import IndexFeatures from '../components/indexFeatures';
+import Bio from '../components/bio';
+import ColumnGrid from '../components/columnGrid';
+import Quote from '../components/quote';
+import CtaSection from '../components/ctaSection';
 
-import 'fontsource-montserrat';
-import 'fontsource-montserrat/600.css';
-import 'fontsource-montserrat/700.css';
-import 'fontsource-montserrat/800.css';
-
-export const query = graphql`
-    query IndexQuery {
-        heroImage: file(relativePath: { regex: "/Hero-Image/" }) {
-            childImageSharp {
-                fluid(maxWidth: 2000) {
-                    ...GatsbyImageSharpFluid
-                }
-            }
-        }
-        feature1Image: file(relativePath: { regex: "/feature-1/" }) {
-            childImageSharp {
-                fluid(maxWidth: 500) {
-                    ...GatsbyImageSharpFluid
-                }
-            }
-        }
-        feature2Image: file(relativePath: { regex: "/feature-2/" }) {
-            childImageSharp {
-                fluid(maxWidth: 500) {
-                    ...GatsbyImageSharpFluid
-                }
-            }
-        }
-        feature3Image: file(relativePath: { regex: "/feature-3/" }) {
-            childImageSharp {
-                fluid(maxWidth: 500) {
-                    ...GatsbyImageSharpFluid
-                }
-            }
-        }
-        processAnimation: file(
-            relativePath: { regex: "/Process-Animation-4/" }
-        ) {
-            id
-            relativePath
-        }
-    }
-`;
-
-const GlobalStyles = createGlobalStyle`
-    body {
-        background-color: #04080D;
-        ;
-        color: #ffffff;
-        font-family: 'Montserrat';
-    }
-`;
 export default function IndexPage({ data }) {
     const {
-        heroImage,
-        feature1Image,
-        feature2Image,
-        feature3Image,
-        processAnimation,
+        cta,
+        featuredBio,
+        featuresContent,
+        heroContent,
+        heroImage: { heroImage },
+        industries,
+        introContent,
+        quote,
     } = data;
 
-    const featureImages = [feature1Image, feature2Image, feature3Image];
-
     return (
-        <>
-            <GlobalStyles />
+        <Layout>
             <SEO title="Hubble Technology" />
-            <Header />
-            <Hero bgImage={heroImage} />
-            <SubHero animation={processAnimation} />
-            <FeaturesSection images={featureImages} />
-            <Contact />
-            <Footer />
-        </>
+            <IndexHero bgImage={heroImage} content={heroContent} />
+            <IndexIntro content={introContent} />
+            <IndexFeatures content={featuresContent} />
+            <Bio content={featuredBio} />
+            <ColumnGrid content={industries} />
+            <Quote content={quote} />
+            <CtaSection content={cta} />
+        </Layout>
     );
 }
 
+export const query = graphql`
+    query IndexPage {
+        heroImage: sanityIndexPage {
+            heroImage {
+                asset {
+                    id
+                    fluid(maxWidth: 2000) {
+                        ...GatsbySanityImageFluid
+                    }
+                }
+            }
+        }
+
+        heroContent: sanityIndexPage {
+            _rawHeroBody
+            heroHeading
+            heroCta
+        }
+
+        introContent: sanityIndexPage {
+            introHeading
+            _rawIntroBody
+            introPlaceholderImage {
+                asset {
+                    fluid(maxWidth: 2000) {
+                        ...GatsbySanityImageFluid
+                    }
+                }
+            }
+        }
+
+        featuresContent: sanityIndexPage {
+            featuresHeading
+            features {
+                id
+                navHeading
+                bodyHeading
+                link {
+                    text
+                    url
+                }
+                _rawBody
+                image {
+                    asset {
+                        fluid(maxWidth: 500) {
+                            ...GatsbySanityImageFluid
+                        }
+                    }
+                }
+            }
+        }
+
+        featuredBio: sanityIndexPage {
+            featuredBio {
+                name
+                heading
+                _rawBody
+                link {
+                    text
+                    url
+                }
+                image {
+                    asset {
+                        fluid(maxWidth: 600) {
+                            ...GatsbySanityImageFluid
+                        }
+                    }
+                }
+                bgImage {
+                    asset {
+                        fluid(maxWidth: 2000) {
+                            ...GatsbySanityImageFluid
+                        }
+                    }
+                }
+            }
+        }
+
+        industries: sanityIndexPage {
+            heading: industriesHeading
+            indexIndustries {
+                id
+                industryName
+                heading
+                description
+                image {
+                    asset {
+                        fluid(maxWidth: 400) {
+                            ...GatsbySanityImageFluid
+                        }
+                    }
+                }
+            }
+        }
+        quote: sanityIndexPage {
+            featuredQuote {
+                name
+                title
+                quote
+                image {
+                    asset {
+                        fluid(maxWidth: 500) {
+                            ...GatsbySanityImageFluid
+                        }
+                    }
+                }
+            }
+        }
+        cta: sanityIndexPage {
+            ctaHeading
+            link {
+                text
+                url
+            }
+        }
+    }
+`;
+
 IndexPage.propTypes = {
     data: PropTypes.shape({
-        heroImage: PropTypes.object.isRequired,
-        feature1Image: PropTypes.object.isRequired,
-        feature2Image: PropTypes.object.isRequired,
-        feature3Image: PropTypes.object.isRequired,
-        processAnimation: PropTypes.object.isRequired,
+        cta: PropTypes.object.isRequired,
+        featuredBio: PropTypes.object.isRequired,
+        featuresContent: PropTypes.object.isRequired,
+        heroImage: PropTypes.shape({
+            heroImage: PropTypes.object.isRequired,
+        }),
+        heroContent: PropTypes.object.isRequired,
+        industries: PropTypes.array.isRequired,
+        introContent: PropTypes.object.isRequired,
+        quote: PropTypes.object.isRequired,
     }).isRequired,
 };

@@ -6,13 +6,19 @@ import createSchema from 'part:@sanity/base/schema-creator';
 import schemaTypes from 'all:part:@sanity/base/schema-type';
 
 // Document schemas
+import author from './documents/author';
+import bio from './documents/bio';
+import category from './documents/category';
+import indexPage from './documents/indexPage';
+import indexFeature from './documents/indexFeature';
+import industry from './documents/industry';
+import internalLink from './documents/internalLink';
+import post from './documents/post';
 import siteSettings from './documents/siteSettings';
+import quote from './documents/quote';
 
 // Object types
-import blockContent from './blockContent';
-import category from './category';
-import post from './post';
-import author from './author';
+import blockContent from './objects/blockContent';
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -24,9 +30,15 @@ export default createSchema({
         // The following are document types which will appear
         // in the studio.
         author,
+        bio,
         category,
+        indexPage,
+        indexFeature,
+        industry,
+        internalLink,
         post,
         siteSettings,
+        quote,
         // When added to this list, object types can be used as
         // { type: 'typename' } in other document schemas
         blockContent,
