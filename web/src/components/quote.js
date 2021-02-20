@@ -6,14 +6,14 @@ import tw from 'twin.macro';
 import Img from 'gatsby-image';
 
 const Section = styled.section`
-    ${tw`container grid grid-cols-1 lg:grid-cols-5 gap-20 mb-40 text-black-2`}
+    ${tw`container grid grid-cols-1 gap-5 lg:grid-cols-12 mb-40 text-black-2`}
 `;
 
 const StyledImg = styled(Img)`
-    ${tw`lg:col-start-1 lg:col-end-3`}
+    ${tw`lg:col-start-1 lg:col-end-3 justify-self-center lg:justify-self-auto`}
 `;
 const BlockQuote = styled.blockquote`
-    ${tw`lg:col-start-3 lg:col-end-7 flex flex-col justify-evenly`}
+    ${tw`lg:col-start-5 lg:col-end-13 flex flex-col justify-evenly`}
 `;
 
 const StyledQuote = styled.p`
@@ -66,7 +66,7 @@ export default function Quote({ content }) {
     } = content;
     return (
         <Section>
-            <StyledImg fluid={imageData} />
+            <StyledImg fluid={imageData} style={{ width: '300px' }} />
             <BlockQuote>
                 <StyledQuote>{quote}</StyledQuote>
                 <Citation>
