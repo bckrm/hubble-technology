@@ -8,6 +8,7 @@ import BackgroundImage from 'gatsby-background-image';
 import Img from 'gatsby-image';
 import BlockText from './block-content/blockText';
 import CurveMask from './svgs/curveMask';
+import InvertedCurveMask from './svgs/invertedCurveMask';
 
 // todo: height/positioning issues
 // need it increase height of section to match layout but adding instrinsic height creates layout issues across different screen sizes
@@ -52,7 +53,7 @@ export default function Bio({ content }) {
 
     return (
         <StyledBackground Tag="section" fluid={bgImageData}>
-            <CurveMask color="var(--white)" isTop />
+            <InvertedCurveMask color="var(--white)" isTop />
             <CurveMask color="var(--white)" />
             <Grid>
                 <Body>

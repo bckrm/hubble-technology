@@ -5,7 +5,7 @@ import tw from 'twin.macro';
 
 import BackgroundImage from 'gatsby-background-image';
 import BlockText from './block-content/blockText';
-import CurveMask from './svgs/curveMask';
+import InvertedCurveMask from './svgs/invertedCurveMask';
 
 const BackgroundSection = styled(BackgroundImage)`
     ${tw`flex flex-col justify-end mb-64 min-h-screen pb-20 2xl:pb-0 pt-40 md:pt-0 text-white`}
@@ -62,7 +62,7 @@ export default function IndexHero({ bgImage, content }) {
                 </Body>
                 <Link href="#contact">{heroCta}</Link>
             </Container>
-            <CurveMask color="var(--darkGray)" />
+            <InvertedCurveMask color="var(--darkGray)" isInverted />
         </BackgroundSection>
     );
 }

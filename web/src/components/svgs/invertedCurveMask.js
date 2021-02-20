@@ -9,21 +9,17 @@ const Svg = styled.svg`
 
     top: ${({ isTop }) => (isTop ? '0' : '100%')};
     transform: ${({ isTop }) =>
-        isTop
-            ? 'translateY(-50%) scale(-1)'
-            : isTop
-            ? 'translateY(-50%)'
-            : 'translateY(-50%) scale(-1)'};
+        isTop ? 'translateY(-50%) scale(1)' : 'scale(1)'};
 `;
 
-export default function CurveMask({ color, isTop }) {
+export default function InvertedCurveMask({ color, isTop }) {
     return (
         <Svg
             width="100%"
             height="252"
             viewBox="0 0 1440 252"
-            fill="none"
             preserveAspectRatio="none"
+            fill="none"
             isTop={isTop}
         >
             <path
@@ -34,7 +30,7 @@ export default function CurveMask({ color, isTop }) {
     );
 }
 
-CurveMask.propTypes = {
+InvertedCurveMask.propTypes = {
     color: PropTypes.string.isRequired,
     isTop: PropTypes.bool.isRequired,
 };
