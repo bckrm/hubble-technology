@@ -10,8 +10,6 @@ import BlockText from './block-content/blockText';
 import CurveMask from './svgs/curveMask';
 import InvertedCurveMask from './svgs/invertedCurveMask';
 
-// todo: height/positioning issues
-// need it increase height of section to match layout but adding instrinsic height creates layout issues across different screen sizes
 const StyledBackground = styled(BackgroundImage)`
     ${tw`h-full text-white`}
 
@@ -19,7 +17,7 @@ const StyledBackground = styled(BackgroundImage)`
 `;
 
 const Grid = styled.div`
-    ${tw`container grid grid-cols-1 lg:grid-cols-2 gap-10 relative`}
+    ${tw`container grid grid-cols-1 md:grid-cols-12 items-center justify-items-center mb-8 md:mb-0`}
 `;
 
 const Heading = styled.h2`
@@ -27,13 +25,17 @@ const Heading = styled.h2`
 `;
 
 const Body = styled.div`
-    ${tw`flex flex-col justify-center`}
+    ${tw`md:col-start-1 md:col-end-6 md:row-start-1 flex flex-col justify-center mb-8 md:mb-0 md:pb-20 md:pt-40`}
 
     p {
-        font-size: 1.25rem;
+        font-size: 1rem;
         line-height: 1.5;
         margin-bottom: 1.25rem;
     }
+`;
+
+const StyledImg = styled(Img)`
+    ${tw`h-auto max-w-full md:max-w-none md:col-start-10 md:h-96 md:w-96 md:mb-20 `}
 `;
 
 export default function Bio({ content }) {
@@ -56,12 +58,12 @@ export default function Bio({ content }) {
             <InvertedCurveMask color="var(--white)" isTop />
             <CurveMask color="var(--white)" />
             <Grid>
+                <StyledImg fluid={imageData} style={{ width: '400px' }} />
                 <Body>
                     <Heading>{heading}</Heading>
                     <BlockText blocks={_rawBody} />
                     <Link to={url}>{text}</Link>
                 </Body>
-                <Img fluid={imageData} />
             </Grid>
         </StyledBackground>
     );
