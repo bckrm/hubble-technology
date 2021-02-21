@@ -14,6 +14,9 @@ module.exports = {
             center: true,
             padding: theme('spacing.5'),
         }),
+        minHeight: {
+            '1/2-screen': '50vh',
+        },
     },
     variants: {
         extend: {},
