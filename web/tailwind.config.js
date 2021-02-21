@@ -2,7 +2,11 @@ module.exports = {
     purge: ['./src/**/*.js', './src/**/*.jsx'],
     darkMode: false, // or 'media' or 'class'
     theme: {
-        extend: {},
+        extend: {
+            minHeight: {
+                '1/2-screen': '50vh',
+            },
+        },
         colors: {
             'black-1': '#151417',
             'black-2': '#343434',
@@ -16,9 +20,6 @@ module.exports = {
             center: true,
             padding: theme('spacing.5'),
         }),
-        minHeight: {
-            '1/2-screen': '50vh',
-        },
     },
     variants: {
         extend: {},

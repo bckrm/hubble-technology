@@ -40,5 +40,15 @@ export default {
             title: 'Investors',
             type: 'investorSection',
         },
+        {
+            name: 'ctaHeading',
+            title: 'CTA Heading',
+            type: 'string',
+        },
+        {
+            name: 'link',
+            title: 'Link',
+            type: 'link',
+        },
     ],
 };

@@ -7,6 +7,7 @@ import SEO from '../components/seo';
 import Hero from '../components/hero';
 import FullWidthImage from '../components/fullWidthImage';
 import ImageGrid4Col from '../components/imageGrid-4col';
+import CtaSection from '../components/ctaSection';
 
 export const query = graphql`
     query AboutPage {
@@ -71,11 +72,18 @@ export const query = graphql`
                 }
             }
         }
+        cta: sanityAboutPage {
+            ctaHeading
+            link {
+                text
+                url
+            }
+        }
     }
 `;
 
 export default function AboutPage({ data }) {
-    const { fullWidthImage, hero, investors, team } = data;
+    const { cta, fullWidthImage, hero, investors, team } = data;
 
     return (
         <Layout>
@@ -84,12 +92,14 @@ export default function AboutPage({ data }) {
             <FullWidthImage content={fullWidthImage} />
             <ImageGrid4Col content={team} bgColor="var(--gray)" />
             <ImageGrid4Col content={investors} />
+            <CtaSection content={cta} />
         </Layout>
     );
 }
 
 AboutPage.propTypes = {
     data: PropTypes.shape({
+        cta: PropTypes.object.isRequired,
         fullWidthImage: PropTypes.object.isRequired,
         hero: PropTypes.object.isRequired,
         investors: PropTypes.object.isRequired,
