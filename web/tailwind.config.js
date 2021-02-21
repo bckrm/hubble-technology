@@ -4,10 +4,11 @@ module.exports = {
     theme: {
         extend: {},
         colors: {
-            black: '#404040',
             'black-1': '#151417',
             'black-2': '#343434',
+            green: '#00A09B',
             white: '#ffffff',
+            black: '#404040',
         },
         container: (theme) => ({
             center: true,
