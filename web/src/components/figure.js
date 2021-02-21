@@ -32,8 +32,8 @@ export default function Figure({ content }) {
     return (
         <StyledFigure>
             <StyledImg fluid={imageData} />
-            <Heading>{heading}</Heading>
-            <Body>{description}</Body>
+            {heading && <Heading>{heading}</Heading>}
+            {description && <Body>{description}</Body>}
         </StyledFigure>
     );
 }

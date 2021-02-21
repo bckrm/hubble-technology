@@ -30,5 +30,15 @@ export default {
             title: 'Sub Hero',
             type: 'fullWidthImage',
         },
+        {
+            name: 'team',
+            title: 'Team',
+            type: 'teamSection',
+        },
+        {
+            name: 'investor',
+            title: 'Investors',
+            type: 'investorSection',
+        },
     ],
 };

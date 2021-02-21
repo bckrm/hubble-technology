@@ -15,8 +15,12 @@ import indexPage from './documents/indexPage';
 import indexFeature from './documents/indexFeature';
 import industry from './documents/industry';
 import internalLink from './documents/internalLink';
+import investor from './documents/investor';
+import investorSection from './documents/investorSection';
 import post from './documents/post';
 import siteSettings from './documents/siteSettings';
+import teamMember from './documents/teamMember';
+import teamSection from './documents/teamSection';
 import quote from './documents/quote';
 
 // Object types
@@ -36,12 +40,16 @@ export default createSchema({
         bio,
         category,
         fullWidthImage,
+        investorSection,
         indexPage,
         indexFeature,
         industry,
         internalLink,
+        investor,
         post,
         siteSettings,
+        teamMember,
+        teamSection,
         quote,
         // When added to this list, object types can be used as
         // { type: 'typename' } in other document schemas
