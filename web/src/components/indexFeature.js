@@ -9,7 +9,11 @@ import Img from 'gatsby-image';
 import BlockText from './block-content/blockText';
 
 const Grid = styled.div`
-    ${tw`grid grid-cols-1 lg:grid-cols-2`}
+    ${tw`grid grid-cols-1 lg:grid-cols-2 gap-y-10 lg:gap-y-0`}
+`;
+
+const Container = styled.div`
+    ${tw`row-start-2 lg:row-start-1`}
 `;
 
 const Heading = styled.h4`
@@ -73,13 +77,13 @@ export default function IndexFeature({ content, isOpen }) {
                     }}
                 >
                     <Grid>
-                        <div>
+                        <Container>
                             <Heading>{bodyHeading}</Heading>
                             <Body>
                                 <BlockText blocks={_rawBody} />
                             </Body>
                             <Link to={url}>{text}</Link>
-                        </div>
+                        </Container>
                         <Img fluid={imageData} />
                     </Grid>
                 </motion.div>
