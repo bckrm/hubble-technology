@@ -6,6 +6,7 @@ import createSchema from 'part:@sanity/base/schema-creator';
 import schemaTypes from 'all:part:@sanity/base/schema-type';
 
 // Document schemas
+import aboutPage from './documents/aboutPage';
 import author from './documents/author';
 import bio from './documents/bio';
 import category from './documents/category';
@@ -29,6 +30,7 @@ export default createSchema({
     types: schemaTypes.concat([
         // The following are document types which will appear
         // in the studio.
+        aboutPage,
         author,
         bio,
         category,

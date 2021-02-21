@@ -11,7 +11,7 @@ import MobilNav from './nav/mobileNav';
 const nav = [
     {
         name: 'about',
-        link: '#about',
+        link: '/about',
     },
     {
         name: 'features',
@@ -66,7 +66,7 @@ export default function Header() {
     return (
         <Nav isScrolled={isScrolled}>
             <NavInner>
-                <Link href="#hero">
+                <Link href="/">
                     <FullLogo />
                 </Link>
                 <MobilNav
