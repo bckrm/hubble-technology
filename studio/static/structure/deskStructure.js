@@ -18,6 +18,14 @@ export default () => {
                         .documentId('indexPage'),
                 ),
             S.listItem()
+                .title('About Page')
+                .icon(VscFile)
+                .child(
+                    S.document()
+                        .schemaType('aboutPage')
+                        .documentId('aboutPage'),
+                ),
+            S.listItem()
                 .title('Settings')
                 .icon(VscFile)
                 .child(
@@ -31,9 +39,12 @@ export default () => {
                 .child(S.document().schemaType('author').documentId('author')),
             ...S.documentTypeListItems().filter(
                 (listItem) =>
-                    !['author', 'indexPage', 'siteSettings'].includes(
-                        listItem.getId(),
-                    ),
+                    ![
+                        'aboutPage',
+                        'author',
+                        'indexPage',
+                        'siteSettings',
+                    ].includes(listItem.getId()),
             ),
         ]);
 };

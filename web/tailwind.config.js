@@ -2,10 +2,16 @@ module.exports = {
     purge: ['./src/**/*.js', './src/**/*.jsx'],
     darkMode: false, // or 'media' or 'class'
     theme: {
-        extend: {},
+        extend: {
+            minHeight: {
+                '1/2-screen': '50vh',
+            },
+        },
         colors: {
             'black-1': '#151417',
             'black-2': '#343434',
+            'black-3': '#404040',
+            'gray-1': '#f9f9f9',
             green: '#00A09B',
             white: '#ffffff',
             black: '#404040',

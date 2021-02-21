@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import tw from 'twin.macro';
 
 import Img from 'gatsby-image';
-import BlockText from './block-content/blockText';
+import BlockText from '../block-content/blockText';
 
 const Section = styled.section`
     ${tw`container relative`}

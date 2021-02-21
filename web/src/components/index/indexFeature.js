@@ -6,7 +6,7 @@ import tw from 'twin.macro';
 import { motion, AnimatePresence } from 'framer-motion';
 
 import Img from 'gatsby-image';
-import BlockText from './block-content/blockText';
+import BlockText from '../block-content/blockText';
 
 const Grid = styled.div`
     ${tw`grid grid-cols-1 lg:grid-cols-2 gap-y-10 lg:gap-y-0`}

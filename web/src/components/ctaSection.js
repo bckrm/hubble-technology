@@ -7,7 +7,7 @@ import { Link } from 'gatsby';
 import CurveMask from './svgs/curveMask';
 
 const Section = styled.section`
-    ${tw`bg-black-1 justify-center py-32 relative text-white`}
+    ${tw`bg-black-1 justify-center mt-56 py-32 relative text-white`}
 `;
 
 const Container = styled.div`

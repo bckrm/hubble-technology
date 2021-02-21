@@ -14,7 +14,10 @@ const GlobalStyles = createGlobalStyle`
     :root {
         --white: #ffffff;
         --black: #000000;
+        --gray: #f9f9f9;
         --darkGray: #151417;
+        --green: #00A09B;
+
     } 
     
     body {
