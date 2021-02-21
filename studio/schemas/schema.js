@@ -10,6 +10,7 @@ import aboutPage from './documents/aboutPage';
 import author from './documents/author';
 import bio from './documents/bio';
 import category from './documents/category';
+import fullWidthImage from './documents/fullWidthImage';
 import indexPage from './documents/indexPage';
 import indexFeature from './documents/indexFeature';
 import industry from './documents/industry';
@@ -34,6 +35,7 @@ export default createSchema({
         author,
         bio,
         category,
+        fullWidthImage,
         indexPage,
         indexFeature,
         industry,

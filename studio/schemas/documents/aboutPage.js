@@ -25,5 +25,10 @@ export default {
             title: 'Hero Heading',
             type: 'string',
         },
+        {
+            name: 'subHero',
+            title: 'Sub Hero',
+            type: 'fullWidthImage',
+        },
     ],
 };
