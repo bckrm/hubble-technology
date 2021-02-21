@@ -4,8 +4,8 @@ import styled from 'styled-components';
 import tw from 'twin.macro';
 
 import BackgroundImage from 'gatsby-background-image';
-import BlockText from './block-content/blockText';
-import InvertedCurveMask from './svgs/invertedCurveMask';
+import BlockText from '../block-content/blockText';
+import InvertedCurveMask from '../svgs/invertedCurveMask';
 
 const BackgroundSection = styled(BackgroundImage)`
     ${tw`flex flex-col justify-end mb-64 min-h-screen pb-20 2xl:pb-0 pt-40 md:pt-0 text-white`}

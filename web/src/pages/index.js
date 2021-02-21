@@ -4,9 +4,9 @@ import PropTypes from 'prop-types';
 
 import Layout from '../page-layouts/layout';
 import SEO from '../components/seo';
-import IndexHero from '../components/indexHero';
-import IndexIntro from '../components/indexIntro';
-import IndexFeatures from '../components/indexFeatures';
+import IndexHero from '../components/index/indexHero';
+import IndexIntro from '../components/index/indexIntro';
+import IndexFeatures from '../components/index/indexFeatures';
 import Bio from '../components/bio';
 import ColumnGrid from '../components/columnGrid';
 import Quote from '../components/quote';
