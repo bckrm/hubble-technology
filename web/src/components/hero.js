@@ -7,7 +7,7 @@ import BackgroundImage from 'gatsby-background-image';
 import CurveMask from './svgs/curveMask';
 
 const BackgroundSection = styled(BackgroundImage)`
-    ${tw`flex items-center justify-center min-h-1/2-screen`}
+    ${tw`flex items-center justify-center mb-40 min-h-1/2-screen`}
 `;
 
 const Heading = styled.h1`
