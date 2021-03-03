@@ -95,9 +95,9 @@ export default function IndexFeatures({ content }) {
                     {features.map((feature) => {
                         return (
                             <GridItem
-                                key={feature.id}
-                                onClick={() => setActiveTab(feature.id)}
-                                isActiveTab={activeTab === feature.id}
+                                key={features.id}
+                                onClick={() => setActiveTab(features.id)}
+                                isActiveTab={activeTab === features.id}
                             >
                                 {feature.navHeading}
                                 <DownChevron

@@ -1,63 +1,69 @@
 import * as React from 'react';
-import { Link } from 'gatsby';
+import { graphql } from 'gatsby';
+
+// import { Link } from 'gatsby';
 import styled from 'styled-components';
 import tw from 'twin.macro';
+import PropTypes from 'prop-types';
 
-const Main = styled.main`
-    ${tw`container`}
+import Layout from '../page-layouts/layout';
+import Hero from '../components/hero';
 
-    color: '#232129',
-    fontFamily: '-apple-system, Roboto, sans-serif, serif',
-`;
+// const Main = styled.main`
+//     ${tw`container`}
 
-// styles
-// const pageStyles = {
 //     color: '#232129',
 //     fontFamily: '-apple-system, Roboto, sans-serif, serif',
-// };
-const headingStyles = {
-    marginTop: 0,
-    marginBottom: 64,
-    maxWidth: 320,
-};
+// `;
 
-const paragraphStyles = {
-    marginBottom: 48,
-};
-const codeStyles = {
-    color: '#8A6534',
-    padding: 4,
-    backgroundColor: '#FFF4DB',
-    fontSize: '1.25rem',
-    borderRadius: 4,
-};
+// const content = {
+//     hero: `Have you lost your way?`,
+//     body: `Let's get you back home!`,
+// };
+
+const StyledHeading = styled.h2`
+    ${tw`font-bold text-5xl mb-12`}
+
+    line-height: 3.75rem;
+    max-width: 58rem;
+`;
+
+const StyledP = styled.p`
+    ${tw`font-semibold md:max-w-3xl pb-16 lg:pb-24 text-2xl`}
+
+    line-height: 150%;
+`;
 
 // markup
-const NotFoundPage = () => {
+export default function NotFoundPage({ data }) {
+    const { hero } = data;
     return (
-        <Main>
-            <title>Not found</title>
-            <h1 style={headingStyles}>Page not found</h1>
-            <p style={paragraphStyles}>
-                Sorry{' '}
-                <span role="img" aria-label="Pensive emoji">
-                    😔
-                </span>{' '}
-                we couldn’t find what you were looking for.
-                <br />
-                {process.env.NODE_ENV === 'development' ? (
-                    <>
-                        <br />
-                        Try creating a page in{' '}
-                        <code style={codeStyles}>src/pages/</code>.
-                        <br />
-                    </>
-                ) : null}
-                <br />
-                <Link to="/">Go home</Link>.
-            </p>
-        </Main>
+        <Layout>
+            <Hero content={hero} />
+            <StyledHeading>Are you lost?</StyledHeading>
+            <StyledP>Let&apos;s get you back home </StyledP>
+        </Layout>
     );
+}
+
+NotFoundPage.propTypes = {
+    data: PropTypes.shape({
+        hero: PropTypes.object.isRequired,
+    }).isRequired,
 };
 
-export default NotFoundPage;
+export const query = graphql`
+    query NotFoundPage {
+        hero: sanityAboutPage {
+            image: heroImage {
+                asset {
+                    id
+                    fluid(maxWidth: 2000) {
+                        ...GatsbySanityImageFluid
+                    }
+                }
+            }
+            heading: heroHeading
+        }
+    }
+`;
