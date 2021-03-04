@@ -8,6 +8,7 @@ import tw from 'twin.macro';
 
 const GridWrapper = styled.div`
     ${tw`grid grid-cols-1 md:grid-cols-3 md:gap-5 mb-36`}
+    background: ${({ bgColor }) => bgColor};
 
     @media screen and (min-width: 768px) {
         &:nth-child(odd) {
@@ -47,9 +48,9 @@ const StyledP = styled.p`
     ${tw`leading-6`}
 `;
 
-export default function Feature({ content, image }) {
+export default function Feature({ bgColor, content, image }) {
     return (
-        <GridWrapper>
+        <GridWrapper bgColor={bgColor}>
             <div className="text-wrap">
                 <StyledHeading>{content.heading}</StyledHeading>
                 <StyledP>{content.body}</StyledP>
@@ -60,6 +61,7 @@ export default function Feature({ content, image }) {
 }
 
 Feature.propTypes = {
+    bgColor: PropTypes.string.isRequired,
     content: PropTypes.object.isRequired,
     image: PropTypes.object.isRequired,
 };

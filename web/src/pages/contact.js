@@ -7,7 +7,41 @@ import SEO from '../components/seo';
 import Hero from '../components/hero';
 import ColumnGrid from '../components/columnGrid';
 import CtaSection from '../components/ctaSection';
-// import Feature from '../components/feature';
+import Feature from '../components/feature';
+import ContactForm from '../components/contactForm';
+
+export default function ContactPage({ data }) {
+    const { cta, hero, industries, feature1Image } = data;
+    const content = {
+        heading: 'Feature benefit Etiam egestas ligula tristique',
+        body:
+            'Suspendisse nunc eros, efficitur sed facilisis et, placerat non risus. Vivamus porttitor eleifend vehicula. Nulla in magna nisi. Vestibulum mollis felis in mi eleifend, sit amet vulputate quam sollicitudin. Mauris et ipsum bibendum, dapibus metus eget, consectetur nisl.',
+    };
+
+    return (
+        <Layout>
+            <SEO title="Contact Hubble" />
+            <Hero content={hero} />
+            <ColumnGrid content={industries} />
+            <Feature
+                content={content}
+                image={feature1Image}
+                bgColor="var(--gray)"
+            />
+            <ContactForm />
+            <CtaSection content={cta} />
+        </Layout>
+    );
+}
+
+ContactPage.propTypes = {
+    data: PropTypes.shape({
+        hero: PropTypes.object.isRequired,
+        industries: PropTypes.array.isRequired,
+        cta: PropTypes.object.isRequired,
+        feature1Image: PropTypes.object.isRequired,
+    }).isRequired,
+};
 
 export const query = graphql`
     query ContactPage {
@@ -68,24 +102,3 @@ export const query = graphql`
         }
     }
 `;
-
-export default function ContactPage({ data }) {
-    const { cta, hero, industries } = data;
-
-    return (
-        <Layout>
-            <SEO title="Contact Hubble" />
-            <Hero content={hero} />
-            <ColumnGrid content={industries} />
-            <CtaSection content={cta} />
-        </Layout>
-    );
-}
-
-ContactPage.propTypes = {
-    data: PropTypes.shape({
-        hero: PropTypes.object.isRequired,
-        industries: PropTypes.array.isRequired,
-        cta: PropTypes.object.isRequired,
-    }).isRequired,
-};
