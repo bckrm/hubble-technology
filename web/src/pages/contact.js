@@ -17,6 +17,10 @@ export default function ContactPage({ data }) {
         body:
             'Suspendisse nunc eros, efficitur sed facilisis et, placerat non risus. Vivamus porttitor eleifend vehicula. Nulla in magna nisi. Vestibulum mollis felis in mi eleifend, sit amet vulputate quam sollicitudin. Mauris et ipsum bibendum, dapibus metus eget, consectetur nisl.',
     };
+    // const heroContent = {
+    //     heading: 'Contact',
+    //     image:
+    // };
 
     return (
         <Layout>
