@@ -7,8 +7,8 @@ import SEO from '../components/seo';
 import Hero from '../components/hero';
 import ColumnGrid from '../components/columnGrid';
 import CtaSection from '../components/ctaSection';
-import Feature from '../components/feature';
 import ContactForm from '../components/contactForm';
+import VideoFeature from '../components/videoFeature';
 
 export default function ContactPage({ data }) {
     const { cta, hero, industries, feature1Image } = data;
@@ -17,17 +17,13 @@ export default function ContactPage({ data }) {
         body:
             'Suspendisse nunc eros, efficitur sed facilisis et, placerat non risus. Vivamus porttitor eleifend vehicula. Nulla in magna nisi. Vestibulum mollis felis in mi eleifend, sit amet vulputate quam sollicitudin. Mauris et ipsum bibendum, dapibus metus eget, consectetur nisl.',
     };
-    // const heroContent = {
-    //     heading: 'Contact',
-    //     image:
-    // };
 
     return (
         <Layout>
             <SEO title="Contact Hubble" />
             <Hero content={hero} />
             <ColumnGrid content={industries} />
-            <Feature
+            <VideoFeature
                 content={content}
                 image={feature1Image}
                 bgColor="var(--gray)"
@@ -62,7 +58,7 @@ export const query = graphql`
         }
         feature1Image: file(relativePath: { regex: "/feature-1/" }) {
             childImageSharp {
-                fluid(maxWidth: 500) {
+                fluid(maxWidth: 300) {
                     ...GatsbyImageSharpFluid
                 }
             }
