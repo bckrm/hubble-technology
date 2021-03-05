@@ -9,20 +9,6 @@ import tw from 'twin.macro';
 const GridWrapper = styled.div`
     ${tw`grid grid-cols-2 grid-rows-1 my-16 h-5/6`}
     background: ${({ bgColor }) => bgColor};
-
-    // @media screen and (min-width: 768px) {
-    //     &:nth-child(odd) {
-    //         .gatsby-image-wrapper {
-    //             grid-column-start: 1;
-    //             grid-column: span 2 / span 2;
-    //             grid-row-start: 1;
-    //         }
-
-    //         .text-wrap {
-    //             grid-column-start: 3;
-    //         }
-    //     }
-    // }
 `;
 
 const ContentWrapper = styled.div`
