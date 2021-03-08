@@ -14,35 +14,37 @@ const Wrapper = styled.div`
 `;
 
 const StyledHeading = styled.h2`
-    ${tw`font-bold text-center text-5xl w-2/4 mb-8`}
+    ${tw`font-bold text-center text-5xl w-1/2 mb-8`}
 
     line-height: 3.75rem;
     max-width: 58rem;
 `;
 
 const StyledP = styled.p`
-    ${tw`text-2xl mb-4`}
+    ${tw`text-2xl mb-12`}
 
     line-height: 150%;
 `;
 
+const StyledLink = styled(Link)`
+    ${tw`text-green`}
+`;
+
 // markup
 export default function NotFoundPage({ data }) {
-    const { cta, fourohfour, hero } = data;
+    const { bodyImage, cta, hero } = data;
     return (
         <Layout>
             <Hero content={hero} />
             <Wrapper>
-                <Img
-                    fixed={fourohfour.childImageSharp.fixed}
-                    style={{ marginTop: '-75px' }}
-                />
+                <Img fixed={bodyImage.childImageSharp.fixed} />
                 <StyledHeading>
                     Didn’t find what you’re looking for?
                 </StyledHeading>
                 <StyledP>
-                    This page doesn’t exist, click <Link to="/">here</Link> to
-                    head back to the homepage{' '}
+                    This page doesn’t exist,
+                    <StyledLink to="/"> click here</StyledLink> to head back to
+                    the homepage.
                 </StyledP>
             </Wrapper>
             <CtaSection content={cta} />
@@ -52,8 +54,8 @@ export default function NotFoundPage({ data }) {
 
 NotFoundPage.propTypes = {
     data: PropTypes.shape({
+        bodyImage: PropTypes.object.isRequired,
         cta: PropTypes.object.isRequired,
-        fourohfour: PropTypes.object.isRequired,
         hero: PropTypes.object.isRequired,
     }).isRequired,
 };
@@ -78,7 +80,7 @@ export const query = graphql`
                 url
             }
         }
-        fourohfour: file(relativePath: { regex: "/404/" }) {
+        bodyImage: file(relativePath: { regex: "/404/" }) {
             childImageSharp {
                 fixed(width: 238, height: 296) {
                     ...GatsbyImageSharpFixed
