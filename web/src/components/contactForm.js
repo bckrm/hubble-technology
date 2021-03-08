@@ -6,21 +6,20 @@ const ContactWrapper = styled.div`
     ${tw`text-center`}
 `;
 
-const FormStyling = styled.form`
-    ${tw`flex flex-col justify-center items-center`}
+const StyledForm = styled.form`
+    ${tw`flex flex-col items-center`}
 `;
 
 const StyledHeading = styled.h1`
     ${tw`font-bold mb-8 relative text-4xl text-black-3 leading-tight`}
 `;
 const InputWrapper = styled.div`
-    ${tw`flex gap-1 w-1/3 flex-wrap`}
+    ${tw`flex gap-1`}
 `;
 
-const ButtonStyling = styled.button`
-    ${tw`cursor-pointer py-2 px-6 max-w-max mt-16 text-xl tracking-widest`}
+const StyledButton = styled.button`
+    ${tw`cursor-pointer bg-green py-2 px-6 text-white max-w-max mt-16 text-xl tracking-widest`}
 
-    background: #00A09B;
     transition: background 500ms ease-out;
 
     &:hover {
@@ -28,8 +27,12 @@ const ButtonStyling = styled.button`
     }
 `;
 
-const InputStyle = styled.input`
+const StyledInput = styled.input`
     ${tw`border-2`}
+`;
+
+const StyledLabel = styled.label`
+    ${tw`flex flex-col mb-4 mx-4 text-sm`}
 `;
 
 export default function ContactForm() {
@@ -72,58 +75,60 @@ export default function ContactForm() {
             {submitForm ? (
                 <StyledHeading>Thank you!</StyledHeading>
             ) : (
-                <FormStyling
+                <StyledForm
                     method="post"
-                    action="thanks"
                     onSubmit={handleSubmit}
                     data-netlify="true"
                     data-netlify-honeypot="bot-field"
                 >
-                    <input type="hidden" name="form-name" value="contact" />
                     <InputWrapper>
-                        <label htmlFor="firstName">
-                            First Name:
-                            <InputStyle
-                                type="text"
-                                name="name"
-                                id="firstname"
-                                onChange={handleChange}
-                                required
-                            />
-                        </label>
-                        <label htmlFor="lastName">
-                            Last Name:
-                            <InputStyle
-                                type="text"
-                                name="name"
-                                id="lastname"
-                                onChange={handleChange}
-                            />
-                        </label>
-                        <label htmlFor="email">
-                            Email:
-                            <InputStyle
-                                type="email"
-                                name="email"
-                                id="email"
-                                onChange={handleChange}
-                                required
-                            />
-                        </label>
-                        <label htmlFor="title">
-                            Title:
-                            <InputStyle
-                                type="text"
-                                name="title"
-                                id="title"
-                                onChange={handleChange}
-                            />
-                        </label>
+                        <div>
+                            <StyledLabel htmlFor="firstName">
+                                First Name:
+                                <StyledInput
+                                    type="text"
+                                    name="name"
+                                    id="firstname"
+                                    onChange={handleChange}
+                                    required
+                                />
+                            </StyledLabel>
+
+                            <StyledLabel htmlFor="lastName">
+                                Last Name:
+                                <StyledInput
+                                    type="text"
+                                    name="name"
+                                    id="lastname"
+                                    onChange={handleChange}
+                                />
+                            </StyledLabel>
+                        </div>
+                        <div>
+                            <StyledLabel htmlFor="email">
+                                Email:
+                                <StyledInput
+                                    type="email"
+                                    name="email"
+                                    id="email"
+                                    onChange={handleChange}
+                                    required
+                                />
+                            </StyledLabel>
+
+                            <StyledLabel htmlFor="title">
+                                Title:
+                                <StyledInput
+                                    type="text"
+                                    name="title"
+                                    id="title"
+                                    onChange={handleChange}
+                                />
+                            </StyledLabel>
+                        </div>
                     </InputWrapper>
-                    <ButtonStyling type="submit">
-                        Let&apos;s Do It
-                    </ButtonStyling>
-                </FormStyling>
+                    <StyledButton type="submit">Let&apos;s Do It</StyledButton>
+                </StyledForm>
             )}
         </ContactWrapper>
     );
