@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import tw from 'twin.macro';
-import { navigate } from 'gatsby';
 
 const ContactWrapper = styled.div`
     ${tw`text-center`}
@@ -35,6 +34,7 @@ const InputStyle = styled.input`
 
 export default function ContactForm() {
     const [formData, setFormData] = useState(null);
+    const [submitForm, setSubmitForm] = useState(false);
 
     const encode = (data) => {
         return Object.keys(data)
@@ -62,63 +62,69 @@ export default function ContactForm() {
                 ...formData,
             }),
         })
-            .then(() => navigate(form.getAttribute('action')))
+            .then(() => setSubmitForm(true))
             .catch((error) => error);
     };
 
     return (
         <ContactWrapper>
             <StyledHeading>Request a Demo</StyledHeading>
-            <FormStyling
-                method="post"
-                action="thanks"
-                onSubmit={handleSubmit}
-                data-netlify="true"
-                data-netlify-honeypot="bot-field"
-            >
-                <input type="hidden" name="form-name" value="contact" />
-                <InputWrapper>
-                    <label htmlFor="firstName">
-                        First Name:
-                        <InputStyle
-                            type="text"
-                            name="name"
-                            id="firstname"
-                            onChange={handleChange}
-                            required
-                        />
-                    </label>
-                    <label htmlFor="lastName">
-                        Last Name:
-                        <InputStyle
-                            type="text"
-                            name="name"
-                            id="lastname"
-                            onChange={handleChange}
-                        />
-                    </label>
-                    <label htmlFor="email">
-                        Email:
-                        <InputStyle
-                            type="email"
-                            name="email"
-                            id="email"
-                            onChange={handleChange}
-                            required
-                        />
-                    </label>
-                    <label htmlFor="title">
-                        Title:
-                        <InputStyle
-                            type="text"
-                            name="title"
-                            id="title"
-                            onChange={handleChange}
-                        />
-                    </label>
-                </InputWrapper>
-                <ButtonStyling type="submit">Let&apos;s Do It</ButtonStyling>
-            </FormStyling>
+            {submitForm ? (
+                <StyledHeading>Thank you!</StyledHeading>
+            ) : (
+                <FormStyling
+                    method="post"
+                    action="thanks"
+                    onSubmit={handleSubmit}
+                    data-netlify="true"
+                    data-netlify-honeypot="bot-field"
+                >
+                    <input type="hidden" name="form-name" value="contact" />
+                    <InputWrapper>
+                        <label htmlFor="firstName">
+                            First Name:
+                            <InputStyle
+                                type="text"
+                                name="name"
+                                id="firstname"
+                                onChange={handleChange}
+                                required
+                            />
+                        </label>
+                        <label htmlFor="lastName">
+                            Last Name:
+                            <InputStyle
+                                type="text"
+                                name="name"
+                                id="lastname"
+                                onChange={handleChange}
+                            />
+                        </label>
+                        <label htmlFor="email">
+                            Email:
+                            <InputStyle
+                                type="email"
+                                name="email"
+                                id="email"
+                                onChange={handleChange}
+                                required
+                            />
+                        </label>
+                        <label htmlFor="title">
+                            Title:
+                            <InputStyle
+                                type="text"
+                                name="title"
+                                id="title"
+                                onChange={handleChange}
+                            />
+                        </label>
+                    </InputWrapper>
+                    <ButtonStyling type="submit">
+                        Let&apos;s Do It
+                    </ButtonStyling>
+                </FormStyling>
+            )}
         </ContactWrapper>
     );
 }
