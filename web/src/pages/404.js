@@ -14,14 +14,14 @@ const Wrapper = styled.div`
 `;
 
 const StyledHeading = styled.h2`
-    ${tw`font-bold text-center text-5xl w-2/4 mb-4`}
+    ${tw`font-bold text-center text-5xl w-2/4 mb-8`}
 
     line-height: 3.75rem;
     max-width: 58rem;
 `;
 
 const StyledP = styled.p`
-    ${tw`text-2xl mb-28`}
+    ${tw`text-2xl mb-4`}
 
     line-height: 150%;
 `;
@@ -33,7 +33,10 @@ export default function NotFoundPage({ data }) {
         <Layout>
             <Hero content={hero} />
             <Wrapper>
-                <Img fluid={fourohfour.childImageSharp.fluid} />
+                <Img
+                    fixed={fourohfour.childImageSharp.fixed}
+                    style={{ marginTop: '-75px' }}
+                />
                 <StyledHeading>
                     Didn’t find what you’re looking for?
                 </StyledHeading>
@@ -77,8 +80,8 @@ export const query = graphql`
         }
         fourohfour: file(relativePath: { regex: "/404/" }) {
             childImageSharp {
-                fluid(maxWidth: 500) {
-                    ...GatsbyImageSharpFluid
+                fixed(width: 238, height: 296) {
+                    ...GatsbyImageSharpFixed
                 }
             }
         }
