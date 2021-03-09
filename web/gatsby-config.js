@@ -8,6 +8,9 @@ module.exports = {
         siteUrl: 'https://hubble-technology.netlify.app',
         description: `Hubble's feature-rich digital asset intelligence platform provides an organization with a comprehensive view of its assets and the relationships between them.`,
     },
+    flags: {
+        THE_FLAG: false,
+    },
     plugins: [
         {
             resolve: 'gatsby-background-image',

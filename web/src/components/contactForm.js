@@ -22,9 +22,9 @@ const StyledButton = styled.button`
 
     transition: background 500ms ease-out;
 
-    &:hover {
-        background: #027874;
-    }
+    // &:hover {
+    //     background: #027874;
+    // }
 `;
 
 const StyledInput = styled.input`
