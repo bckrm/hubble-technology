@@ -73,7 +73,7 @@ export default function ContactForm() {
                     method="post"
                     onSubmit={handleSubmit}
                     data-netlify="true"
-                    data-netlify-honeypot="bot-field"
+                    netlify-honeypot="bot-field"
                 >
                     <p className="hidden">
                         <label>
