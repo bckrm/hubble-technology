@@ -72,6 +72,7 @@ export const query = graphql`
         }
         industries: sanityIndexPage {
             heading: industriesHeading
+            description: industriesHeading
             indexIndustries {
                 id
                 industryName
