@@ -18,7 +18,7 @@ const InputWrapper = styled.div`
 `;
 
 const StyledButton = styled.button`
-    ${tw`cursor-pointer bg-green py-2 px-6 text-white max-w-max mt-16 text-xl tracking-widest`}
+    ${tw`cursor-pointer bg-green py-2 px-6 text-white max-w-max mt-16 text-xl tracking-widest hover:bg-hoverGreen`}
 
     transition: background 500ms ease-out;
 
@@ -93,7 +93,6 @@ export default function ContactForm() {
                                     required
                                 />
                             </StyledLabel>
-
                             <StyledLabel htmlFor="lastName">
                                 Last Name:
                                 <StyledInput
@@ -115,7 +114,6 @@ export default function ContactForm() {
                                     required
                                 />
                             </StyledLabel>
-
                             <StyledLabel htmlFor="title">
                                 Title:
                                 <StyledInput
