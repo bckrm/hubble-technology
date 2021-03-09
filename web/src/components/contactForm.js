@@ -22,11 +22,11 @@ const StyledButton = styled.button`
 `;
 
 const StyledInput = styled.input`
-    ${tw`border-2`}
+    ${tw`border-2 h-10 mt-2 py-1 px-2 text-lg text-black`}
 `;
 
 const StyledLabel = styled.label`
-    ${tw`flex flex-col mb-4 mx-4 text-sm`}
+    ${tw`flex flex-col mb-4 mx-4 text-sm text-left`}
 `;
 
 export default function ContactForm() {
@@ -83,7 +83,7 @@ export default function ContactForm() {
                     <InputWrapper>
                         <div>
                             <StyledLabel htmlFor="firstName">
-                                First Name:
+                                First Name
                                 <StyledInput
                                     type="text"
                                     name="name"
@@ -93,7 +93,7 @@ export default function ContactForm() {
                                 />
                             </StyledLabel>
                             <StyledLabel htmlFor="lastName">
-                                Last Name:
+                                Last Name
                                 <StyledInput
                                     type="text"
                                     name="name"
@@ -104,7 +104,7 @@ export default function ContactForm() {
                         </div>
                         <div>
                             <StyledLabel htmlFor="email">
-                                Email:
+                                Email
                                 <StyledInput
                                     type="email"
                                     name="email"
@@ -114,7 +114,7 @@ export default function ContactForm() {
                                 />
                             </StyledLabel>
                             <StyledLabel htmlFor="title">
-                                Title:
+                                Title
                                 <StyledInput
                                     type="text"
                                     name="title"
