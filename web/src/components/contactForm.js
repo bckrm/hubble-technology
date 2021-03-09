@@ -18,13 +18,7 @@ const InputWrapper = styled.div`
 `;
 
 const StyledButton = styled.button`
-    ${tw`cursor-pointer bg-green py-2 px-6 text-white max-w-max mt-16 text-xl tracking-widest hover:bg-hoverGreen`}
-
-    transition: background 500ms ease-out;
-
-    // &:hover {
-    //     background: #027874;
-    // }
+    ${tw`cursor-pointer transition duration-500 ease-out bg-green py-2 px-6 text-white max-w-max mt-16 text-xl tracking-widest hover:bg-hoverGreen`}
 `;
 
 const StyledInput = styled.input`
@@ -37,7 +31,7 @@ const StyledLabel = styled.label`
 
 export default function ContactForm() {
     const [formData, setFormData] = useState(null);
-    const [submitForm, setSubmitForm] = useState(false);
+    const [isSubmitFormSuccessful, setIsSubmitFormSuccessful] = useState(false);
 
     const encode = (data) => {
         return Object.keys(data)
@@ -65,14 +59,14 @@ export default function ContactForm() {
                 ...formData,
             }),
         })
-            .then(() => setSubmitForm(true))
+            .then(() => setIsSubmitFormSuccessful(true))
             .catch((error) => error);
     };
 
     return (
         <ContactWrapper>
             <StyledHeading>Request a Demo</StyledHeading>
-            {submitForm ? (
+            {isSubmitFormSuccessful ? (
                 <StyledHeading>Thank you!</StyledHeading>
             ) : (
                 <StyledForm
@@ -81,6 +75,11 @@ export default function ContactForm() {
                     data-netlify="true"
                     data-netlify-honeypot="bot-field"
                 >
+                    <p className="hidden">
+                        <label>
+                            <input name="bot-field" />
+                        </label>
+                    </p>
                     <InputWrapper>
                         <div>
                             <StyledLabel htmlFor="firstName">
