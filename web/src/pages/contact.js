@@ -22,7 +22,7 @@ export default function ContactPage({ data }) {
         <Layout>
             <SEO title="Contact Hubble" />
             <Hero content={hero} />
-            <ColumnGrid content={industries} />
+            <ColumnGrid content={industries} hasDescriptionText />
             <VideoFeature
                 content={content}
                 image={feature1Image}
@@ -59,20 +59,6 @@ export const query = graphql`
         feature1Image: file(relativePath: { regex: "/feature-1/" }) {
             childImageSharp {
                 fluid(maxWidth: 300) {
-                    ...GatsbyImageSharpFluid
-                }
-            }
-        }
-        feature2Image: file(relativePath: { regex: "/feature-2/" }) {
-            childImageSharp {
-                fluid(maxWidth: 500) {
-                    ...GatsbyImageSharpFluid
-                }
-            }
-        }
-        feature3Image: file(relativePath: { regex: "/feature-3/" }) {
-            childImageSharp {
-                fluid(maxWidth: 500) {
                     ...GatsbyImageSharpFluid
                 }
             }
