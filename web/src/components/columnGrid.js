@@ -33,12 +33,12 @@ const Description = styled.p`
     ${tw`text-xl text-black text-center mb-12`}
 `;
 
-export default function ColumnGrid({ content, hasDescriptionText }) {
+export default function ColumnGrid({ content }) {
     const { description, heading, indexIndustries } = content;
     return (
         <Section>
             <Heading>{heading}</Heading>
-            {hasDescriptionText && <Description>{description}</Description>}
+            {description && <Description>{description}</Description>}
             <Grid>
                 {indexIndustries.map((item) => {
                     return <Figure content={item} key={item.id} />;
@@ -48,10 +48,6 @@ export default function ColumnGrid({ content, hasDescriptionText }) {
     );
 }
 
-ColumnGrid.defaultProps = {
-    hasDescriptionText: false,
-};
 ColumnGrid.propTypes = {
     content: PropTypes.object.isRequired,
-    hasDescriptionText: PropTypes.bool,
 };

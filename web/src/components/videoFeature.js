@@ -6,8 +6,7 @@ import styled from 'styled-components';
 import tw from 'twin.macro';
 
 const GridWrapper = styled.div`
-    ${tw`grid grid-cols-2 grid-rows-1 my-16 h-5/6`}
-    background: ${({ bgColor }) => bgColor};
+    ${tw`grid grid-cols-2 grid-rows-1 my-16 h-5/6 bg-gray-1`}
 `;
 
 const ContentWrapper = styled.div`
@@ -36,9 +35,9 @@ const StyledP = styled.p`
     ${tw`leading-6`}
 `;
 
-export default function VideoFeature({ bgColor, content, image }) {
+export default function VideoFeature({ content, image }) {
     return (
-        <GridWrapper bgColor={bgColor}>
+        <GridWrapper>
             <ContentWrapper>
                 <StyledHeading>{content.heading}</StyledHeading>
                 <StyledP>{content.body}</StyledP>
@@ -49,7 +48,6 @@ export default function VideoFeature({ bgColor, content, image }) {
 }
 
 VideoFeature.propTypes = {
-    bgColor: PropTypes.string.isRequired,
     content: PropTypes.object.isRequired,
     image: PropTypes.object.isRequired,
 };

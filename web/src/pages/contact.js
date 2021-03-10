@@ -23,11 +23,7 @@ export default function ContactPage({ data }) {
             <SEO title="Contact Hubble" />
             <Hero content={hero} />
             <ColumnGrid content={industries} hasDescriptionText />
-            <VideoFeature
-                content={content}
-                image={feature1Image}
-                bgColor="var(--gray)"
-            />
+            <VideoFeature content={content} image={feature1Image} />
             <ContactForm />
             <CtaSection content={cta} />
         </Layout>
