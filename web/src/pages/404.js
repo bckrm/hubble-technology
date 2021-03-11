@@ -10,18 +10,15 @@ import Hero from '../components/hero';
 import CtaSection from '../components/ctaSection';
 
 const Wrapper = styled.div`
-    ${tw`flex flex-col justify-center items-center content-center`}
+    ${tw`container flex flex-col justify-center items-center content-center`}
 `;
 
 const StyledHeading = styled.h2`
-    ${tw`font-bold text-center text-5xl w-1/2 mb-8`}
-
-    line-height: 3.75rem;
-    max-width: 58rem;
+    ${tw`text-3xl md:text-5xl font-bold text-center lg:w-1/2 my-10`}
 `;
 
 const StyledP = styled.p`
-    ${tw`text-2xl mb-12`}
+    ${tw`text-2xl mb-12 text-center`}
 
     line-height: 150%;
 `;
@@ -30,7 +27,6 @@ const StyledLink = styled(Link)`
     ${tw`text-green`}
 `;
 
-// markup
 export default function NotFoundPage({ data }) {
     const { bodyImage, cta, hero } = data;
     return (
