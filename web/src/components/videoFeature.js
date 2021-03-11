@@ -45,11 +45,11 @@ const ContentWrapper = styled.div`
 `;
 
 const StyledImg = styled(Img)`
-    ${tw`mx-4 lg:col-start-1 lg:col-span-1 my-7 mb-32 lg:my-20`}
+    ${tw`mx-4 lg:col-start-1 lg:col-span-1 my-7 mb-20 lg:my-20`}
 `;
 
 const StyledHeading = styled.h3`
-    ${tw`font-bold text-xl leading-8 my-8 relative lg:text-3xl lg:w-4/5`}
+    ${tw`font-bold text-xl leading-8 my-8 mt-12 relative lg:text-3xl lg:w-4/5`}
     &:after {
         content: '';
         position: absolute;
