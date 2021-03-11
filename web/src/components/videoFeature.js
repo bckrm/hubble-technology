@@ -37,19 +37,19 @@ import tw from 'twin.macro';
 // `;
 
 const GridWrapper = styled.div`
-    ${tw`flex flex-col lg:grid grid-cols-2 grid-rows-1 mx-4 lg:my-16 lg:h-5/6 bg-gray-1`}
+    ${tw`min-w-full flex flex-col lg:grid lg:grid-cols-2 lg:grid-rows-1 lg:my-16 lg:h-5/6 bg-gray-1`}
 `;
 
 const ContentWrapper = styled.div`
-    ${tw`col-start-2 col-span-1 lg:w-9/12 justify-self-center self-center`}
+    ${tw`mx-4 lg:col-start-2 lg:col-span-1 lg:w-9/12 justify-self-center self-center`}
 `;
 
 const StyledImg = styled(Img)`
-    ${tw`lg:col-start-1 col-span-1 my-7 mb-32 lg:my-20 w-auto`}
+    ${tw`mx-4 lg:col-start-1 lg:col-span-1 my-7 mb-32 lg:my-20`}
 `;
 
 const StyledHeading = styled.h3`
-    ${tw`font-bold leading-8 my-8 relative text-3xl w-7/12`}
+    ${tw`font-bold text-xl leading-8 my-8 relative lg:text-3xl lg:w-4/5`}
     &:after {
         content: '';
         position: absolute;
@@ -63,7 +63,7 @@ const StyledHeading = styled.h3`
 `;
 
 const StyledP = styled.p`
-    ${tw`leading-6`}
+    ${tw`leading-6 text-xs lg:text-xl`}
 `;
 
 export default function VideoFeature({ content, image }) {
