@@ -11,10 +11,10 @@ const StyledForm = styled.form`
 `;
 
 const StyledHeading = styled.h1`
-    ${tw`font-bold mb-8 relative text-4xl text-black-3 leading-tight`}
+    ${tw`font-bold my-8 relative text-4xl text-black-3 leading-tight`}
 `;
 const InputWrapper = styled.div`
-    ${tw`flex gap-1`}
+    ${tw`flex flex-col lg:flex-row gap-1`}
 `;
 
 const StyledButton = styled.button`
@@ -27,6 +27,10 @@ const StyledInput = styled.input`
 
 const StyledLabel = styled.label`
     ${tw`flex flex-col mb-4 mx-4 text-sm text-left`}
+`;
+
+const StyledHoneyPot = styled.p`
+    ${tw`hidden`}
 `;
 
 export default function ContactForm() {
@@ -75,11 +79,11 @@ export default function ContactForm() {
                     data-netlify="true"
                     netlify-honeypot="bot-field"
                 >
-                    <p className="hidden">
+                    <StyledHoneyPot>
                         <label>
                             <input name="bot-field" />
                         </label>
-                    </p>
+                    </StyledHoneyPot>
                     <InputWrapper>
                         <div>
                             <StyledLabel htmlFor="firstName">
