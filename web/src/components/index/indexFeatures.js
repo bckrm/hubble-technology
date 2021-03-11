@@ -95,7 +95,7 @@ export default function IndexFeatures({ content }) {
                     {features.map((feature) => {
                         return (
                             <GridItem
-                                key={features.id}
+                                key={feature.id}
                                 onClick={() => setActiveTab(feature.id)}
                                 isActiveTab={activeTab === feature.id}
                             >
