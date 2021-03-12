@@ -23,7 +23,7 @@ const nav = [
     },
     {
         name: 'demo',
-        link: '/contact/#demo',
+        link: '/contact#demo',
     },
 ];
 
