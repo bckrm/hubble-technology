@@ -19,7 +19,7 @@ const nav = [
     },
     {
         name: 'contact',
-        link: '#contact',
+        link: '/contact',
     },
     {
         name: 'demo',
