@@ -8,7 +8,7 @@ import tw from 'twin.macro';
 
 const GridWrapper = styled.div`
     ${tw`grid grid-cols-1 md:grid-cols-3 md:gap-5 mb-36`}
-
+    background: ${({ bgColor }) => bgColor};
     @media screen and (min-width: 768px) {
         &:nth-child(odd) {
             .gatsby-image-wrapper {
@@ -16,7 +16,6 @@ const GridWrapper = styled.div`
                 grid-column: span 2 / span 2;
                 grid-row-start: 1;
             }
-
             .text-wrap {
                 grid-column-start: 3;
             }
@@ -30,7 +29,6 @@ const StyledImg = styled(Img)`
 
 const StyledHeading = styled.h3`
     ${tw`font-bold leading-8 mb-8 relative text-3xl`}
-
     &:after {
         content: '';
         position: absolute;
@@ -47,10 +45,10 @@ const StyledP = styled.p`
     ${tw`leading-6`}
 `;
 
-export default function Feature({ content, image }) {
+export default function Feature({ bgColor, content, image }) {
     return (
-        <GridWrapper>
-            <div className="text-wrap">
+        <GridWrapper bgColor={bgColor}>
+            <div className="">
                 <StyledHeading>{content.heading}</StyledHeading>
                 <StyledP>{content.body}</StyledP>
             </div>
@@ -60,6 +58,7 @@ export default function Feature({ content, image }) {
 }
 
 Feature.propTypes = {
+    bgColor: PropTypes.string.isRequired,
     content: PropTypes.object.isRequired,
     image: PropTypes.object.isRequired,
 };

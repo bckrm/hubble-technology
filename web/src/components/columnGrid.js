@@ -29,11 +29,16 @@ const Grid = styled.div`
     ${tw`grid grid-cols-1 lg:grid-cols-3 gap-24 lg:px-16`}
 `;
 
+const Description = styled.p`
+    ${tw`text-xl text-black text-center mb-12`}
+`;
+
 export default function ColumnGrid({ content }) {
-    const { heading, indexIndustries } = content;
+    const { description, heading, indexIndustries } = content;
     return (
         <Section>
             <Heading>{heading}</Heading>
+            {description && <Description>{description}</Description>}
             <Grid>
                 {indexIndustries.map((item) => {
                     return <Figure content={item} key={item.id} />;
