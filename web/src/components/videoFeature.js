@@ -5,8 +5,12 @@ import Img from 'gatsby-image';
 import styled from 'styled-components';
 import tw from 'twin.macro';
 
+const Section = styled.section`
+    ${tw`bg-gray-1`}
+`;
+
 const GridWrapper = styled.div`
-    ${tw`min-w-full flex flex-col lg:grid lg:grid-cols-2 lg:grid-rows-1 lg:my-16 lg:h-5/6 bg-gray-1`}
+    ${tw`container grid grid-cols-1 lg:grid-cols-2 lg:grid-rows-1 lg:my-16 py-8`}
 `;
 
 const ContentWrapper = styled.div`
@@ -19,6 +23,7 @@ const StyledImg = styled(Img)`
 
 const StyledHeading = styled.h3`
     ${tw`font-bold text-xl leading-8 my-8 mt-12 relative lg:text-3xl lg:w-4/5`}
+
     &:after {
         content: '';
         position: absolute;
@@ -27,7 +32,7 @@ const StyledHeading = styled.h3`
         bottom: -0.75rem;
         transform: translateY(100%);
         height: 0.25rem;
-        background-color: #00a09b;
+        background-color: var(--green);
     }
 `;
 
@@ -37,13 +42,15 @@ const StyledP = styled.p`
 
 export default function VideoFeature({ content, image }) {
     return (
-        <GridWrapper>
-            <ContentWrapper>
-                <StyledHeading>{content.heading}</StyledHeading>
-                <StyledP>{content.body}</StyledP>
-            </ContentWrapper>
-            <StyledImg fluid={image.childImageSharp.fluid} />
-        </GridWrapper>
+        <Section>
+            <GridWrapper>
+                <ContentWrapper>
+                    <StyledHeading>{content.heading}</StyledHeading>
+                    <StyledP>{content.body}</StyledP>
+                </ContentWrapper>
+                <StyledImg fluid={image.childImageSharp.fluid} />
+            </GridWrapper>
+        </Section>
     );
 }
 
