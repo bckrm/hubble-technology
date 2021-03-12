@@ -68,7 +68,7 @@ export default function ContactForm() {
     };
 
     return (
-        <ContactWrapper>
+        <ContactWrapper id="demo">
             <StyledHeading>Request a Demo</StyledHeading>
             {isSubmitFormSuccessful ? (
                 <StyledHeading>Thank you!</StyledHeading>

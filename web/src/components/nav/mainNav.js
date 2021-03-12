@@ -11,7 +11,6 @@ const UL = styled.ul`
 const LI = styled.li`
     ${tw`ml-8 text-lg`}
 `;
-
 const PageLink = styled.a`
     ${tw`block bg-green py-2 px-7`}
 `;
@@ -23,7 +22,11 @@ export default function MainNav({ navItems }) {
                 if (item.name === 'demo') {
                     return (
                         <LI key={item.link}>
-                            <PageLink href={item.link}>{item.name}</PageLink>
+                            {/* <AnchorLink to="/contact#demo" title={item.name} /> */}
+                            {/* <PageLink href={item.link}>{item.name}</PageLink> */}
+                            <PageLink>
+                                <Link to="/contact#demo">{item.name}</Link>
+                            </PageLink>
                         </LI>
                     );
                 }
