@@ -15,7 +15,7 @@ const nav = [
     },
     {
         name: 'features',
-        link: '#features',
+        link: '/features',
     },
     {
         name: 'contact',
@@ -23,7 +23,7 @@ const nav = [
     },
     {
         name: 'demo',
-        link: '#demo',
+        link: '/contact/#demo',
     },
 ];
 
