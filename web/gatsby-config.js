@@ -17,12 +17,6 @@ module.exports = {
             },
         },
         {
-            resolve: 'gatsby-plugin-anchor-links',
-            options: {
-                offset: 250,
-            },
-        },
-        {
             resolve: 'gatsby-plugin-eslint',
             options: {
                 test: /\.js$|\.jsx$/,
