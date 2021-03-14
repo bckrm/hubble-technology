@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import tw from 'twin.macro';
 import { Link } from 'gatsby';
+import { AnchorLink } from 'gatsby-plugin-anchor-links';
 
 const UL = styled.ul`
     ${tw`hidden md:flex flex-row items-center font-bold leading-5 justify-between self-center text-white uppercase`}
@@ -23,7 +24,15 @@ export default function MainNav({ navItems }) {
                 if (item.name === 'demo') {
                     return (
                         <LI key={item.link}>
-                            <PageLink href={item.link}>{item.name}</PageLink>
+                            <PageLink>
+                                <AnchorLink
+                                    to={item.link}
+                                    title="demo"
+                                    className="demo"
+                                >
+                                    {item.name}
+                                </AnchorLink>
+                            </PageLink>
                         </LI>
                     );
                 }
