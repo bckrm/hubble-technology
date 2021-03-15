@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import tw from 'twin.macro';
 
-const ContactWrapper = styled.div`
+const ContactWrapper = styled.section`
     ${tw`text-center`}
 `;
 
@@ -68,7 +68,7 @@ export default function ContactForm() {
     };
 
     return (
-        <ContactWrapper>
+        <ContactWrapper id="demo">
             <StyledHeading>Request a Demo</StyledHeading>
             {isSubmitFormSuccessful ? (
                 <StyledHeading>Thank you!</StyledHeading>
