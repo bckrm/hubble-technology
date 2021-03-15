@@ -7,7 +7,7 @@ import tw from 'twin.macro';
 import Feature from './feature';
 
 const content = {
-    heading: '',
+    heading: 'Features/Benefits',
     features: [
         {
             heading: 'Compliance and Security',
@@ -32,13 +32,10 @@ const StyledSection = styled.section`
 `;
 
 const StyledHeading = styled.h2`
-    ${tw`mb-16 tracking-widest uppercase`}
-
-    font-size: 2.75rem;
-    line-height: 3rem;
+    ${tw`font-bold leading-tight mb-24 text-4xl text-center`}
 `;
 
-export default function FeaturesSection({ images }) {
+export default function NewFeaturesSection({ images }) {
     return (
         <StyledSection id="why-hubble">
             <StyledHeading>{content.heading}</StyledHeading>
@@ -55,6 +52,6 @@ export default function FeaturesSection({ images }) {
     );
 }
 
-FeaturesSection.propTypes = {
+NewFeaturesSection.propTypes = {
     images: PropTypes.arrayOf(PropTypes.object).isRequired,
 };

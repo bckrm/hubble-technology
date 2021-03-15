@@ -48,7 +48,7 @@ const StyledP = styled.p`
 export default function Feature({ bgColor, content, image }) {
     return (
         <GridWrapper bgColor={bgColor}>
-            <div className="">
+            <div className="text-wrap">
                 <StyledHeading>{content.heading}</StyledHeading>
                 <StyledP>{content.body}</StyledP>
             </div>
