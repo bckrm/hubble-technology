@@ -13,7 +13,7 @@ const LI = styled.li`
     ${tw`ml-8 text-lg`}
 `;
 
-const PageLink = styled.a`
+const PageLink = styled(AnchorLink)`
     ${tw`block bg-green py-2 px-7`}
 `;
 
@@ -24,14 +24,12 @@ export default function MainNav({ navItems }) {
                 if (item.name === 'demo') {
                     return (
                         <LI key={item.link}>
-                            <PageLink>
-                                <AnchorLink
-                                    to={item.link}
-                                    title="demo"
-                                    className="demo"
-                                >
-                                    {item.name}
-                                </AnchorLink>
+                            <PageLink
+                                to={item.link}
+                                title="demo"
+                                className="demo"
+                            >
+                                {item.name}
                             </PageLink>
                         </LI>
                     );
