@@ -22,8 +22,6 @@ export default function MainNav({ navItems }) {
                 if (item.name === 'demo') {
                     return (
                         <LI key={item.link}>
-                            {/* <AnchorLink to="/contact#demo" title={item.name} /> */}
-                            {/* <PageLink href={item.link}>{item.name}</PageLink> */}
                             <PageLink>
                                 <Link to="/contact#demo">{item.name}</Link>
                             </PageLink>
