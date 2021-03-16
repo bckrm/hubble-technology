@@ -3,29 +3,39 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import tw from 'twin.macro';
+// import { Link } from 'gatsby';
 
-import Feature from './feature';
+import NewFeature from './newFeature';
 
 const content = {
-    heading: 'Features/Benefits',
     features: [
         {
-            heading: 'Compliance and Security',
+            heading: 'Comprehensive Security Monitoring',
             body:
                 'Ensure compliance and security across the entire organization. Infuse technology asset technology into your existing security investments, enabling enhanced situational awareness and super-charging security automation and orchestration.',
         },
         {
-            heading: 'Digital Transformation',
+            heading: 'Confident Compliance',
             body:
                 'Enable digital transformation with real time asset data that helps you identify opportunities for technology rationalization, innovation and transformation.',
         },
         {
-            heading: 'Untrap Value',
+            heading: 'Robust Integrations',
             body:
                 'Releasing trapped value is key to success in a digital world. Our platform is designed to unlock the value of your existing technology data to help power your business through asset intelligence.',
         },
     ],
 };
+
+const links = ['Security', 'Intelligence', 'Value'];
+
+const LinkWrapper = styled.div`
+    ${tw`flex justify-around`}
+`;
+
+const StyledButton = styled.button`
+    ${tw`text-center`}
+`;
 
 const StyledSection = styled.section`
     ${tw`container mx-auto pt-24 lg:pt-36 px-4 lg:px-2 2xl:px-0`}
@@ -37,11 +47,16 @@ const StyledHeading = styled.h2`
 
 export default function NewFeaturesSection({ images }) {
     return (
-        <StyledSection id="why-hubble">
-            <StyledHeading>{content.heading}</StyledHeading>
+        <StyledSection>
+            <StyledHeading>Features/Benefits</StyledHeading>
+            <LinkWrapper>
+                {links.map((link, i) => {
+                    return <StyledButton key={link[i]}>{link}</StyledButton>;
+                })}
+            </LinkWrapper>
             {content.features.map((feature, i) => {
                 return (
-                    <Feature
+                    <NewFeature
                         content={feature}
                         image={images[i]}
                         key={`${feature.heading}`}
