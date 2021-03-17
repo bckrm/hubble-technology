@@ -33,26 +33,28 @@ const StyledP = styled.p`
     ${tw`leading-6`}
 `;
 
-export default function NewFeature({ content, image }) {
+export default function NewFeature({ content, image, isOpen }) {
     return (
         <AnimatePresence>
-            <motion.div
-                initial={{ opacity: 0, height: 0 }}
-                animate={{ opacity: 1, height: 'auto' }}
-                exit={{ opacity: 0, height: 0 }}
-                transition={{
-                    duration: 0.3,
-                    ease: [0.04, 0.62, 0.23, 0.98],
-                }}
-            >
-                <Grid>
-                    <Container>
-                        <StyledHeading>{content.heading}</StyledHeading>
-                        <StyledP>{content.body}</StyledP>
-                    </Container>
-                    <Img fluid={image.childImageSharp.fluid} />
-                </Grid>
-            </motion.div>
+            {isOpen && (
+                <motion.div
+                    initial={{ opacity: 0, height: 0 }}
+                    animate={{ opacity: 1, height: 'auto' }}
+                    exit={{ opacity: 0, height: 0 }}
+                    transition={{
+                        duration: 0.3,
+                        ease: [0.04, 0.62, 0.23, 0.98],
+                    }}
+                >
+                    <Grid>
+                        <Container>
+                            <StyledHeading>{content.heading}</StyledHeading>
+                            <StyledP>{content.body}</StyledP>
+                        </Container>
+                        <Img fluid={image.childImageSharp.fluid} />
+                    </Grid>
+                </motion.div>
+            )}
         </AnimatePresence>
     );
 }
@@ -60,4 +62,5 @@ export default function NewFeature({ content, image }) {
 NewFeature.propTypes = {
     content: PropTypes.object.isRequired,
     image: PropTypes.object.isRequired,
+    isOpen: PropTypes.bool.isRequired,
 };

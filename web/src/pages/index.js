@@ -23,7 +23,6 @@ export default function IndexPage({ data }) {
         introContent,
         quote,
     } = data;
-
     return (
         <Layout>
             <SEO title="Hubble Technology" />

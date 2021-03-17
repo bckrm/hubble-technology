@@ -12,7 +12,6 @@ export default function FeaturesPage({ data }) {
     const {
         cta,
         hero,
-        featuresContent,
         feature1Image,
         feature2Image,
         feature3Image,
@@ -25,10 +24,7 @@ export default function FeaturesPage({ data }) {
         <Layout>
             <Hero content={hero} />
             <ColumnGrid content={industries} hasDescriptionText />
-            <NewFeaturesSection
-                images={featureImages}
-                content={featuresContent}
-            />
+            <NewFeaturesSection images={featureImages} />
             <CtaSection content={cta} />
         </Layout>
     );
@@ -37,7 +33,6 @@ export default function FeaturesPage({ data }) {
 FeaturesPage.propTypes = {
     data: PropTypes.shape({
         cta: PropTypes.object.isRequired,
-        featuresContent: PropTypes.object.isRequired,
         feature1Image: PropTypes.object.isRequired,
         feature2Image: PropTypes.object.isRequired,
         feature3Image: PropTypes.object.isRequired,
