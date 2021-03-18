@@ -10,10 +10,16 @@ import aboutPage from './documents/aboutPage';
 import author from './documents/author';
 import bio from './documents/bio';
 import category from './documents/category';
+import featuresBenefitsCollection from './documents/featuresBenefitsCollection';
+import featuresBenefitsItem from './documents/featuresBenefitsItem';
+import featuresBenefitsSection from './documents/featuresBenefitsSection';
+import featuresPage from './documents/featuresPage';
 import fullWidthImage from './documents/fullWidthImage';
 import indexPage from './documents/indexPage';
 import indexFeature from './documents/indexFeature';
 import industry from './documents/industry';
+import infoItem from './documents/infoItem';
+import infoSection from './documents/infoSection';
 import internalLink from './documents/internalLink';
 import investor from './documents/investor';
 import investorSection from './documents/investorSection';
@@ -39,11 +45,17 @@ export default createSchema({
         author,
         bio,
         category,
+        featuresBenefitsCollection,
+        featuresBenefitsItem,
+        featuresBenefitsSection,
+        featuresPage,
         fullWidthImage,
         investorSection,
         indexPage,
         indexFeature,
         industry,
+        infoItem,
+        infoSection,
         internalLink,
         investor,
         post,
