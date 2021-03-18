@@ -26,6 +26,14 @@ export default () => {
                         .documentId('aboutPage'),
                 ),
             S.listItem()
+                .title('Features Page')
+                .icon(VscFile)
+                .child(
+                    S.document()
+                        .schemaType('featuresPage')
+                        .documentId('featuresPage'),
+                ),
+            S.listItem()
                 .title('Settings')
                 .icon(VscFile)
                 .child(
@@ -42,6 +50,7 @@ export default () => {
                     ![
                         'aboutPage',
                         'author',
+                        'featuresPage',
                         'indexPage',
                         'siteSettings',
                     ].includes(listItem.getId()),
