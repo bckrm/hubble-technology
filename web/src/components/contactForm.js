@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import tw from 'twin.macro';
 
@@ -33,7 +34,8 @@ const StyledHoneyPot = styled.p`
     ${tw`hidden`}
 `;
 
-export default function ContactForm() {
+export default function ContactForm({ content }) {
+    const { formHeading } = content;
     const [formData, setFormData] = useState(null);
     const [isSubmitFormSuccessful, setIsSubmitFormSuccessful] = useState(false);
 
@@ -69,7 +71,7 @@ export default function ContactForm() {
 
     return (
         <ContactWrapper id="demo">
-            <StyledHeading>Request a Demo</StyledHeading>
+            <StyledHeading>{formHeading}</StyledHeading>
             {isSubmitFormSuccessful ? (
                 <StyledHeading>Thank you!</StyledHeading>
             ) : (
@@ -134,3 +136,7 @@ export default function ContactForm() {
         </ContactWrapper>
     );
 }
+
+ContactForm.propTypes = {
+    content: PropTypes.object.isRequired,
+};
