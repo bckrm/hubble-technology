@@ -4,7 +4,7 @@ import { graphql } from 'gatsby';
 
 import Layout from '../page-layouts/layout';
 import Hero from '../components/hero';
-import ColumnGrid from '../components/columnGrid';
+// import ColumnGrid from '../components/columnGrid';
 import CtaSection from '../components/ctaSection';
 import NewFeaturesSection from '../components/newFeaturesSection';
 
@@ -15,7 +15,8 @@ export default function FeaturesPage({ data }) {
         feature1Image,
         feature2Image,
         feature3Image,
-        industries,
+        // industries,
+        features,
     } = data;
 
     const featureImages = [feature1Image, feature2Image, feature3Image];
@@ -23,8 +24,8 @@ export default function FeaturesPage({ data }) {
     return (
         <Layout>
             <Hero content={hero} />
-            <ColumnGrid content={industries} hasDescriptionText />
-            <NewFeaturesSection images={featureImages} />
+            {/* <ColumnGrid content={industries} hasDescriptionText /> */}
+            <NewFeaturesSection images={featureImages} content={features} />
             <CtaSection content={cta} />
         </Layout>
     );
@@ -37,7 +38,8 @@ FeaturesPage.propTypes = {
         feature2Image: PropTypes.object.isRequired,
         feature3Image: PropTypes.object.isRequired,
         hero: PropTypes.object.isRequired,
-        industries: PropTypes.array.isRequired,
+        // industries: PropTypes.array.isRequired,
+        features: PropTypes.object.isRequired,
     }).isRequired,
 };
 
@@ -81,6 +83,13 @@ export const query = graphql`
                         id
                         heading
                         body
+                        image {
+                            asset {
+                                fluid(maxWidth: 500) {
+                                    ...GatsbySanityImageFluid
+                                }
+                            }
+                        }
                     }
                 }
             }
@@ -95,23 +104,6 @@ export const query = graphql`
                 }
             }
             heading: heroHeading
-        }
-        industries: sanityIndexPage {
-            heading: industriesHeading
-            description: industriesHeading
-            indexIndustries {
-                id
-                industryName
-                heading
-                description
-                image {
-                    asset {
-                        fluid(maxWidth: 400) {
-                            ...GatsbySanityImageFluid
-                        }
-                    }
-                }
-            }
         }
     }
 `;

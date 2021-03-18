@@ -93,7 +93,6 @@ export default function IndexFeatures({ content }) {
                 </Controls>
                 <Grid activeSlide={activeSlide}>
                     {features.map((feature) => {
-                        console.log(features);
                         return (
                             <GridItem
                                 key={feature.id}

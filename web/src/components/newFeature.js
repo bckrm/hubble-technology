@@ -33,7 +33,7 @@ const StyledP = styled.p`
     ${tw`leading-6`}
 `;
 
-export default function NewFeature({ content, image, isOpen }) {
+export default function NewFeature({ content, isOpen }) {
     return (
         <AnimatePresence>
             {isOpen && (
@@ -46,13 +46,15 @@ export default function NewFeature({ content, image, isOpen }) {
                         ease: [0.04, 0.62, 0.23, 0.98],
                     }}
                 >
-                    <Grid>
-                        <Container>
-                            <StyledHeading>{content.heading}</StyledHeading>
-                            <StyledP>{content.body}</StyledP>
-                        </Container>
-                        <Img fluid={image.childImageSharp.fluid} />
-                    </Grid>
+                    {content.featuresBenefitsItems.map((item) => (
+                        <Grid>
+                            <Container>
+                                <StyledHeading>{item.heading}</StyledHeading>
+                                <StyledP>{item.body}</StyledP>
+                            </Container>
+                            <Img fluid={item.image.asset.fluid} />
+                        </Grid>
+                    ))}
                 </motion.div>
             )}
         </AnimatePresence>
@@ -61,6 +63,5 @@ export default function NewFeature({ content, image, isOpen }) {
 
 NewFeature.propTypes = {
     content: PropTypes.object.isRequired,
-    image: PropTypes.object.isRequired,
     isOpen: PropTypes.bool.isRequired,
 };
