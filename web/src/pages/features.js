@@ -71,6 +71,20 @@ export const query = graphql`
                 }
             }
         }
+        features: sanityFeaturesPage {
+            featuresBenefitsSection {
+                Heading
+                featuresBenefitsItems {
+                    id
+                    title
+                    featuresBenefitsItems {
+                        id
+                        heading
+                        body
+                    }
+                }
+            }
+        }
         hero: sanityAboutPage {
             image: heroImage {
                 asset {

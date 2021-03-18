@@ -116,16 +116,18 @@ export const query = graphql`
         }
 
         industries: sanityIndexPage {
-            heading: industriesHeading
-            indexIndustries {
-                id
-                industryName
-                heading
-                description
-                image {
-                    asset {
-                        fluid(maxWidth: 400) {
-                            ...GatsbySanityImageFluid
+            infoSection {
+                heading: heading
+                description: summary
+                itemsArray: infoItems {
+                    id
+                    heading
+                    description
+                    image {
+                        asset {
+                            fluid(maxWidth: 400, maxHeight: 400) {
+                                ...GatsbySanityImageFluid
+                            }
                         }
                     }
                 }

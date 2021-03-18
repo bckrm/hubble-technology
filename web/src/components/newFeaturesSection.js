@@ -122,14 +122,6 @@ const StyledHeading = styled.h2`
 
 export default function NewFeaturesSection({ images }) {
     const [activeTab, setActiveTab] = useState(content.features[0].id);
-    // const [activeLink, setActiveLink] = useState(0);
-
-    // const handleClick = () => {
-    //     const currentLink = activeLink;
-    //     const nextLink = currentLink + 1;
-    //     setActiveLink(nextLink);
-    //     setActiveTab(content.features[nextLink].id);
-    // };
 
     return (
         <StyledSection>
