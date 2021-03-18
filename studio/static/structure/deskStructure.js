@@ -34,6 +34,14 @@ export default () => {
                         .documentId('featuresPage'),
                 ),
             S.listItem()
+                .title('Contact Page')
+                .icon(VscFile)
+                .child(
+                    S.document()
+                        .schemaType('contactPage')
+                        .documentId('contactPage'),
+                ),
+            S.listItem()
                 .title('Settings')
                 .icon(VscFile)
                 .child(
@@ -50,6 +58,7 @@ export default () => {
                     ![
                         'aboutPage',
                         'author',
+                        'contactPage',
                         'featuresPage',
                         'indexPage',
                         'siteSettings',

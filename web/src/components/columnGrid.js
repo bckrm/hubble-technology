@@ -34,13 +34,15 @@ const Description = styled.p`
 `;
 
 export default function ColumnGrid({ content }) {
-    const { description, heading, indexIndustries } = content;
+    const {
+        infoSection: { description, heading, itemsArray },
+    } = content;
     return (
         <Section>
             <Heading>{heading}</Heading>
             {description && <Description>{description}</Description>}
             <Grid>
-                {indexIndustries.map((item) => {
+                {itemsArray.map((item) => {
                     return <Figure content={item} key={item.id} />;
                 })}
             </Grid>

@@ -11,20 +11,15 @@ import ContactForm from '../components/contactForm';
 import VideoFeature from '../components/videoFeature';
 
 export default function ContactPage({ data }) {
-    const { cta, hero, industries, feature1Image } = data;
-    const content = {
-        heading: 'Feature benefit Etiam egestas ligula tristique',
-        body:
-            'Suspendisse nunc eros, efficitur sed facilisis et, placerat non risus. Vivamus porttitor eleifend vehicula. Nulla in magna nisi. Vestibulum mollis felis in mi eleifend, sit amet vulputate quam sollicitudin. Mauris et ipsum bibendum, dapibus metus eget, consectetur nisl.',
-    };
+    const { cta, form, hero, infoSection, videoSection } = data;
 
     return (
         <Layout>
             <SEO title="Contact Hubble" />
             <Hero content={hero} />
-            <ColumnGrid content={industries} hasDescriptionText />
-            <VideoFeature content={content} image={feature1Image} />
-            <ContactForm />
+            <ColumnGrid content={infoSection} hasDescriptionText />
+            <VideoFeature content={videoSection} />
+            <ContactForm content={form} />
             <CtaSection content={cta} />
         </Layout>
     );
@@ -32,16 +27,17 @@ export default function ContactPage({ data }) {
 
 ContactPage.propTypes = {
     data: PropTypes.shape({
-        hero: PropTypes.object.isRequired,
-        industries: PropTypes.array.isRequired,
         cta: PropTypes.object.isRequired,
-        feature1Image: PropTypes.object.isRequired,
+        form: PropTypes.object.isRequired,
+        hero: PropTypes.object.isRequired,
+        infoSection: PropTypes.array.isRequired,
+        videoSection: PropTypes.object.isRequired,
     }).isRequired,
 };
 
 export const query = graphql`
     query ContactPage {
-        hero: sanityAboutPage {
+        hero: sanityContactPage {
             image: heroImage {
                 asset {
                     id
@@ -52,35 +48,49 @@ export const query = graphql`
             }
             heading: heroHeading
         }
-        feature1Image: file(relativePath: { regex: "/feature-1/" }) {
-            childImageSharp {
-                fluid(maxWidth: 300) {
-                    ...GatsbyImageSharpFluid
+
+        infoSection: sanityContactPage {
+            infoSection {
+                heading: heading
+                description: summary
+                itemsArray: infoItems {
+                    id
+                    heading
+                    description
+                    image {
+                        asset {
+                            fluid(maxWidth: 400, maxHeight: 400) {
+                                ...GatsbySanityImageFluid
+                            }
+                        }
+                    }
                 }
             }
         }
-        cta: sanityAboutPage {
-            ctaHeading
-            link {
-                text
-                url
-            }
-        }
-        industries: sanityIndexPage {
-            heading: industriesHeading
-            description: industriesHeading
-            indexIndustries {
-                id
-                industryName
-                heading
-                description
+
+        videoSection: sanityContactPage {
+            videoFeatureSection {
+                title
+                summary
                 image {
                     asset {
-                        fluid(maxWidth: 400) {
+                        fluid(maxWidth: 300) {
                             ...GatsbySanityImageFluid
                         }
                     }
                 }
+            }
+        }
+
+        form: sanityContactPage {
+            formHeading
+        }
+
+        cta: sanityContactPage {
+            ctaHeading
+            link {
+                text
+                url
             }
         }
     }

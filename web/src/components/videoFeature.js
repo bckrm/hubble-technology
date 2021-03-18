@@ -40,15 +40,24 @@ const StyledP = styled.p`
     ${tw`leading-6 text-xs lg:text-xl`}
 `;
 
-export default function VideoFeature({ content, image }) {
+export default function VideoFeature({ content }) {
+    const {
+        videoFeatureSection: {
+            title,
+            summary,
+            image: {
+                asset: { fluid: imageData },
+            },
+        },
+    } = content;
     return (
         <Section>
             <GridWrapper>
                 <ContentWrapper>
-                    <StyledHeading>{content.heading}</StyledHeading>
-                    <StyledP>{content.body}</StyledP>
+                    <StyledHeading>{title}</StyledHeading>
+                    <StyledP>{summary}</StyledP>
                 </ContentWrapper>
-                <StyledImg fluid={image.childImageSharp.fluid} />
+                <StyledImg fluid={imageData} />
             </GridWrapper>
         </Section>
     );
