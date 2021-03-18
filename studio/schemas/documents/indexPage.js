@@ -82,16 +82,21 @@ export default {
             type: 'bio',
         },
         {
-            name: 'industriesHeading',
-            title: 'Industries Heading',
-            type: 'string',
+            name: 'infoSection',
+            title: 'Info Section',
+            type: 'infoSection',
         },
-        {
-            name: 'indexIndustries',
-            title: 'Industries',
-            type: 'array',
-            of: [{ type: 'reference', to: { type: 'industry' } }],
-        },
+        // {
+        //     name: 'industriesHeading',
+        //     title: 'Industries Heading',
+        //     type: 'string',
+        // },
+        // {
+        //     name: 'indexIndustries',
+        //     title: 'Industries',
+        //     type: 'array',
+        //     of: [{ type: 'reference', to: { type: 'industry' } }],
+        // },
         {
             name: 'featuredQuote',
             title: 'Featured Quote',

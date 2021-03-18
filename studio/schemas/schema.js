@@ -10,10 +10,17 @@ import aboutPage from './documents/aboutPage';
 import author from './documents/author';
 import bio from './documents/bio';
 import category from './documents/category';
+import contactPage from './documents/contactPage';
+import featuresBenefitsCollection from './documents/featuresBenefitsCollection';
+import featuresBenefitsItem from './documents/featuresBenefitsItem';
+import featuresBenefitsSection from './documents/featuresBenefitsSection';
+import featuresPage from './documents/featuresPage';
 import fullWidthImage from './documents/fullWidthImage';
 import indexPage from './documents/indexPage';
 import indexFeature from './documents/indexFeature';
 import industry from './documents/industry';
+import infoItem from './documents/infoItem';
+import infoSection from './documents/infoSection';
 import internalLink from './documents/internalLink';
 import investor from './documents/investor';
 import investorSection from './documents/investorSection';
@@ -22,6 +29,7 @@ import siteSettings from './documents/siteSettings';
 import teamMember from './documents/teamMember';
 import teamSection from './documents/teamSection';
 import quote from './documents/quote';
+import videoFeatureSection from './documents/videoFeatureSection';
 
 // Object types
 import blockContent from './objects/blockContent';
@@ -39,11 +47,18 @@ export default createSchema({
         author,
         bio,
         category,
+        contactPage,
+        featuresBenefitsCollection,
+        featuresBenefitsItem,
+        featuresBenefitsSection,
+        featuresPage,
         fullWidthImage,
         investorSection,
         indexPage,
         indexFeature,
         industry,
+        infoItem,
+        infoSection,
         internalLink,
         investor,
         post,
@@ -54,5 +69,6 @@ export default createSchema({
         // When added to this list, object types can be used as
         // { type: 'typename' } in other document schemas
         blockContent,
+        videoFeatureSection,
     ]),
 });
