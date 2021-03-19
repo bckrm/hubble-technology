@@ -15,7 +15,7 @@ const StyledHeading = styled.h1`
     ${tw`font-bold my-8 relative text-4xl text-black-3 leading-tight`}
 `;
 const InputWrapper = styled.div`
-    ${tw`flex flex-col lg:flex-row gap-1`}
+    ${tw`flex flex-col lg:grid lg:grid-cols-2 lg:grid-rows-3 gap-1`}
 `;
 
 const StyledButton = styled.button`
@@ -87,48 +87,53 @@ export default function ContactForm({ content }) {
                         </label>
                     </StyledHoneyPot>
                     <InputWrapper>
-                        <div>
-                            <StyledLabel htmlFor="firstName">
-                                First Name
-                                <StyledInput
-                                    type="text"
-                                    name="name"
-                                    id="firstname"
-                                    onChange={handleChange}
-                                    required
-                                />
-                            </StyledLabel>
-                            <StyledLabel htmlFor="lastName">
-                                Last Name
-                                <StyledInput
-                                    type="text"
-                                    name="name"
-                                    id="lastname"
-                                    onChange={handleChange}
-                                />
-                            </StyledLabel>
-                        </div>
-                        <div>
-                            <StyledLabel htmlFor="email">
-                                Email
-                                <StyledInput
-                                    type="email"
-                                    name="email"
-                                    id="email"
-                                    onChange={handleChange}
-                                    required
-                                />
-                            </StyledLabel>
-                            <StyledLabel htmlFor="title">
-                                Title
-                                <StyledInput
-                                    type="text"
-                                    name="title"
-                                    id="title"
-                                    onChange={handleChange}
-                                />
-                            </StyledLabel>
-                        </div>
+                        <StyledLabel htmlFor="firstName">
+                            First Name
+                            <StyledInput
+                                type="text"
+                                name="name"
+                                id="firstname"
+                                onChange={handleChange}
+                                required
+                            />
+                        </StyledLabel>
+                        <StyledLabel htmlFor="lastName">
+                            Last Name
+                            <StyledInput
+                                type="text"
+                                name="name"
+                                id="lastname"
+                                onChange={handleChange}
+                            />
+                        </StyledLabel>
+                        <StyledLabel htmlFor="title">
+                            Title
+                            <StyledInput
+                                type="text"
+                                name="title"
+                                id="title"
+                                onChange={handleChange}
+                            />
+                        </StyledLabel>
+                        <StyledLabel htmlFor="company">
+                            Company
+                            <StyledInput
+                                type="text"
+                                name="company"
+                                id="company"
+                                onChange={handleChange}
+                            />
+                        </StyledLabel>
+                        <StyledLabel htmlFor="email">
+                            Email
+                            <StyledInput
+                                type="email"
+                                name="email"
+                                id="email"
+                                onChange={handleChange}
+                                required
+                            />
+                        </StyledLabel>
                     </InputWrapper>
                     <StyledButton type="submit">Let&apos;s Do It</StyledButton>
                 </StyledForm>
