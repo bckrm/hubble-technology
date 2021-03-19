@@ -9,23 +9,13 @@ import CtaSection from '../components/ctaSection';
 import NewFeaturesSection from '../components/newFeaturesSection';
 
 export default function FeaturesPage({ data }) {
-    const {
-        cta,
-        hero,
-        feature1Image,
-        feature2Image,
-        feature3Image,
-        industries,
-        features,
-    } = data;
-
-    const featureImages = [feature1Image, feature2Image, feature3Image];
+    const { cta, hero, industries, features } = data;
 
     return (
         <Layout>
             <Hero content={hero} />
             <ColumnGrid content={industries} hasDescriptionText />
-            <NewFeaturesSection images={featureImages} content={features} />
+            <NewFeaturesSection content={features} />
             <CtaSection content={cta} />
         </Layout>
     );
@@ -34,9 +24,6 @@ export default function FeaturesPage({ data }) {
 FeaturesPage.propTypes = {
     data: PropTypes.shape({
         cta: PropTypes.object.isRequired,
-        feature1Image: PropTypes.object.isRequired,
-        feature2Image: PropTypes.object.isRequired,
-        feature3Image: PropTypes.object.isRequired,
         hero: PropTypes.object.isRequired,
         industries: PropTypes.array.isRequired,
         features: PropTypes.object.isRequired,
@@ -50,27 +37,6 @@ export const query = graphql`
             link {
                 text
                 url
-            }
-        }
-        feature1Image: file(relativePath: { regex: "/feature-1/" }) {
-            childImageSharp {
-                fluid(maxWidth: 500) {
-                    ...GatsbyImageSharpFluid
-                }
-            }
-        }
-        feature2Image: file(relativePath: { regex: "/feature-2/" }) {
-            childImageSharp {
-                fluid(maxWidth: 500) {
-                    ...GatsbyImageSharpFluid
-                }
-            }
-        }
-        feature3Image: file(relativePath: { regex: "/feature-3/" }) {
-            childImageSharp {
-                fluid(maxWidth: 500) {
-                    ...GatsbyImageSharpFluid
-                }
             }
         }
         features: sanityFeaturesPage {

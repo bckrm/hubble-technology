@@ -8,7 +8,7 @@ import tw from 'twin.macro';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const Grid = styled.div`
-    ${tw`grid grid-cols-1 lg:grid-cols-2 gap-y-10 lg:gap-y-0`}
+    ${tw`grid grid-cols-1 lg:grid-cols-2 gap-y-10 lg:gap-16 m-16`}
     &:nth-child(even) {
         .gatsby-image-wrapper {
             grid-column-start: 1;

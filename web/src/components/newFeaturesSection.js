@@ -15,23 +15,19 @@ const StyledContainer = styled.div`
 `;
 
 const LinkWrapper = styled.div`
-    ${tw`flex gap-10 justify-center mb-4`}
+    ${tw`flex gap-10 justify-center my-8`}
 `;
 
 const StyledButton = styled.button`
     ${tw`text-gray-2 text-center font-semibold`}
-    color: ${({ isActive }) => (isActive ? '#00A09B' : 'bg-gray-2')}
+    color: ${({ isActive }) => (isActive ? '#00A09B' : 'gray-2')}
 `;
 
 const StyledHeading = styled.h2`
     ${tw`font-bold leading-tight mb-4 text-4xl text-center`}
 `;
 
-const ItemWrapper = styled.div`
-    ${tw`grid`}
-`;
-
-export default function NewFeaturesSection({ images, content }) {
+export default function NewFeaturesSection({ content }) {
     const {
         featuresBenefitsSection: { featuresBenefitsItems, Heading },
     } = content;
@@ -55,24 +51,20 @@ export default function NewFeaturesSection({ images, content }) {
                         );
                     })}
                 </LinkWrapper>
-                <ItemWrapper>
-                    {featuresBenefitsItems.map((feature, i) => {
-                        return (
-                            <NewFeature
-                                content={feature}
-                                image={images[i]}
-                                key={`${feature.id}`}
-                                isOpen={activeTab === feature.id}
-                            />
-                        );
-                    })}
-                </ItemWrapper>
+                {featuresBenefitsItems.map((feature) => {
+                    return (
+                        <NewFeature
+                            content={feature}
+                            key={`${feature.id}`}
+                            isOpen={activeTab === feature.id}
+                        />
+                    );
+                })}
             </StyledContainer>
         </StyledSection>
     );
 }
 
 NewFeaturesSection.propTypes = {
-    images: PropTypes.arrayOf(PropTypes.object).isRequired,
     content: PropTypes.object.isRequired,
 };
