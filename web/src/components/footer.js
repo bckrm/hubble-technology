@@ -58,20 +58,12 @@ const Button = styled.button`
 const content = {
     internalLinks: [
         {
-            link: '/#',
-            text: 'Link',
+            link: 'https://www.linkedin.com/company/hubble-technology/',
+            text: 'LinkedIn',
         },
         {
-            link: '/#',
-            text: 'Link',
-        },
-        {
-            link: '/#',
-            text: 'Link',
-        },
-        {
-            link: '/#',
-            text: 'Link',
+            link: 'https://twitter.com/gethubble',
+            text: 'Twitter',
         },
     ],
     form: {
