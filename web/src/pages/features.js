@@ -4,7 +4,7 @@ import { graphql } from 'gatsby';
 
 import Layout from '../page-layouts/layout';
 import Hero from '../components/hero';
-// import ColumnGrid from '../components/columnGrid';
+import ColumnGrid from '../components/columnGrid';
 import CtaSection from '../components/ctaSection';
 import NewFeaturesSection from '../components/newFeaturesSection';
 
@@ -15,7 +15,7 @@ export default function FeaturesPage({ data }) {
         feature1Image,
         feature2Image,
         feature3Image,
-        // industries,
+        industries,
         features,
     } = data;
 
@@ -24,7 +24,7 @@ export default function FeaturesPage({ data }) {
     return (
         <Layout>
             <Hero content={hero} />
-            {/* <ColumnGrid content={industries} hasDescriptionText /> */}
+            <ColumnGrid content={industries} hasDescriptionText />
             <NewFeaturesSection images={featureImages} content={features} />
             <CtaSection content={cta} />
         </Layout>
@@ -38,14 +38,14 @@ FeaturesPage.propTypes = {
         feature2Image: PropTypes.object.isRequired,
         feature3Image: PropTypes.object.isRequired,
         hero: PropTypes.object.isRequired,
-        // industries: PropTypes.array.isRequired,
+        industries: PropTypes.array.isRequired,
         features: PropTypes.object.isRequired,
     }).isRequired,
 };
 
 export const query = graphql`
     query FeaturesQuery {
-        cta: sanityAboutPage {
+        cta: sanityFeaturesPage {
             ctaHeading
             link {
                 text
@@ -88,6 +88,24 @@ export const query = graphql`
                                 fluid(maxWidth: 500) {
                                     ...GatsbySanityImageFluid
                                 }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        industries: sanityFeaturesPage {
+            infoSection {
+                heading: heading
+                description: summary
+                itemsArray: infoItems {
+                    id
+                    heading
+                    description
+                    image {
+                        asset {
+                            fluid(maxWidth: 400, maxHeight: 400) {
+                                ...GatsbySanityImageFluid
                             }
                         }
                     }

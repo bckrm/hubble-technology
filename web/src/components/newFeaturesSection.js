@@ -6,20 +6,29 @@ import tw from 'twin.macro';
 
 import NewFeature from './newFeature';
 
+const StyledSection = styled.section`
+    ${tw`bg-gray-1 mx-auto pt-24 lg:pt-36 px-4 lg:px-2 2xl:px-0`}
+`;
+
+const StyledContainer = styled.div`
+    ${tw`container`}
+`;
+
 const LinkWrapper = styled.div`
-    ${tw`flex justify-around`}
+    ${tw`flex gap-10 justify-center mb-4`}
 `;
 
 const StyledButton = styled.button`
-    ${tw`text-black text-center`}
-`;
-
-const StyledSection = styled.section`
-    ${tw`container mx-auto pt-24 lg:pt-36 px-4 lg:px-2 2xl:px-0`}
+    ${tw`text-gray-2 text-center font-semibold`}
+    color: ${({ isActive }) => (isActive ? '#00A09B' : 'bg-gray-2')}
 `;
 
 const StyledHeading = styled.h2`
-    ${tw`font-bold leading-tight mb-24 text-4xl text-center`}
+    ${tw`font-bold leading-tight mb-4 text-4xl text-center`}
+`;
+
+const ItemWrapper = styled.div`
+    ${tw`grid`}
 `;
 
 export default function NewFeaturesSection({ images, content }) {
@@ -31,30 +40,34 @@ export default function NewFeaturesSection({ images, content }) {
 
     return (
         <StyledSection>
-            <StyledHeading>{Heading}</StyledHeading>
-            <LinkWrapper>
-                {featuresBenefitsItems.map((feature, i) => {
-                    return (
-                        <StyledButton
-                            onClick={() => setActiveTab(feature.id)}
-                            key={feature[i]}
-                            isActive={activeTab === feature.id}
-                        >
-                            {feature.title}
-                        </StyledButton>
-                    );
-                })}
-            </LinkWrapper>
-            {featuresBenefitsItems.map((feature, i) => {
-                return (
-                    <NewFeature
-                        content={feature}
-                        image={images[i]}
-                        key={`${feature.id}`}
-                        isOpen={activeTab === feature.id}
-                    />
-                );
-            })}
+            <StyledContainer>
+                <StyledHeading>{Heading}</StyledHeading>
+                <LinkWrapper>
+                    {featuresBenefitsItems.map((feature, i) => {
+                        return (
+                            <StyledButton
+                                onClick={() => setActiveTab(feature.id)}
+                                key={feature[i]}
+                                isActive={activeTab === feature.id}
+                            >
+                                {feature.title}
+                            </StyledButton>
+                        );
+                    })}
+                </LinkWrapper>
+                <ItemWrapper>
+                    {featuresBenefitsItems.map((feature, i) => {
+                        return (
+                            <NewFeature
+                                content={feature}
+                                image={images[i]}
+                                key={`${feature.id}`}
+                                isOpen={activeTab === feature.id}
+                            />
+                        );
+                    })}
+                </ItemWrapper>
+            </StyledContainer>
         </StyledSection>
     );
 }

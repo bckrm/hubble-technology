@@ -9,10 +9,18 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 const Grid = styled.div`
     ${tw`grid grid-cols-1 lg:grid-cols-2 gap-y-10 lg:gap-y-0`}
+    &:nth-child(even) {
+        .gatsby-image-wrapper {
+            grid-column-start: 1;
+        }
+        .text-wrap {
+            grid-column-start: 2;
+        }
+    }
 `;
 
 const Container = styled.div`
-    ${tw`row-start-2 lg:row-start-1`}
+    ${tw`row-start-2 lg:row-start-1 place-self-center`}
 `;
 
 const StyledHeading = styled.h3`
@@ -48,7 +56,7 @@ export default function NewFeature({ content, isOpen }) {
                 >
                     {content.featuresBenefitsItems.map((item) => (
                         <Grid>
-                            <Container>
+                            <Container className="text-wrap">
                                 <StyledHeading>{item.heading}</StyledHeading>
                                 <StyledP>{item.body}</StyledP>
                             </Container>
