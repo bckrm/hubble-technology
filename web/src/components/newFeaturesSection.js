@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-// eslint-disable-next-line import/no-extraneous-dependencies
 import tw from 'twin.macro';
 
 import NewFeature from './newFeature';
@@ -45,6 +44,7 @@ export default function NewFeaturesSection({ content }) {
                                 onClick={() => setActiveTab(feature.id)}
                                 key={feature[i]}
                                 isActive={activeTab === feature.id}
+                                type="button"
                             >
                                 {feature.title}
                             </StyledButton>

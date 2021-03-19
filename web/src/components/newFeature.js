@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import Img from 'gatsby-image';
 
 import styled from 'styled-components';
-// eslint-disable-next-line import/no-extraneous-dependencies
 import tw from 'twin.macro';
 import { motion, AnimatePresence } from 'framer-motion';
 
