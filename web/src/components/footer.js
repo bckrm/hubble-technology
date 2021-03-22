@@ -56,22 +56,14 @@ const Button = styled.button`
 // todo: wire up form submission
 
 const content = {
-    internalLinks: [
+    externalLinks: [
         {
-            link: '/#',
-            text: 'Link',
+            link: 'https://www.linkedin.com/company/hubble-technology/',
+            text: 'LinkedIn',
         },
         {
-            link: '/#',
-            text: 'Link',
-        },
-        {
-            link: '/#',
-            text: 'Link',
-        },
-        {
-            link: '/#',
-            text: 'Link',
+            link: 'https://twitter.com/gethubble',
+            text: 'Twitter',
         },
     ],
     form: {
@@ -86,10 +78,12 @@ export default function Footer() {
         const { value } = target;
         setEmail(value);
     };
-    const links = content.internalLinks.map((item) => {
+    const links = content.externalLinks.map((item) => {
         return (
             <li key={item.text}>
-                <Link to={item.link}>{item.text}</Link>
+                <a href={item.link} target="_blank" rel="noreferrer">
+                    {item.text}
+                </a>
             </li>
         );
     });
