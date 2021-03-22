@@ -42,11 +42,11 @@ export default function FeaturesSection({ images }) {
     return (
         <StyledSection id="why-hubble">
             <StyledHeading>{content.heading}</StyledHeading>
-            {content.features.map((feature, i) => {
+            {content.features.map((feature, index) => {
                 return (
                     <Feature
                         content={feature}
-                        image={images[i]}
+                        image={images[index]}
                         key={`${feature.heading}`}
                     />
                 );
