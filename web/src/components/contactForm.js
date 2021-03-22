@@ -15,7 +15,7 @@ const StyledHeading = styled.h1`
     ${tw`font-bold my-8 relative text-4xl text-black-3 leading-tight`}
 `;
 const InputWrapper = styled.div`
-    ${tw`flex flex-col lg:grid lg:grid-cols-2 lg:grid-rows-3 gap-1`}
+    ${tw`flex flex-col lg:grid lg:grid-cols-2 gap-1`}
 `;
 
 const StyledButton = styled.button`
@@ -87,21 +87,21 @@ export default function ContactForm({ content }) {
                         </label>
                     </StyledHoneyPot>
                     <InputWrapper>
-                        <StyledLabel htmlFor="firstName">
+                        <StyledLabel htmlFor="firstname">
                             First Name
                             <StyledInput
                                 type="text"
-                                name="name"
+                                name="firstname"
                                 id="firstname"
                                 onChange={handleChange}
                                 required
                             />
                         </StyledLabel>
-                        <StyledLabel htmlFor="lastName">
+                        <StyledLabel htmlFor="lastname">
                             Last Name
                             <StyledInput
                                 type="text"
-                                name="name"
+                                name="lastname"
                                 id="lastname"
                                 onChange={handleChange}
                             />
