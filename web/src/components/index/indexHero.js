@@ -60,7 +60,7 @@ export default function IndexHero({ bgImage, content }) {
                 <Body>
                     <BlockText blocks={_rawHeroBody} />
                 </Body>
-                <Link href="#contact">{heroCta}</Link>
+                <Link href="/contact">{heroCta}</Link>
             </Container>
             <InvertedCurveMask color="var(--darkGray)" isInverted />
         </BackgroundSection>
