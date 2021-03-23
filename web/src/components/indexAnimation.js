@@ -1,11 +1,11 @@
 import React, { useRef } from 'react';
 import Lottie from 'lottie-react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import { useInView } from 'react-intersection-observer';
 
 import hubble from '../animations/hubble.json';
 
-export default function IndexAnimation() {
+export default function IndexAnimation({ setFinishedAnimation }) {
     const indexContainer = useRef(null);
 
     const { ref, inView } = useInView({
@@ -20,14 +20,15 @@ export default function IndexAnimation() {
         <div ref={ref}>
             <Lottie
                 animationData={hubble}
-                loop={0}
+                loop={false}
                 autoplay={false}
                 lottieRef={indexContainer}
+                onComplete={() => setFinishedAnimation(true)}
             />
         </div>
     );
 }
 
-// IndexAnimation.propTypes = {
-//     setFinishedAnimation: PropTypes.func.isRequired,
-// };
+IndexAnimation.propTypes = {
+    setFinishedAnimation: PropTypes.func.isRequired,
+};

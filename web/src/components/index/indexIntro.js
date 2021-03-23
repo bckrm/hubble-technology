@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import tw from 'twin.macro';
@@ -31,14 +31,14 @@ const Heading = styled.h2`
 `;
 
 export default function IndexIntro({ content }) {
-    // const [finishedAnimation, setFinishedAnimation] = useState(false);
+    const [finishedAnimation, setFinishedAnimation] = useState(false);
     const { introHeading, _rawIntroBody } = content;
     return (
         <Section>
-            <IndexAnimation />
+            <IndexAnimation setFinishedAnimation={setFinishedAnimation} />
             <Wrapper>
                 <Heading>{introHeading}</Heading>
-                <BlockText blocks={_rawIntroBody} />
+                {finishedAnimation && <BlockText blocks={_rawIntroBody} />}
             </Wrapper>
         </Section>
     );
