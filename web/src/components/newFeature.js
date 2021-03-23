@@ -23,7 +23,7 @@ const Container = styled.div`
 `;
 
 const StyledHeading = styled.h3`
-    ${tw`font-bold leading-8 mb-8 relative text-3xl`}
+    ${tw`font-bold leading-8 mb-8 relative text-xl md:text-3xl`}
     &:after {
         content: '';
         position: absolute;
@@ -37,7 +37,7 @@ const StyledHeading = styled.h3`
 `;
 
 const StyledP = styled.p`
-    ${tw`leading-6`}
+    ${tw`leading-6 text-xs md:text-xl`}
 `;
 
 export default function NewFeature({ content, isOpen }) {

@@ -18,14 +18,14 @@ const LinkWrapper = styled.div`
 `;
 
 const StyledButton = styled.button`
-    ${tw`text-gray-2 text-lg md:text-xl text-center font-bold`}
+    ${tw`text-gray-2 text-base md:text-xl text-center font-bold`}
 
     color: ${({ isActive }) => (isActive ? '#00A09B' : 'gray-2')};
     text-decoration: ${({ isActive }) => (isActive ? 'underline' : 'none')};
 `;
 
 const StyledHeading = styled.h2`
-    ${tw`font-bold leading-tight mb-4 text-4xl text-center`}
+    ${tw`font-bold leading-tight mb-4 text-2xl md:text-4xl text-center`}
 `;
 
 export default function NewFeaturesSection({ content }) {
