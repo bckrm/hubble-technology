@@ -3,15 +3,16 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import tw from 'twin.macro';
 
-import Img from 'gatsby-image';
+// import Img from 'gatsby-image';
 import BlockText from '../block-content/blockText';
+import IndexAnimation from '../indexAnimation';
 
 const Section = styled.section`
     ${tw`container relative`}
 `;
 
 const Wrapper = styled.div`
-    ${tw`relative lg:absolute lg:left-full lg:top-full lg:transform-gpu lg:-translate-y-full lg:-translate-x-full lg:w-1/2`}
+    ${tw`relative mt-20 lg:absolute lg:left-full lg:top-full lg:transform-gpu lg:-translate-y-full lg:-translate-x-full lg:w-1/2`}
 
     //todo move colors to tailwind config
     &:after {
@@ -30,16 +31,11 @@ const Heading = styled.h2`
 `;
 
 export default function IndexIntro({ content }) {
-    const {
-        introHeading,
-        introPlaceholderImage: {
-            asset: { fluid: imageData },
-        },
-        _rawIntroBody,
-    } = content;
+    // const [finishedAnimation, setFinishedAnimation] = useState(false);
+    const { introHeading, _rawIntroBody } = content;
     return (
         <Section>
-            <Img fluid={imageData} />
+            <IndexAnimation />
             <Wrapper>
                 <Heading>{introHeading}</Heading>
                 <BlockText blocks={_rawIntroBody} />
@@ -51,7 +47,6 @@ export default function IndexIntro({ content }) {
 IndexIntro.propTypes = {
     content: PropTypes.shape({
         introHeading: PropTypes.string.isRequired,
-        introPlaceholderImage: PropTypes.object.isRequired,
         _rawIntroBody: PropTypes.array.isRequired,
     }).isRequired,
 };
