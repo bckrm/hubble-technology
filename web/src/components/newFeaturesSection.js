@@ -59,7 +59,6 @@ export default function NewFeaturesSection({ content }) {
                             content={feature}
                             key={`${feature.id}`}
                             isOpen={activeTab === feature.id}
-                            isActive={{ textDecoration: 'underline' }}
                         />
                     );
                 })}
