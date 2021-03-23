@@ -14,12 +14,14 @@ const StyledContainer = styled.div`
 `;
 
 const LinkWrapper = styled.div`
-    ${tw`flex gap-10 justify-center my-8`}
+    ${tw`flex gap-16 justify-center my-10`}
 `;
 
 const StyledButton = styled.button`
-    ${tw`text-gray-2 text-center font-semibold`}
-    color: ${({ isActive }) => (isActive ? '#00A09B' : 'gray-2')}
+    ${tw`text-gray-2 text-xl text-center font-bold`}
+
+    color: ${({ isActive }) => (isActive ? '#00A09B' : 'gray-2')};
+    text-decoration: ${({ isActive }) => (isActive ? 'underline' : 'none')};
 `;
 
 const StyledHeading = styled.h2`
@@ -57,6 +59,7 @@ export default function NewFeaturesSection({ content }) {
                             content={feature}
                             key={`${feature.id}`}
                             isOpen={activeTab === feature.id}
+                            isActive={{ textDecoration: 'underline' }}
                         />
                     );
                 })}
