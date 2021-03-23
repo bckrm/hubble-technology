@@ -14,11 +14,11 @@ const StyledContainer = styled.div`
 `;
 
 const LinkWrapper = styled.div`
-    ${tw`flex gap-16 justify-center my-10`}
+    ${tw`flex gap-4 md:gap-16 justify-center my-10`}
 `;
 
 const StyledButton = styled.button`
-    ${tw`text-gray-2 text-xl text-center font-bold`}
+    ${tw`text-gray-2 text-lg md:text-xl text-center font-bold`}
 
     color: ${({ isActive }) => (isActive ? '#00A09B' : 'gray-2')};
     text-decoration: ${({ isActive }) => (isActive ? 'underline' : 'none')};
