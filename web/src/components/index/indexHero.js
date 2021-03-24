@@ -20,9 +20,7 @@ const Container = styled.div`
 `;
 
 const Heading = styled.h1`
-    ${tw`font-bold mb-8 text-5xl md:max-w-2xl`}
-
-    line-height: 3.75rem
+    ${tw`font-bold mb-8 text-4xl md:text-5xl md:max-w-2xl`}
 `;
 
 const Body = styled.div`
