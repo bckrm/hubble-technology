@@ -12,23 +12,25 @@ const Section = styled.section`
 `;
 
 const Wrapper = styled.div`
-    ${tw`relative mt-20 lg:absolute lg:left-full lg:top-full lg:transform-gpu lg:-translate-y-full lg:-translate-x-full lg:w-1/2`}//todo move colors to tailwind config
+    ${tw`relative mt-20 lg:absolute lg:left-full lg:top-full lg:transform-gpu lg:-translate-y-full lg:-translate-x-full lg:w-1/2`}
+    //todo move colors to tailwind config
+    .motion-wrapper {
+        position: relative;
+
+        &:after {
+            background: #00a09b;
+            content: '';
+            height: 0.25rem;
+            position: absolute;
+            top: 0;
+            transform: translateY(-1.5rem);
+            width: 1.5rem;
+        }
+    }
 `;
 
 const Heading = styled.h2`
     ${tw`font-bold text-4xl mb-12`}
-`;
-
-const TextWrapper = styled.div`
-    &:after {
-        background: #00a09b;
-        content: '';
-        position: absolute;
-        height: 0.25rem;
-        top: 40%;
-        transform: translateY(-50%);
-        width: 1.5rem;
-    }
 `;
 
 export default function IndexIntro({ content }) {
@@ -42,15 +44,14 @@ export default function IndexIntro({ content }) {
                 <AnimatePresence>
                     {isFinishedAnimation && (
                         <motion.div
+                            className="motion-wrapper"
                             initial={{ opacity: 0, height: 0 }}
                             animate={{ opacity: 1, height: 'auto' }}
                             transition={{
                                 duration: 2,
                             }}
                         >
-                            <TextWrapper>
-                                <BlockText blocks={_rawIntroBody} />
-                            </TextWrapper>
+                            <BlockText blocks={_rawIntroBody} />
                         </motion.div>
                     )}
                 </AnimatePresence>
