@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import tw from 'twin.macro';
+import { motion, AnimatePresence } from 'framer-motion';
 
 // import Img from 'gatsby-image';
 import BlockText from '../block-content/blockText';
@@ -38,7 +39,19 @@ export default function IndexIntro({ content }) {
             <IndexAnimation setFinishedAnimation={setFinishedAnimation} />
             <Wrapper>
                 <Heading>{introHeading}</Heading>
-                {finishedAnimation && <BlockText blocks={_rawIntroBody} />}
+                <AnimatePresence>
+                    {finishedAnimation && (
+                        <motion.div
+                            initial={{ opacity: 0, height: 0 }}
+                            animate={{ opacity: 1, height: 'auto' }}
+                            transition={{
+                                duration: 2,
+                            }}
+                        >
+                            <BlockText blocks={_rawIntroBody} />
+                        </motion.div>
+                    )}
+                </AnimatePresence>
             </Wrapper>
         </Section>
     );
