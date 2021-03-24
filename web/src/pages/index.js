@@ -21,7 +21,6 @@ export default function IndexPage({ data }) {
         industries,
         introContent,
     } = data;
-
     return (
         <Layout>
             <SEO title="Hubble Technology" />

@@ -30,7 +30,7 @@ const Grid = styled.div`
 `;
 
 const Description = styled.p`
-    ${tw`text-xl text-black text-center mb-12`}
+    ${tw`mx-auto text-xl text-black text-center max-w-xl`}
 `;
 
 export default function ColumnGrid({ content }) {
