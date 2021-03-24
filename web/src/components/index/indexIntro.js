@@ -32,15 +32,15 @@ const TextWrapper = styled.div`
 `;
 
 export default function IndexIntro({ content }) {
-    const [finishedAnimation, setFinishedAnimation] = useState(false);
+    const [isFinishedAnimation, setIsFinishedAnimation] = useState(false);
     const { introHeading, _rawIntroBody } = content;
     return (
         <Section>
-            <IndexAnimation setFinishedAnimation={setFinishedAnimation} />
+            <IndexAnimation setIsFinishedAnimation={setIsFinishedAnimation} />
             <Wrapper>
                 <Heading>{introHeading}</Heading>
                 <AnimatePresence>
-                    {finishedAnimation && (
+                    {isFinishedAnimation && (
                         <motion.div
                             initial={{ opacity: 0, height: 0 }}
                             animate={{ opacity: 1, height: 'auto' }}

@@ -5,7 +5,7 @@ import { useInView } from 'react-intersection-observer';
 
 import hubble from '../animations/hubble.json';
 
-export default function IndexAnimation({ setFinishedAnimation }) {
+export default function IndexAnimation({ setIsFinishedAnimation }) {
     const indexContainer = useRef(null);
 
     const { ref, inView } = useInView({
@@ -23,12 +23,12 @@ export default function IndexAnimation({ setFinishedAnimation }) {
                 loop={false}
                 autoplay={false}
                 lottieRef={indexContainer}
-                onComplete={() => setFinishedAnimation(true)}
+                onComplete={() => setIsFinishedAnimation(true)}
             />
         </div>
     );
 }
 
 IndexAnimation.propTypes = {
-    setFinishedAnimation: PropTypes.func.isRequired,
+    setIsFinishedAnimation: PropTypes.func.isRequired,
 };
