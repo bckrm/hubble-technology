@@ -21,10 +21,14 @@ const Container = styled.div`
 
 const Heading = styled.h1`
     ${tw`font-bold mb-8 text-4xl md:text-5xl md:max-w-2xl`}
+
+    @media screen and (min-width: 768px) {
+        line-height: 3.75rem;
+    }
 `;
 
 const Body = styled.div`
-    ${tw`font-semibold md:max-w-3xl mb-8 text-2xl`}
+    ${tw`font-normal md:max-w-3xl mb-8 text-2xl`}
 
     line-height: 150%;
 
