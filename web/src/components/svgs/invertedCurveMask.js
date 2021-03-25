@@ -7,7 +7,7 @@ import tw from 'twin.macro';
 const Svg = styled.svg`
     ${tw`absolute w-full`}
 
-    top: ${({ isTop }) => (isTop ? '0' : '100%')};
+    top: ${({ isTop }) => (isTop ? '0' : '90%')};
     transform: ${({ isTop }) =>
         isTop ? 'translateY(-50%) scale(1)' : 'scale(1)'};
 `;

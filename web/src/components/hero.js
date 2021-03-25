@@ -11,7 +11,7 @@ const BackgroundSection = styled(BackgroundImage)`
 `;
 
 const Heading = styled.h1`
-    ${tw`font-bold text-5xl text-white leading-tight`}
+    ${tw`font-bold text-3xl md:text-5xl text-center text-white leading-tight`}
 `;
 
 export default function Hero({ content }) {
