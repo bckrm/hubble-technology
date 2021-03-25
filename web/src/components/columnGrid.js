@@ -10,7 +10,7 @@ const Section = styled.section`
 `;
 
 const Heading = styled.h2`
-    ${tw`font-bold pb-32 relative text-5xl text-black text-center`};
+    ${tw`font-bold pb-32 relative text-2xl md:text-5xl text-black text-center`};
 
     // todo: move color to custom property
     &:after {
