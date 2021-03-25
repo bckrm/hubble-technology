@@ -7,10 +7,13 @@ import Img from 'gatsby-image';
 
 const Section = styled.section`
     ${tw`container mb-40 relative`}
+    .gatsby-image-wrapper {
+        top: -10px;
+    }
 `;
 
 const Wrapper = styled.div`
-    ${tw`bg-white md:bottom-0 md:absolute md:w-3/4 lg:w-1/2 pb-10 pt-3 md:pl-5 pr-10 md:right-0`}
+    ${tw`md:bottom-0 md:absolute md:w-3/4 lg:w-1/2 pb-10 pt-3 left-96 top-80 md:pl-5 pr-10 md:right-0`}
 `;
 
 const Heading = styled.h2`
