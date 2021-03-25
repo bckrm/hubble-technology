@@ -14,7 +14,7 @@ const Wrapper = styled.div`
 `;
 
 const StyledHeading = styled.h2`
-    ${tw`text-3xl md:text-5xl font-bold text-center lg:w-1/2 my-10`}
+    ${tw`text-5xl font-bold text-center lg:w-1/2 my-10`}
 `;
 
 const StyledP = styled.p`
