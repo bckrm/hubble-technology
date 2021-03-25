@@ -13,11 +13,11 @@ const Section = styled.section`
 `;
 
 const Wrapper = styled.div`
-    ${tw`md:bottom-0 md:absolute md:transform md:translate-y-2/4 md:translate-x-1/4 md:w-3/4 lg:w-1/2 pb-10 pt-3 inset-auto md:pl-5 pr-10 md:right-0`}
+    ${tw`md:bottom-0 md:absolute md:transform md:translate-y-2/4 md:translate-x-1/4 md:w-3/4 lg:w-1/2 pb-10 pt-3 inset-auto lg:top-96 md:pl-5 pr-10 md:right-0 lg:right-48`}
 `;
 
 const Heading = styled.h2`
-    ${tw`capitalize font-bold mb-8 relative text-4xl text-black-3 leading-tight`}
+    ${tw`capitalize font-bold mb-8 relative text-lg md:text-4xl text-black-3 leading-tight`}
 
     &:after {
         content: '';
@@ -29,6 +29,9 @@ const Heading = styled.h2`
         transform: translateY(0.75rem);
         width: 1.5rem;
     }
+`;
+const Body = styled.p`
+    ${tw`text-xs md:text-lg`}
 `;
 
 export default function FullWidthImage({ content }) {
@@ -47,7 +50,7 @@ export default function FullWidthImage({ content }) {
             <Img fluid={imageData} />
             <Wrapper>
                 {heading && <Heading>{heading}</Heading>}
-                {body && <p>{body}</p>}
+                {body && <Body>{body}</Body>}
             </Wrapper>
         </Section>
     );
