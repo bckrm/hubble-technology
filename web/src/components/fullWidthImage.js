@@ -17,7 +17,7 @@ const Wrapper = styled.div`
 `;
 
 const Heading = styled.h2`
-    ${tw`capitalize font-bold mb-8 relative text-lg md:text-4xl text-black-3 leading-tight`}
+    ${tw`capitalize font-bold mb-8 relative text-4xl text-black-3 leading-tight`}
 
     &:after {
         content: '';
@@ -31,7 +31,7 @@ const Heading = styled.h2`
     }
 `;
 const Body = styled.p`
-    ${tw`text-xs md:text-lg`}
+    ${tw`text-lg`}
 `;
 
 export default function FullWidthImage({ content }) {
