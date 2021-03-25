@@ -13,7 +13,7 @@ const Section = styled.section`
 `;
 
 const Wrapper = styled.div`
-    ${tw`md:bottom-0 md:absolute md:w-3/4 lg:w-1/2 pb-10 pt-3 left-96 top-80 md:pl-5 pr-10 md:right-0`}
+    ${tw`md:bottom-0 md:absolute md:transform md:translate-y-2/4 md:translate-x-1/4 md:w-3/4 lg:w-1/2 pb-10 pt-3 inset-auto md:pl-5 pr-10 md:right-0`}
 `;
 
 const Heading = styled.h2`
