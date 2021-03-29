@@ -24,7 +24,6 @@ export default function IndexAnimation({ setIsFinishedAnimation }) {
                 autoplay={false}
                 lottieRef={indexContainer}
                 onComplete={() => setIsFinishedAnimation(true)}
-                style={{ width: '80%' }}
             />
         </div>
     );
