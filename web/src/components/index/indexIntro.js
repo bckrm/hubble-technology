@@ -30,7 +30,7 @@ const Wrapper = styled.div`
 `;
 
 const Heading = styled.h2`
-    ${tw`font-bold text-2xl md:text-4xl mb-12`}
+    ${tw`font-bold text-4xl mb-12`}
 `;
 
 export default function IndexIntro({ content }) {
