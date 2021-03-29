@@ -40,11 +40,11 @@ export default function NewFeaturesSection({ content }) {
             <StyledContainer>
                 <StyledHeading>{Heading}</StyledHeading>
                 <LinkWrapper>
-                    {featuresBenefitsItems.map((feature, i) => {
+                    {featuresBenefitsItems.map((feature) => {
                         return (
                             <StyledButton
                                 onClick={() => setActiveTab(feature.id)}
-                                key={feature[i]}
+                                key={feature.id}
                                 isActive={activeTab === feature.id}
                                 type="button"
                             >

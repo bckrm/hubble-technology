@@ -25,7 +25,7 @@ FeaturesPage.propTypes = {
     data: PropTypes.shape({
         cta: PropTypes.object.isRequired,
         hero: PropTypes.object.isRequired,
-        industries: PropTypes.array.isRequired,
+        industries: PropTypes.object.isRequired,
         features: PropTypes.object.isRequired,
     }).isRequired,
 };

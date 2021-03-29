@@ -64,7 +64,11 @@ export default function IndexHero({ bgImage, content }) {
                 </Body>
                 <Link href="/contact">{heroCta}</Link>
             </Container>
-            <InvertedCurveMask color="var(--darkGray)" isInverted />
+            <InvertedCurveMask
+                color="var(--darkGray)"
+                isInverted
+                isTop={false}
+            />
         </BackgroundSection>
     );
 }

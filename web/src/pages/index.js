@@ -149,7 +149,7 @@ IndexPage.propTypes = {
             heroImage: PropTypes.object.isRequired,
         }),
         heroContent: PropTypes.object.isRequired,
-        industries: PropTypes.array.isRequired,
+        industries: PropTypes.object.isRequired,
         introContent: PropTypes.object.isRequired,
     }).isRequired,
 };
