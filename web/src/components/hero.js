@@ -25,7 +25,7 @@ export default function Hero({ content }) {
     return (
         <BackgroundSection Tag="section" fluid={imageData}>
             <Heading>{heading}</Heading>
-            <CurveMask color="var(--white)" isTop={false} />
+            <CurveMask color="var(--white)" />
         </BackgroundSection>
     );
 }

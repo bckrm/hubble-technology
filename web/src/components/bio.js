@@ -56,7 +56,7 @@ export default function Bio({ content }) {
     return (
         <StyledBackground Tag="section" fluid={bgImageData}>
             <InvertedCurveMask color="var(--white)" isTop />
-            <CurveMask color="var(--white)" isTop={false} />
+            <CurveMask color="var(--white)" />
             <Grid>
                 <StyledImg fluid={imageData} style={{ width: '400px' }} />
                 <Body>
