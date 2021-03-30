@@ -3,7 +3,7 @@ import Lottie from 'lottie-react';
 import PropTypes from 'prop-types';
 import { useInView } from 'react-intersection-observer';
 
-import hubble from '../animations/hubble_edit.json';
+import hubble from '../animations/hubble_newedit.json';
 
 export default function IndexAnimation({ setIsFinishedAnimation }) {
     const indexContainer = useRef(null);
@@ -24,7 +24,6 @@ export default function IndexAnimation({ setIsFinishedAnimation }) {
                 autoplay={false}
                 lottieRef={indexContainer}
                 onComplete={() => setIsFinishedAnimation(true)}
-                style={{ width: '90%' }}
             />
         </div>
     );
