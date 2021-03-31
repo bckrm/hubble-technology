@@ -13,7 +13,7 @@ import VideoFeature from '../components/videoFeature';
 import CurveMask from '../components/svgs/curveMask';
 
 const MaskWrapper = styled.section`
-    ${tw`bg-black-1 justify-center mt-56 py-32 relative text-white`}
+    ${tw`bg-black-1 justify-center mt-60 py-32 relative text-white`}
 `;
 
 export default function ContactPage({ data }) {
