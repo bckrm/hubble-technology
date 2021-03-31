@@ -66,7 +66,7 @@ export default function Header() {
     return (
         <Nav isScrolled={isScrolled}>
             <NavInner>
-                <Link href="/">
+                <Link to="/">
                     <FullLogo />
                 </Link>
                 <MobilNav

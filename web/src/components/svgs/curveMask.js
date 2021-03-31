@@ -58,7 +58,11 @@ export default function CurveMask({ color, isTop }) {
     );
 }
 
+CurveMask.defaultProps = {
+    isTop: false,
+};
+
 CurveMask.propTypes = {
     color: PropTypes.string.isRequired,
-    isTop: PropTypes.bool.isRequired,
+    isTop: PropTypes.bool,
 };

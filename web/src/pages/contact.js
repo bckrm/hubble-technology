@@ -30,7 +30,7 @@ ContactPage.propTypes = {
         cta: PropTypes.object.isRequired,
         form: PropTypes.object.isRequired,
         hero: PropTypes.object.isRequired,
-        infoSection: PropTypes.array.isRequired,
+        infoSection: PropTypes.object.isRequired,
         videoSection: PropTypes.object.isRequired,
     }).isRequired,
 };

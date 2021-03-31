@@ -36,7 +36,7 @@ export default function MainNav({ navItems }) {
                 }
                 return (
                     <LI key={item.link}>
-                        <Link href={item.link}>{item.name}</Link>
+                        <Link to={item.link}>{item.name}</Link>
                     </LI>
                 );
             })}
