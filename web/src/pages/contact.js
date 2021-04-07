@@ -1,17 +1,23 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
+import tw from 'twin.macro';
 
 import Layout from '../page-layouts/layout';
 import SEO from '../components/seo';
 import Hero from '../components/hero';
 import ColumnGrid from '../components/columnGrid';
-import CtaSection from '../components/ctaSection';
 import ContactForm from '../components/contactForm';
 import VideoFeature from '../components/videoFeature';
+import CurveMask from '../components/svgs/curveMask';
+
+const MaskWrapper = styled.section`
+    ${tw`bg-black-1 justify-center mt-60 py-32 relative text-white`}
+`;
 
 export default function ContactPage({ data }) {
-    const { cta, form, hero, infoSection, videoSection } = data;
+    const { form, hero, infoSection, videoSection } = data;
 
     return (
         <Layout>
@@ -20,7 +26,9 @@ export default function ContactPage({ data }) {
             <ColumnGrid content={infoSection} hasDescriptionText />
             <VideoFeature content={videoSection} />
             <ContactForm content={form} />
-            <CtaSection content={cta} />
+            <MaskWrapper>
+                <CurveMask color="var(--darkGray)" isInverted isTop />
+            </MaskWrapper>
         </Layout>
     );
 }
@@ -84,14 +92,6 @@ export const query = graphql`
 
         form: sanityContactPage {
             formHeading
-        }
-
-        cta: sanityContactPage {
-            ctaHeading
-            link {
-                text
-                url
-            }
         }
     }
 `;
