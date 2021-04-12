@@ -14,9 +14,6 @@ const Section = styled.section`
 const Wrapper = styled.div`
     ${tw`relative p-4 lg:absolute lg:top-full lg:left-full lg:transform-gpu lg:-translate-y-full lg:-translate-x-full lg:w-1/2`}
 
-    @media only screen and (min-width: 1040px) {
-        left: 90%;
-    }
     @media only screen and (min-width: 1536px) {
         top: 80%;
     }
