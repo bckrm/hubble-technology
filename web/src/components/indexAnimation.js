@@ -8,29 +8,6 @@ import hubble from '../animations/hubble_newnewedit.json';
 export default function IndexAnimation({ setIsFinishedAnimation }) {
     const indexContainer = useRef(null);
 
-    // let percentage = '-15%';
-
-    // const checkWidth = () => {
-    //     if (window.innerWidth < 1000) {
-    //         percentage = '0%';
-    //     } else {
-    //         percentage = '-15%';
-    //     }
-    // };
-
-    // useEffect(() => {
-    //     window.addEventListener('resize', checkWidth);
-
-    //     return () => {
-    //         window.removeEventListener('resize', checkWidth);
-    //     };
-    // });
-    const percentage = '-15%';
-
-    const styles = {
-        transform: `translateX(${percentage})`,
-    };
-
     const { ref, inView } = useInView({
         /* Optional options */
         threshold: 0,
@@ -47,7 +24,6 @@ export default function IndexAnimation({ setIsFinishedAnimation }) {
                 autoplay={false}
                 lottieRef={indexContainer}
                 onComplete={() => setIsFinishedAnimation(true)}
-                style={styles}
             />
         </div>
     );
