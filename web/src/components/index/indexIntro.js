@@ -12,7 +12,9 @@ const Section = styled.section`
 `;
 
 const AnimationWrapper = styled.div`
-    transform: translateX(-5%);
+    @media only screen and (min-width: 1024px) {
+        transform: translateX(-5%);
+    }
 `;
 const Wrapper = styled.div`
     ${tw`relative p-4 lg:absolute lg:top-full lg:left-full lg:transform-gpu lg:-translate-y-full lg:-translate-x-full lg:w-1/2`}
