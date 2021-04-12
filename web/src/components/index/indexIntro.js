@@ -11,6 +11,9 @@ const Section = styled.section`
     ${tw`container relative`}
 `;
 
+const AnimationWrapper = styled.div`
+    transform: translateX(-5%);
+`;
 const Wrapper = styled.div`
     ${tw`relative p-4 lg:absolute lg:top-full lg:left-full lg:transform-gpu lg:-translate-y-full lg:-translate-x-full lg:w-1/2`}
 
@@ -41,7 +44,11 @@ export default function IndexIntro({ content }) {
     const { introHeading, _rawIntroBody } = content;
     return (
         <Section>
-            <IndexAnimation setIsFinishedAnimation={setIsFinishedAnimation} />
+            <AnimationWrapper>
+                <IndexAnimation
+                    setIsFinishedAnimation={setIsFinishedAnimation}
+                />
+            </AnimationWrapper>
             <Wrapper>
                 <Heading>{introHeading}</Heading>
                 <AnimatePresence>
