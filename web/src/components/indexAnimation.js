@@ -8,7 +8,7 @@ import hubble from '../animations/hubble_newnewedit.json';
 export default function IndexAnimation({ setIsFinishedAnimation }) {
     const indexContainer = useRef(null);
 
-    const percentage = '15%';
+    const percentage = '-15%';
 
     const styles = {
         transform: `translateX(${percentage})`,

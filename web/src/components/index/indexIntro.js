@@ -12,11 +12,14 @@ const Section = styled.section`
 `;
 
 const Wrapper = styled.div`
-    ${tw`relative p-4 lg:absolute lg:left-full lg:top-full lg:transform-gpu lg:-translate-y-full lg:-translate-x-full lg:w-1/2`}
-    //todo move colors to tailwind config
+    ${tw`relative p-4 lg:absolute lg:top-full lg:left-full lg:transform-gpu lg:-translate-y-full lg:-translate-x-full lg:w-1/2`}
+    // @media only screen and (min-width: 1024px) {
+    //     transform: translateX(-115%);
+    //     transform: translateY(-150%);
+    // }
+
     .motion-wrapper {
         position: relative;
-
         &:after {
             background: #00a09b;
             content: '';
