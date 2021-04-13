@@ -8,7 +8,7 @@ import BlockText from '../block-content/blockText';
 import InvertedCurveMask from '../svgs/invertedCurveMask';
 
 const BackgroundSection = styled(BackgroundImage)`
-    ${tw`flex flex-col justify-end mb-64 min-h-screen pb-20 2xl:pb-0 pt-40 md:pt-0 text-white`}
+    ${tw`flex flex-col justify-end mb-20 min-h-screen pb-20 2xl:pb-0 pt-40 md:pt-0 text-white`}
 
     @media screen and (min-width: 1440px) {
         justify-content: center;
@@ -20,7 +20,7 @@ const Container = styled.div`
 `;
 
 const Heading = styled.h1`
-    ${tw`font-bold mb-8 text-5xl md:max-w-2xl`}
+    ${tw`font-bold mb-4 text-5xl md:max-w-2xl`}
 
     @media screen and (min-width: 768px) {
         line-height: 3.75rem;
@@ -64,7 +64,7 @@ export default function IndexHero({ bgImage, content }) {
                 </Body>
                 <Link href="/contact">{heroCta}</Link>
             </Container>
-            <InvertedCurveMask color="var(--darkGray)" isInverted />
+            <InvertedCurveMask color="var(--black)" isInverted />
         </BackgroundSection>
     );
 }

@@ -11,12 +11,20 @@ const Section = styled.section`
     ${tw`container relative`}
 `;
 
+const AnimationWrapper = styled.div`
+    @media only screen and (min-width: 1024px) {
+        transform: translateX(-5%);
+    }
+`;
 const Wrapper = styled.div`
-    ${tw`relative mt-20 lg:absolute lg:left-full lg:top-full lg:transform-gpu lg:-translate-y-full lg:-translate-x-full lg:w-1/2`}
-    //todo move colors to tailwind config
+    ${tw`relative p-4 lg:absolute lg:top-full lg:left-full lg:transform-gpu lg:-translate-y-full lg:-translate-x-full lg:w-1/2`}
+
+    @media only screen and (min-width: 1536px) {
+        top: 80%;
+    }
+
     .motion-wrapper {
         position: relative;
-
         &:after {
             background: #00a09b;
             content: '';
@@ -38,7 +46,11 @@ export default function IndexIntro({ content }) {
     const { introHeading, _rawIntroBody } = content;
     return (
         <Section>
-            <IndexAnimation setIsFinishedAnimation={setIsFinishedAnimation} />
+            <AnimationWrapper>
+                <IndexAnimation
+                    setIsFinishedAnimation={setIsFinishedAnimation}
+                />
+            </AnimationWrapper>
             <Wrapper>
                 <Heading>{introHeading}</Heading>
                 <AnimatePresence>
