@@ -3,7 +3,8 @@ import Lottie from 'lottie-react';
 import PropTypes from 'prop-types';
 import { useInView } from 'react-intersection-observer';
 
-import hubble from '../animations/hubble_newnewedit.json';
+// import hubble from '../animations/hubble_newnewedit.json';
+import hubble from '../animations/Homepage-Edit.json';
 
 export default function IndexAnimation({ setIsFinishedAnimation }) {
     const indexContainer = useRef(null);
