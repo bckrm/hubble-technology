@@ -12,6 +12,7 @@ const Section = styled.section`
 `;
 
 const AnimationWrapper = styled.div`
+    ${tw`transform -translate-x-1/2`}
     @media only screen and (min-width: 1024px) {
         transform: translateX(-5%);
     }
