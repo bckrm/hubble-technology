@@ -36,7 +36,7 @@ export default function NewFeaturesSection({ content }) {
     const [activeTab, setActiveTab] = useState(featuresBenefitsItems[0].id);
 
     return (
-        <StyledSection>
+        <StyledSection id="data">
             <StyledContainer>
                 <StyledHeading>{Heading}</StyledHeading>
                 <LinkWrapper>
