@@ -8,7 +8,7 @@ import BlockText from '../block-content/blockText';
 import InvertedCurveMask from '../svgs/invertedCurveMask';
 
 const BackgroundSection = styled(BackgroundImage)`
-    ${tw`flex flex-col justify-end mb-32 min-h-screen pb-20 2xl:pb-0 pt-40 md:pt-0 text-white`}
+    ${tw`flex flex-col justify-end mb-56 min-h-screen pb-20 2xl:pb-0 pt-40 md:pt-0 text-white`}
 
     @media screen and (min-width: 1440px) {
         justify-content: center;
