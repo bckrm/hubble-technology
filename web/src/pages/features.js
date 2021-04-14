@@ -78,7 +78,7 @@ export const query = graphql`
                 }
             }
         }
-        hero: sanityAboutPage {
+        hero: sanityFeaturesPage {
             image: heroImage {
                 asset {
                     id
