@@ -2,8 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import tw from 'twin.macro';
-import { Link } from 'gatsby';
-// import { AnchorLink } from 'gatsby-plugin-anchor-links';
+import { AnchorLink } from 'gatsby-plugin-anchor-links';
 
 const UL = styled.ul`
     ${tw`hidden md:flex flex-row items-center font-bold leading-5 justify-between self-center text-white uppercase`}
@@ -13,9 +12,9 @@ const LI = styled.li`
     ${tw`ml-8 text-lg`}
 `;
 
-// const PageLink = styled(AnchorLink)`
-//     ${tw`block bg-green py-2 px-7`}
-// `;
+const PageLink = styled(AnchorLink)`
+    ${tw`block bg-green py-2 px-7`}
+`;
 
 export default function MainNav({ navItems }) {
     return (
@@ -24,15 +23,19 @@ export default function MainNav({ navItems }) {
                 if (item.name === 'demo') {
                     return (
                         <LI key={item.link}>
-                            <Link to={item.link} title="demo" className="demo">
+                            <PageLink
+                                to={item.link}
+                                title="demo"
+                                className="demo"
+                            >
                                 {item.name}
-                            </Link>
+                            </PageLink>
                         </LI>
                     );
                 }
                 return (
                     <LI key={item.link}>
-                        <Link to={item.link}>{item.name}</Link>
+                        <AnchorLink to={item.link}>{item.name}</AnchorLink>
                     </LI>
                 );
             })}
