@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import tw from 'twin.macro';
-import { Link } from 'gatsby';
 import { AnchorLink } from 'gatsby-plugin-anchor-links';
 
 const UL = styled.ul`
@@ -36,7 +35,7 @@ export default function MainNav({ navItems }) {
                 }
                 return (
                     <LI key={item.link}>
-                        <Link to={item.link}>{item.name}</Link>
+                        <AnchorLink to={item.link}>{item.name}</AnchorLink>
                     </LI>
                 );
             })}

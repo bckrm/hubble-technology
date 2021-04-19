@@ -14,8 +14,12 @@ const nav = [
         link: '/about',
     },
     {
+        name: 'why hubble',
+        link: '/features#features',
+    },
+    {
         name: 'features',
-        link: '/features',
+        link: '/features#data',
     },
     {
         name: 'contact',

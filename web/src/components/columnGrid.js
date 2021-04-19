@@ -38,7 +38,7 @@ export default function ColumnGrid({ content }) {
         infoSection: { description, heading, itemsArray },
     } = content;
     return (
-        <Section>
+        <Section id="features">
             <Heading>{heading}</Heading>
             {description && <Description>{description}</Description>}
             <Grid>
