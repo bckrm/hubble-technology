@@ -12,16 +12,13 @@ const Section = styled.section`
 `;
 
 const AnimationWrapper = styled.div`
+    ${tw`w-full md:w-10/12`}
     @media only screen and (min-width: 1024px) {
         transform: translateX(-5%);
     }
 `;
 const Wrapper = styled.div`
-    ${tw`relative p-4 lg:absolute lg:top-full lg:left-full lg:transform-gpu lg:-translate-y-full lg:-translate-x-full lg:w-1/2`}
-
-    @media only screen and (min-width: 1536px) {
-        top: 80%;
-    }
+    ${tw`relative p-4 lg:absolute lg:top-full lg:left-full lg:transform-gpu lg:-translate-y-1/2 lg:-translate-x-full lg:w-1/2`}
 
     .motion-wrapper {
         position: relative;
