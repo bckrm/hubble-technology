@@ -52,6 +52,9 @@ const Button = styled.button`
     ${tw`bg-green self-center md:self-end capitalize py-2 px-6 max-w-max text-xl tracking-widest`}
 `;
 
+const StyledLink = styled.a`
+    ${tw`ml-4`}
+`;
 // todo: confirm hover states for internal links
 // todo: wire up form submission
 
@@ -96,6 +99,9 @@ export default function Footer() {
                         <LogoLink to="/">
                             <TextLogoWhite />
                         </LogoLink>
+                        <StyledLink href="mailto:info@hubble.net">
+                            info@hubble.net
+                        </StyledLink>
                     </ContactDiv>
                     <UL>{links}</UL>
                 </FooterNav>
