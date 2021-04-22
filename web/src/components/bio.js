@@ -35,7 +35,7 @@ const Body = styled.div`
 `;
 
 const StyledImg = styled(Img)`
-    ${tw`h-auto max-w-full md:max-w-none md:col-start-10 md:h-96 md:w-96 md:mb-20 `}
+    ${tw`h-auto rounded-full max-w-full md:max-w-none md:col-start-10 md:h-96 md:w-96 md:mb-20 `}
 `;
 
 export default function Bio({ content }) {
