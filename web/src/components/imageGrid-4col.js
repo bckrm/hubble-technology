@@ -18,7 +18,6 @@ const Container = styled.div`
 
 const Heading = styled.h2`
     ${tw`font-bold mb-12 relative text-4xl text-black-3`}
-
     &:after {
         background: var(--green);
         content: '';
