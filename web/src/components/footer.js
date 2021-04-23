@@ -99,7 +99,11 @@ export default function Footer() {
                         <LogoLink to="/">
                             <TextLogoWhite />
                         </LogoLink>
-                        <StyledLink href="mailto:info@hubble.net">
+                        <StyledLink
+                            href="mailto:info@hubble.net"
+                            target="_blank"
+                            rel="noreferrer"
+                        >
                             info@hubble.net
                         </StyledLink>
                     </ContactDiv>
