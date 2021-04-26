@@ -83,7 +83,13 @@ export const query = graphql`
 `;
 
 export default function AboutPage({ data }) {
-    const { cta, fullWidthImage, hero, investors, team } = data;
+    const {
+        cta,
+        fullWidthImage,
+        hero,
+        // investors,
+        team,
+    } = data;
 
     return (
         <Layout>
@@ -91,7 +97,8 @@ export default function AboutPage({ data }) {
             <Hero content={hero} />
             <FullWidthImage content={fullWidthImage} />
             <ImageGrid4Col content={team} bgColor="var(--gray)" />
-            <ImageGrid4Col content={investors} />
+            {/* <ImageGrid4Col content={investors} /> */}
+            {/* to do add this back when its time */}
             <CtaSection content={cta} />
         </Layout>
     );
@@ -102,7 +109,7 @@ AboutPage.propTypes = {
         cta: PropTypes.object.isRequired,
         fullWidthImage: PropTypes.object.isRequired,
         hero: PropTypes.object.isRequired,
-        investors: PropTypes.object.isRequired,
+        // investors: PropTypes.object.isRequired,
         team: PropTypes.object.isRequired,
     }).isRequired,
 };
