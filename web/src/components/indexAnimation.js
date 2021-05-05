@@ -23,7 +23,7 @@ export default function IndexAnimation({ setIsFinishedAnimation }) {
                 loop={false}
                 autoplay={false}
                 lottieRef={indexContainer}
-                onComplete={() => setIsFinishedAnimation(true)}
+                onEnterFrame={() => setIsFinishedAnimation(true)}
             />
         </div>
     );
