@@ -11,7 +11,7 @@ import {
 import IndexFeature from './indexFeature';
 
 const Section = styled.section`
-    ${tw`container my-44`}
+    ${tw`container my-24 md:my-44 pt-8 lg:pt-28`}
 `;
 
 const Heading = styled.h2`
