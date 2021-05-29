@@ -5,6 +5,7 @@ module.exports = {
         extend: {
             minHeight: {
                 '1/2-screen': '50vh',
+                '80vh': '80vh',
             },
         },
         colors: {
