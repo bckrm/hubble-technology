@@ -5,7 +5,6 @@ import PropTypes from 'prop-types';
 import Layout from '../page-layouts/layout';
 import SEO from '../components/seo';
 import IndexHero from '../components/index/indexHero';
-import IndexIntro from '../components/index/indexIntro';
 import IndexFeatures from '../components/index/indexFeatures';
 import Bio from '../components/bio';
 import ColumnGrid from '../components/columnGrid';
@@ -19,13 +18,11 @@ export default function IndexPage({ data }) {
         heroContent,
         heroImage: { heroImage },
         industries,
-        introContent,
     } = data;
     return (
         <Layout>
             <SEO title="Hubble Technology" />
             <IndexHero bgImage={heroImage} content={heroContent} />
-            <IndexIntro content={introContent} />
             <IndexFeatures content={featuresContent} />
             <Bio content={featuredBio} />
             <ColumnGrid content={industries} />
@@ -66,7 +63,8 @@ export const query = graphql`
         }
 
         featuresContent: sanityIndexPage {
-            featuresHeading
+            animatedText
+            staticHeading
             features {
                 id
                 navHeading

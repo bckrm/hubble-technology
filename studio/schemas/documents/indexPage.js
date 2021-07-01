@@ -65,8 +65,14 @@ export default {
             ],
         },
         {
-            name: 'featuresHeading',
-            title: 'Features Heading',
+            name: 'animatedText',
+            title: 'Animated Text',
+            type: 'text',
+            description: 'Comma separated list of text',
+        },
+        {
+            name: 'staticHeading',
+            title: 'Static Heading',
             type: 'string',
         },
         {

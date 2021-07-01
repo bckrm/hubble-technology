@@ -14,7 +14,7 @@ const StyledContainer = styled.div`
 `;
 
 const LinkWrapper = styled.div`
-    ${tw`flex gap-4 md:gap-16 justify-center my-10`}
+    ${tw`flex flex-wrap gap-4 md:gap-16 justify-center my-10`}
 `;
 
 const StyledButton = styled.button`

@@ -9,10 +9,10 @@ import MainNav from './nav/mainNav';
 import MobilNav from './nav/mobileNav';
 
 const nav = [
-    {
-        name: 'about',
-        link: '/about',
-    },
+    //     {
+    //         name: 'about',
+    //         link: '/about',
+    //     },
     {
         name: 'why hubble',
         link: '/features#features',

@@ -8,7 +8,7 @@ import BlockText from '../block-content/blockText';
 import HpHeroMask from '../svgs/hpHeroMask';
 
 const BackgroundSection = styled(BackgroundImage)`
-    ${tw`flex flex-col justify-end mb-56 min-h-80vh pb-20 2xl:pb-0 pt-40 md:pt-0 text-white`}
+    ${tw`flex flex-col justify-end mb-56 pb-20 2xl:pb-0 pt-40 md:pt-0 text-white`}
 
     @media screen and (min-width: 1440px) {
         justify-content: center;
@@ -16,7 +16,7 @@ const BackgroundSection = styled(BackgroundImage)`
 `;
 
 const Container = styled.div`
-    ${tw`container mx-auto`}
+    ${tw`container mx-auto md:my-28`}
 `;
 
 const Heading = styled.h1`

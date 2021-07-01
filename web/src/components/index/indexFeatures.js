@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import tw from 'twin.macro';
@@ -8,10 +8,11 @@ import {
     MdNavigateNext,
 } from 'react-icons/md';
 
+import AnimatedText from './animatedText';
 import IndexFeature from './indexFeature';
 
 const Section = styled.section`
-    ${tw`container my-24 md:my-44 pt-8 lg:pt-28`}
+    ${tw`container my-24 md:my-44 pt-8 relative`}
 `;
 
 const Heading = styled.h2`
@@ -58,7 +59,7 @@ const DownChevron = styled(MdKeyboardArrowDown)`
 `;
 
 export default function IndexFeatures({ content }) {
-    const { features, featuresHeading } = content;
+    const { animatedText, features, staticHeading } = content;
 
     const [activeTab, setActiveTab] = useState(features[0].id);
     const [activeSlide, setActiveSlide] = useState(0);
@@ -77,9 +78,43 @@ export default function IndexFeatures({ content }) {
         setActiveTab(features[nextSlide].id);
     };
 
+    const animatedTextArray = animatedText.split(',');
+
+    const [activeText, setActiveText] = useState(animatedTextArray[0]);
+    const [textIndex, setTextIndex] = useState(0);
+
+    useEffect(() => {
+        const timer = setInterval(() => {
+            if (textIndex < animatedTextArray.length - 1) {
+                setActiveText(animatedTextArray[textIndex + 1]);
+                setTextIndex(textIndex + 1);
+            } else {
+                setActiveText(animatedTextArray[0]);
+                setTextIndex(0);
+            }
+        }, 2000);
+        // clearing interval
+        return () => clearInterval(timer);
+    });
+
     return (
         <Section>
-            <Heading>{featuresHeading}</Heading>
+            {animatedTextArray &&
+                animatedTextArray.map((item) => {
+                    const key = item.toLowerCase().split(' ').join('');
+                    const currentActiveTextKey = activeText
+                        .toLowerCase()
+                        .split(' ')
+                        .join('');
+                    return (
+                        <AnimatedText
+                            isOpen={key === currentActiveTextKey}
+                            text={item}
+                            key={key}
+                        />
+                    );
+                })}
+            <Heading>{staticHeading}</Heading>
             <GridWrapper>
                 <Controls>
                     <BackwardButton
@@ -123,7 +158,8 @@ export default function IndexFeatures({ content }) {
 
 IndexFeatures.propTypes = {
     content: PropTypes.shape({
+        animatedText: PropTypes.string.isRequired,
         features: PropTypes.array.isRequired,
-        featuresHeading: PropTypes.string.isRequired,
+        staticHeading: PropTypes.string.isRequired,
     }).isRequired,
 };

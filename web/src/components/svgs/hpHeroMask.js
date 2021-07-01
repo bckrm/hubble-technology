@@ -5,7 +5,7 @@ import tw from 'twin.macro';
 const Svg = styled.svg`
     ${tw`absolute w-full`}
 
-    top: ${({ isTop }) => (isTop ? '0' : '90%')};
+    top: ${({ isTop }) => (isTop ? '0' : '94%')};
 
     @media screen and (min-width: 1024px) {
         top: 96%;
