@@ -12,7 +12,7 @@ import AnimatedText from './animatedText';
 import IndexFeature from './indexFeature';
 
 const Section = styled.section`
-    ${tw`container my-24 md:my-44 pt-8 lg:pt-28 relative`}
+    ${tw`container my-24 md:my-44 pt-8 relative`}
 `;
 
 const Heading = styled.h2`
